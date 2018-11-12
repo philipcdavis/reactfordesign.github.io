@@ -2,17 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import styled, { injectGlobal } from "styled-components"
-
-injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Chivo:400,700');
-
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: Chivo, sans-serif;
-  }
-`
+import styled from 'styled-components'
 
 const Container = styled.div`
   margin: 3rem auto;
