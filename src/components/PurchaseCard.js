@@ -28,7 +28,7 @@ const Card = styled(Box)`
   border-radius: 5px;
   text-align: center;
   border: 3px solid ${color.gray3};
-  animation: ${colorChange("border-color", 0.1)} 10s infinite alternate;
+  animation: ${colorChange("border-color", 0.2)} 10s infinite alternate;
 `;
 
 export default PurchaseCard;

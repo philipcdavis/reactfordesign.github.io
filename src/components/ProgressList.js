@@ -36,6 +36,7 @@ const Badge = styled(Button)`
 const StatusCircle = styled.div`
   height: 8px;
   width: 8px;
+  min-width: 8px;
   border-radius: 16px;
   display: inline-block;
   margin-right: 14px;
