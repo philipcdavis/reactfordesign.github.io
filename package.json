@@ -17,6 +17,7 @@
     "gh-pages": "^2.0.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
     "rebass": "^2.3.4",
     "styled-components": "^4.0.3"

@@ -1,5 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
 import { color } from './Utils'
+import ReactGA from 'react-ga'
+
+ReactGA.initialize('UA-129140072-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Chivo:400,700');
