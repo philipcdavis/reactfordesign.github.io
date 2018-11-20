@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import FavIcon from '../images/icon.png'
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -28,6 +29,9 @@ const Layout = ({ children }) => (
           meta={[
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
+          ]}
+          link={[
+              { rel: 'shortcut icon', type: 'image/png', href: FavIcon }
           ]}
         >
           <html lang="en" />

@@ -4,6 +4,15 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-129140072-1",
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "react.design",
+      }
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
@@ -17,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'React for Design',
+        short_name: 'React For Design',
         start_url: '/',
         background_color: '#000',
         theme_color: '#FFF',

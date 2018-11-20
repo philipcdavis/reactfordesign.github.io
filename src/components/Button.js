@@ -7,6 +7,7 @@ export const BtnLink = styled(Btn).attrs({ as: 'a' })`
   display: inline-block;
 `;
 
+
 export const BtnRainbow = styled(BtnLink)`
   animation: ${colorChange("background")} 10s infinite alternate;
 `

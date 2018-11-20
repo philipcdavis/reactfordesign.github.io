@@ -7,6 +7,7 @@
     "babel-plugin-styled-components": "^1.8.0",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",
+    "gatsby-plugin-google-analytics": "^2.0.7",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
@@ -17,7 +18,6 @@
     "gh-pages": "^2.0.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
     "rebass": "^2.3.4",
     "styled-components": "^4.0.3"

@@ -4,6 +4,7 @@ import { color } from '../Tile'
 import { Heading, Text, Box } from 'rebass'
 import { BtnRainbow } from '../components/Button'
 import { colorChange } from '../components/Utils'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const PurchaseCard = function(props) {
   return (
@@ -15,7 +16,7 @@ const PurchaseCard = function(props) {
         Get Access to future videos as they are released.
         The Price will be going up as more videos finish.
       </Text>
-      <BtnRainbow href="https://gum.co/reactfordesign" target="_blank">Early Bird Purchase</BtnRainbow>
+      <BtnRainbow as={OutboundLink} href="https://gum.co/reactfordesign" target="_blank">Early Bird Purchase</BtnRainbow>
     </Card>
   )
 };
