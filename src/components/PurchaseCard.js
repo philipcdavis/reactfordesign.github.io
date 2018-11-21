@@ -16,7 +16,7 @@ const PurchaseCard = function(props) {
         Get Access to future videos as they are released.
         The Price will be going up as more videos finish.
       </Text>
-      <BtnRainbow as={OutboundLink} href="https://gum.co/reactfordesign" target="_blank">Early Bird Purchase</BtnRainbow>
+      <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Early Bird Purchase</BtnRainbow>
     </Card>
   )
 };
