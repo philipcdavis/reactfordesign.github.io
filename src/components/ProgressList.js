@@ -15,7 +15,7 @@ const ProgressList = function(props) {
         <ListItem active>{`Styling with Javascript`}</ListItem>
         <ListItem active>{`Creating an Icon Component Library`}</ListItem>
         <ListItem>{`Building a Design System, Part 1: Reusable Components`}</ListItem>
-        <ListItem>{`Building a Design System, Part 2: Orginization & Extension`}</ListItem>
+        <ListItem>{`Building a Design System, Part 2: Organization & Extension`}</ListItem>
         <Text color={color.gray1} >More Coming...</Text>
       </Box>
     </Box>
