@@ -19,14 +19,14 @@ const PurchaseCard = function(props) {
         </Text>
       </Box>
       <Flex>
-        <Box width="50%">
+        <Box width="60%" pt={2}>
           <PurchasePoint>One time payment</PurchasePoint>
           <PurchasePoint>Source Files Included</PurchasePoint>
           <PurchasePoint>Download or Stream HD Videos</PurchasePoint>
         </Box>
-        <Box align="center" width="50%">
-          <Strikethrough fontSize="5" color={color.gray1}>$100</Strikethrough>
-          <Heading fontSize="7" color="white">$50</Heading>
+        <Box align="center" width="40%">
+          <Strikethrough mt={0} fontSize="4" color={color.gray1}>$100</Strikethrough>
+          <Heading lineHeight={1} mb={3} fontSize="7" color="white">$50</Heading>
           <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Early Bird Purchase</BtnRainbow>
         </Box>
       </Flex>

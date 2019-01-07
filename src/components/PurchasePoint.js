@@ -10,14 +10,27 @@ const PurchasePoint = function(props) {
   return (
     <Box>
       <StyledCheck size={28} />
-      <RainbowHeading mb={4} fontSize={[4]}>{props.children}</RainbowHeading>
+      <StyledHeading mb={4} fontSize={[4]}>{props.children}</StyledHeading>
     </Box>
   )
 };
 
 const StyledCheck = styled(CheckCircle)`
-  animation: ${colorChange("stroke")} 10s infinite alternate;
-  opacity: 0.5;
+  & path {
+    animation: ${colorChange("stroke", 0.4)} 10s infinite alternate;
+  }
+
+  & polyline {
+    animation: ${colorChange("stroke")} 10s infinite alternate;
+  }
+
+  display: inline-block;
+`
+
+const StyledHeading = styled(RainbowHeading)`
+  position: relative;
+  top: -6px;
+  left: 10px;
   display: inline-block;
 `
 
