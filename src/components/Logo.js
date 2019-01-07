@@ -2,10 +2,10 @@ import React from 'react'
 import { Box } from 'rebass'
 
 const Logo = function(props) {
-  let { ...rest } = props;
+  let { width="68px", ...rest } = props;
   return (
-    <Box { ...rest } width="68px">
-      <svg width="68px" height="74px" viewBox="0 0 68 74">
+    <Box { ...rest } width={width}>
+      <svg width={width} height="74px" viewBox="0 0 68 74">
         <g transform="translate(-431.000000, -144.000000)">
           <g id="logo" transform="translate(424.000000, 144.000000)">
             <ellipse fill="none" id="Oval-Copy-2" stroke="#FF0D3A" strokeWidth="3" transform="translate(41.000000, 37.000000) rotate(-240.000000) translate(-41.000000, -37.000000) " cx="41" cy="37" rx="20" ry="35"></ellipse>

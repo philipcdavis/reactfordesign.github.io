@@ -4,18 +4,27 @@ import { color, space, fontSize } from './Utils';
 export const InputLight = styled.input`
   background-color: white;
   font-family: inherit;
-  padding: ${space[1] + 5 + 'px'};
+  padding: ${space[2]-2 + 'px'};
   font-size: ${fontSize[1]};
-  border-radius: 4px;
   border: none;
   outline: none;
   color: ${color.gray2};
-  margin-right: 10px;
   transition: 0.2s opacity ease;
   opacity: 0.9;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: ${props => props.group ? 0 : 4 + "px"};
+  border-bottom-right-radius: ${props => props.group ? 0 : 4 + "px"};
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+
 
   &:hover, &:focus {
     opacity: 1;
+    outline: none;
+    border-color: #555;
   }
 
   &::-webkit-input-placeholder {
@@ -24,6 +33,6 @@ export const InputLight = styled.input`
 `
 
 export const InputDark = styled(InputLight)`
-  background-color: ${color.gray2}
+  background-color: ${color.gray2};
   color: ${color.white};
 `;

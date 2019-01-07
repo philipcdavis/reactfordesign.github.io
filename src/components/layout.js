@@ -5,12 +5,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import FavIcon from '../images/icon.png'
 
-const Container = styled.div`
-  margin: 3rem auto;
-  max-width: 600px;
-  width: 92%;
-`
-
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -37,9 +31,9 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
 
-        <Container>
+        <div>
           {children}
-        </Container>
+        </div>
       </>
     )}
   />
