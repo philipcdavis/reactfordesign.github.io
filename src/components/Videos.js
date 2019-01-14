@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Heading, Text, Flex, Image } from 'rebass'
+import { Box, Heading, Text } from 'rebass'
 import ProgressList from '../components/ProgressList'
 import DesignSystemImage from '../images/design-system.png'
 

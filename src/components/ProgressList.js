@@ -15,12 +15,11 @@ const ProgressList = function(props) {
         <ListItem active>{`Designing with Realistic Data Sets`}</ListItem>
         <ListItem active>{`Styling with Javascript`}</ListItem>
         <ListItem active>{`Creating an Icon Component Library`}</ListItem>
-        <ListItem active>
+        <ListItem >
           {`Building a Design System, Part 1: Reusable Components`}
-          <NewBadge>New!</NewBadge>
         </ListItem>
         <ListItem>{`Building a Design System, Part 2: Organization & Extension`}</ListItem>
-        <Text color={color.gray1} >More Coming...</Text>
+        <Text color="white" >More Coming...</Text>
       </Box>
     </Box>
   )
@@ -37,15 +36,15 @@ const Badge = styled(Button)`
   margin-right: 10px;
 `;
 
-const NewBadge = styled(Button)`
-  font-size: 14px;
-  background-color: ${color.gray3};
-  color: white;
-  padding: 4px 9px;
-  border-radius: 20px;
-  margin-left: 10px;
-  animation: ${colorChange("color")} 10s infinite alternate;
-`;
+// const NewBadge = styled(Button)`
+//   font-size: 14px;
+//   background-color: ${color.gray3};
+//   color: white;
+//   padding: 4px 9px;
+//   border-radius: 20px;
+//   margin-left: 10px;
+//   animation: ${colorChange("color")} 10s infinite alternate;
+// `;
 
 const StatusCircle = styled.div`
   height: 8px;

@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Logo from '../components/Logo'
-import { Text, Box, Heading, Flex, Link } from 'rebass'
-import { GlobalStyle, color } from '../Tile'
+import { Text, Box, Heading, Link } from 'rebass'
+import { GlobalStyle } from '../Tile'
 
 const NotFoundPage = () => (
   <Layout>

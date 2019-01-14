@@ -1,11 +1,10 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Logo from '../components/Logo'
 import Nav from '../components/Nav'
 import { BtnRainbow } from '../components/Button'
-import { Text, Box, Heading, Flex, Link } from 'rebass'
+import { Text, Box, Heading } from 'rebass'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { GlobalStyle, color } from '../Tile'
+import { GlobalStyle } from '../Tile'
 
 const Preview = () => (
   <Layout>
@@ -32,6 +31,7 @@ const Preview = () => (
           }
         }}>
         <iframe
+          title="Designing with Realistic Data Sets"
           width='560'
           height='315'
           src='https://player.vimeo.com/video/311157677'

@@ -9,7 +9,7 @@ class SignupForm extends Component {
   render() {
     return (
       <div id="mc_embed_signup">
-        <form action="https://twitter.us18.list-manage.com/subscribe/post?u=4b8048aee994b838162f80e3a&amp;id=21229251bb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+        <form action={url} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
           <Flex id="mc_embed_signup_scroll" mx="auto">
             <Box width={"100%"} className="mc-field-group">
             	<InputDark group type="email" placeholder="Email Address" name="EMAIL" className="required email" id="mce-EMAIL" />

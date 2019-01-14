@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { color } from '../Tile'
 import { Box } from 'rebass'
 import { colorChange } from '../components/Utils'
 import { RainbowHeading } from '../components/Text'
@@ -10,7 +9,7 @@ const PurchasePoint = function(props) {
   return (
     <Box>
       <StyledCheck size={28} />
-      <StyledHeading mb={[3,4]} fontSize={[3,,,4]}>{props.children}</StyledHeading>
+      <StyledHeading mb={[3,4]} fontSize={[3,3,3,4]}>{props.children}</StyledHeading>
     </Box>
   )
 };
