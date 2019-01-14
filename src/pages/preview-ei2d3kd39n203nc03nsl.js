@@ -10,9 +10,9 @@ import { GlobalStyle, color } from '../Tile'
 const Preview = () => (
   <Layout>
     <GlobalStyle />
-    <Box px={6} py={5}>
+    <Box px={[3,6]} py={[3,5]}>
       <Nav />
-      <Heading align="center" mt={5} fontSize={4} color="white">Designing with Realistic Data Sets</Heading>
+      <Heading align={["right","center"]} mt={5} fontSize={[3,4]} color="white">Designing with Realistic Data Sets</Heading>
       <Box
         width={1}
         mt={4}
@@ -40,8 +40,8 @@ const Preview = () => (
         />
       </Box>
 
-      <Box align="center">
-        <Text mt={5} mb={3}>If you like this video, you'll probably like the full course.</Text>
+      <Box align={["right","center"]}>
+        <Text fontSize={3} mt={5} mb={3}>If you like this video, you'll probably like the full course.</Text>
         <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Get the Full Course</BtnRainbow>
       </Box>
     </Box>
