@@ -10,7 +10,7 @@ const PurchasePoint = function(props) {
   return (
     <Box>
       <StyledCheck size={28} />
-      <StyledHeading mb={4} fontSize={[4]}>{props.children}</StyledHeading>
+      <StyledHeading mb={[3,4]} fontSize={[3,,,4]}>{props.children}</StyledHeading>
     </Box>
   )
 };
@@ -29,7 +29,7 @@ const StyledCheck = styled(CheckCircle)`
 
 const StyledHeading = styled(RainbowHeading)`
   position: relative;
-  top: -6px;
+  top: -7px;
   left: 10px;
   display: inline-block;
 `

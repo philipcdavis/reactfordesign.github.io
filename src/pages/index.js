@@ -20,15 +20,17 @@ const IndexPage = () => (
   <React.Fragment>
     <GlobalStyle />
     <Layout>
-      <Box px={6} py={5}>
-        <Nav />
-        <Intro />
-      </Box>
-      <RainbowHr />
-      <Videos />
-      <Box px={6} py={5}>
-        <PurchaseCard />
-        <Footer />
+      <Box>
+        <Box px={[3,,6]} py={[4,5]}>
+          <Nav />
+          <Intro />
+        </Box>
+        <RainbowHr />
+        <Videos />
+        <Box px={[3,,6]} py={[4,5]}>
+          <PurchaseCard />
+          <Footer />
+        </Box>
       </Box>
     </Layout>
   </React.Fragment>

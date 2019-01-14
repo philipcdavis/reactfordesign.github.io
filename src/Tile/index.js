@@ -17,6 +17,12 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.4em;
     line-height: 1.5;
   }
+
+  @media (max-width: 600px) {
+    body {
+      font-size: 1.2em;
+    }
+  }
 `;
 
 export * from './Button';

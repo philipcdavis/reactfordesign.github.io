@@ -6,30 +6,31 @@ import DesignSystemImage from '../images/design-system.png'
 
 const Videos = function(props) {
   return (
-    <FlexContainer px={6} py={5}>
-      <Box mt={4} width={["580px"]}>
-        <Heading color="white" fontSize={5}>Lessons for designers</Heading>
-        <Text>Below is the list of videos that are currently available and a few that are still in the works. Purchasing the course now will get you access to all videos that are released in the future.</Text>
+    <Container pt={[4,5]}>
+      <Box px={[3,6]} mt={4} width={["100%", "850px"]}>
+        <Heading color="white" mb={2} fontSize={[4,5]}>Made for designers</Heading>
+        <Text>This is a course built specifically for designers looking to use React for interface design. Below is the list of videos that are currently available and a few that are still in the works.</Text>
         <ProgressList my={5}/>
       </Box>
-
-      <FloaterImage src={DesignSystemImage} alt="Image of Design Systems" />
-
-    </FlexContainer>
+    </Container>
   )
 }
 
-const FlexContainer = styled(Flex)`
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
-`
+const Container = styled(Box)`
+  background-image: url(${DesignSystemImage});
+  background-position: 90% 100%;
+  background-size: 900px;
+  background-repeat: no-repeat;
+  max-width: 70em;
+  margin: 0 auto;
 
-const FloaterImage = styled(Image)`
-  position: absolute;
-  right: -300px;
-  top: 200px;
-  width: 912px;
+  @media(max-width: 1090px){
+    background: none;
+  }
+
+  @media(max-width: 1400px){
+    background-position: calc(100% + 300px) 100%;
+  }
 `
 
 export default Videos;
