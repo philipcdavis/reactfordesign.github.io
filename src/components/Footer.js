@@ -7,7 +7,7 @@ const Footer = function(props) {
       <Box width={[1,1,1/2]}>
         <Text fontSize={[2,3]}>
           Get in Contact:
-          <Link color="white" ml={3} href="mailto:reactfordesign@gmail.com?subject=Question for you...">Email</Link>
+          <Link color="white" ml={3} href="mailto:reactfordesigners@gmail.com?subject=Question for you...">Email</Link>
           <Link color="white" ml={3} href="https://twitter.com/philipcdavis">Twitter</Link>
         </Text>
       </Box>
