@@ -2,14 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
 import FavIcon from '../images/icon.png'
-
-const Container = styled.div`
-  margin: 3rem auto;
-  max-width: 600px;
-  width: 92%;
-`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -37,9 +30,9 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
 
-        <Container>
+        <div>
           {children}
-        </Container>
+        </div>
       </>
     )}
   />

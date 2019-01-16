@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { color } from '../Tile'
 import { Box, Text, Button, Flex } from 'rebass'
+import { colorChange } from '../components/Utils'
 
 const ProgressList = function(props) {
   let { ...rest } = props;
@@ -14,9 +15,11 @@ const ProgressList = function(props) {
         <ListItem active>{`Designing with Realistic Data Sets`}</ListItem>
         <ListItem active>{`Styling with Javascript`}</ListItem>
         <ListItem active>{`Creating an Icon Component Library`}</ListItem>
-        <ListItem>{`Building a Design System, Part 1: Reusable Components`}</ListItem>
+        <ListItem >
+          {`Building a Design System, Part 1: Reusable Components`}
+        </ListItem>
         <ListItem>{`Building a Design System, Part 2: Organization & Extension`}</ListItem>
-        <Text color={color.gray1} >More Coming...</Text>
+        <Text color="white" >More Coming...</Text>
       </Box>
     </Box>
   )
@@ -32,6 +35,16 @@ const Badge = styled(Button)`
   padding: 5px 10px;
   margin-right: 10px;
 `;
+
+// const NewBadge = styled(Button)`
+//   font-size: 14px;
+//   background-color: ${color.gray3};
+//   color: white;
+//   padding: 4px 9px;
+//   border-radius: 20px;
+//   margin-left: 10px;
+//   animation: ${colorChange("color")} 10s infinite alternate;
+// `;
 
 const StatusCircle = styled.div`
   height: 8px;

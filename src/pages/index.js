@@ -1,29 +1,34 @@
 import React from 'react'
-import Logo from '../components/Logo'
 import Layout from '../components/layout'
-import { GlobalStyle, color } from '../Tile'
-import ProgressList from '../components/ProgressList'
+import { GlobalStyle } from '../Tile'
+import Nav from '../components/Nav'
+import Intro from '../components/Intro'
 import PurchaseCard from '../components/PurchaseCard'
-import { Text, Heading } from 'rebass'
+import Videos from '../components/Videos'
+import Footer from '../components/Footer'
+import { RainbowHr } from '../components/Text'
+import { Box } from 'rebass'
+import ReactGA from 'react-ga'
+ReactGA.initialize('UA-51640724-1')
+ReactGA.pageview(window.location.pathname + window.location.search)
 
 
 const IndexPage = () => (
   <React.Fragment>
     <GlobalStyle />
     <Layout>
-      <Logo mt={5} mb={2} mx='auto' display='block' />
-      <Heading mb="30px" align="center" fontSize={[3,4]} color={color.white}>React for Design</Heading>
-      <Text fontSize={[18, 21]} my={20}>{`
-        React is a powerful design tool.
-      `}</Text>
-      <Text fontSize={[18, 21]} my={20}>{`If you're interested in using React for design work but not sure where to start, I'm making a course for you.`}</Text>
-      <Text fontSize={[18, 21]} my={20}>You can use react to create complex interfaces, interactive prototypes, and cross functional resources.</Text>
-      <Text fontSize={[18, 21]} my={20}>{`If you're interested in getting early access, you can purchase now. The price will be going up as more video lessons are released. `}</Text>
-
-      <ProgressList my={5}/>
-
-      <PurchaseCard />
-
+      <Box>
+        <Box px={[3,3,6]} py={[4,5]}>
+          <Nav />
+          <Intro />
+        </Box>
+        <RainbowHr />
+        <Videos />
+        <Box px={[3,3,6]} py={[4,5]}>
+          <PurchaseCard />
+          <Footer />
+        </Box>
+      </Box>
     </Layout>
   </React.Fragment>
 )
