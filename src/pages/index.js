@@ -8,9 +8,6 @@ import Videos from '../components/Videos'
 import Footer from '../components/Footer'
 import { RainbowHr } from '../components/Text'
 import { Box } from 'rebass'
-import ReactGA from 'react-ga'
-ReactGA.initialize('UA-51640724-1')
-ReactGA.pageview(window.location.pathname + window.location.search)
 
 
 const IndexPage = () => (
