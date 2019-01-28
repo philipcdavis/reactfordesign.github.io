@@ -4,6 +4,7 @@ import { color, space, fontSize } from './Utils';
 export const InputLight = styled.input`
   background-color: white;
   font-family: inherit;
+  margin: 0;
   padding: ${space[2]-2 + 'px'};
   font-size: ${fontSize[1]};
   border: none;
