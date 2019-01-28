@@ -1,5 +1,21 @@
-import { keyframes } from 'styled-components'
+import { keyframes, css } from 'styled-components'
 import { color } from '../Tile'
+
+const sizes = {
+  desktop: "64em",
+  tablet: "52em",
+  phone: "40em",
+}
+
+export const media = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${sizes[label]}) {
+      ${css(...args)}
+    }
+  `
+
+  return acc
+}, {})
 
 export function colorChange(type, opacity=1) {
   return keyframes`

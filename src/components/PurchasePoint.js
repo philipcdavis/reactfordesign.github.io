@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Box } from 'rebass'
-import { colorChange } from '../components/Utils'
-import { RainbowHeading } from '../components/Text'
+import { RainbowHeading } from './Text'
 import { CheckCircle } from 'react-feather'
+import { media, colorChange } from './Utils'
 
 const PurchasePoint = function(props) {
   return (
     <Box>
       <StyledCheck size={28} />
-      <StyledHeading mb={[3,4]} fontSize={[3,3,3,4]}>{props.children}</StyledHeading>
+      <StyledHeading mb={[3,4]} fontSize={[2,3,3,4]}>{props.children}</StyledHeading>
     </Box>
   )
 };
@@ -24,6 +24,11 @@ const StyledCheck = styled(CheckCircle)`
   }
 
   display: inline-block;
+
+  ${media.phone`
+    transform: scale(0.8);
+  `}
+
 `
 
 const StyledHeading = styled(RainbowHeading)`
