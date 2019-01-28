@@ -8,7 +8,7 @@ const Videos = function(props) {
   return (
     <Container pt={[4,5]}>
       <Box px={[3,6]} mt={4} width={["100%", "850px"]}>
-        <Heading color="white" mb={2} fontSize={[4,5]}>Made for designers</Heading>
+        <Heading color="white" mb={2} fontSize={[4,5]}>A Course for Designers</Heading>
         <Text>This is a course built specifically for designers looking to use React for interface design. Below is the list of videos that are currently available and a few that are still in the works.</Text>
         <ProgressList my={5}/>
       </Box>
