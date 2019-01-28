@@ -29,14 +29,17 @@ const Layout = ({ children }) => (
             <html lang="en" />
             <meta property="og:url" content="https://react.design" />
             <meta property="og:type" content="website" />
+            <meta property="og:title" content="React for Designers" />
             <meta property="og:locale" content="en" />
             <meta property="og:site_name" content="React for Design" />
             <meta property="og:image" content={image} />
             <meta property="og:image:width" content="512" />
             <meta property="og:image:height" content="512" />
 
-            <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@philipcdavis" />
+            <meta name="twitter:creator" content="@philipcdavis" />
+            <meta name="twitter:title" content="React for Designers" />
+            <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:image" content={image} />
             <meta name="twitter:description" content={description} />
           </Helmet>
