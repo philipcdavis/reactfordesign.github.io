@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
             <html lang="en" />
             <meta property="og:url" content="https://react.design" />
             <meta property="og:type" content="website" />
-            <meta property="og:title" content="React for Designers" />
+            <meta property="og:title" content="A React Course for Designers" />
             <meta property="og:locale" content="en" />
             <meta property="og:site_name" content="React for Design" />
             <meta property="og:image" content={image} />
@@ -38,7 +38,7 @@ const Layout = ({ children }) => (
 
             <meta name="twitter:site" content="@philipcdavis" />
             <meta name="twitter:creator" content="@philipcdavis" />
-            <meta name="twitter:title" content="React for Designers" />
+            <meta name="twitter:title" content="A React Course for Designers" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:image" content={image} />
             <meta name="twitter:description" content={description} />
