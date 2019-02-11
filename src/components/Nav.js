@@ -6,8 +6,10 @@ import { Box, Flex } from 'rebass'
 
 const Nav = () => (
   <Flex css={{
-      maxWidth: "70em"
+      maxWidth: "70em",
+      position: "relative",
     }}
+    mt={4}
     mx="auto"
     pb={2}
     alignItems="flex-start"

@@ -11,7 +11,7 @@ const PurchaseCard = function(props) {
   return (
     <Card px={[3,4,"100px"]} py={[4,5]}>
       <Box width={[1]} css={{maxWidth: "500px"}} mb={[3,5]} mx="auto">
-        <Heading color="white" align={["center"]} mb={2} fontSize={[4,5]}>Introductory Pricing</Heading>
+        <Heading color="white" align={["center"]} mb={2} fontSize={[4,5]}>Early Bird Pricing</Heading>
         <Text color="white" align={["center"]} fontSize={[18, 21]} mb={4} mt={3}>
           Get Access to future videos as they are released.
           The Price will be going up as more videos finish.

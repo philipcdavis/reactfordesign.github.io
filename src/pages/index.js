@@ -6,6 +6,7 @@ import Intro from '../components/Intro'
 import PurchaseCard from '../components/PurchaseCard'
 import Videos from '../components/Videos'
 import Footer from '../components/Footer'
+import CodeAnimation from '../components/CodeAnimation'
 import { RainbowHr } from '../components/Text'
 import { Box } from 'rebass'
 
@@ -15,7 +16,8 @@ const IndexPage = () => (
     <GlobalStyle />
     <Layout>
       <Box>
-        <Box px={[3,3,6]} py={[4,5]}>
+        <CodeAnimation />
+        <Box px={[3,3,6]} py={[5,5]}>
           <Nav />
           <Intro />
         </Box>
