@@ -3,7 +3,7 @@ import { Text, Box, Flex, Link } from 'rebass'
 
 const Footer = function(props) {
   return (
-    <Flex mt={[4,6]} flexWrap="wrap">
+    <Flex pb={2} flexWrap="wrap">
       <Box width={[1,1,1/2]}>
         <Text fontSize={[2,3]}>
           Get in Contact:
