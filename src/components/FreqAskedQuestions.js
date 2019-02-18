@@ -31,7 +31,7 @@ const FAQ = function(props) {
             The pricing will be going up as more videos are released.
             <br />
             <br />
-            If you have a good idea for you'd like to learn send me a message on <Link color="inherit" href="https://twitter.com/philipcdavis">twitter</Link>.
+            If you have a good idea for something you'd like to learn send me a message on <Link color="inherit" href="https://twitter.com/philipcdavis">twitter</Link>.
           </Text>
         </Box>
 
