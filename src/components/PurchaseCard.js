@@ -11,7 +11,7 @@ const PurchaseCard = function(props) {
   return (
     <Card px={[3,4,"100px"]} py={[4,5]}>
       <Box width={[1]} css={{maxWidth: "500px"}} mb={[3,5]} mx="auto">
-        <Heading color="white" align={["center"]} mb={2} fontSize={[4,5]}>Early Bird Pricing</Heading>
+        <Heading color="white" align={["center"]} mb={2} fontSize={[4,5]}>Introductory Pricing</Heading>
         <Text color="white" align={["center"]} fontSize={[18, 21]} mb={4} mt={3}>
           Get Access to future videos as they are released.
           The Price will be going up as more videos finish.
@@ -25,8 +25,8 @@ const PurchaseCard = function(props) {
         </Box>
         <Box align="center" mx="auto" width={[1,"250px"]}>
           <Strikethrough mt={0} fontSize={[3,4]} color={color.gray1}>$100</Strikethrough>
-          <Heading lineHeight={1} mb={3} fontSize={[6,7]} color="white">$40</Heading>
-          <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Early Bird Purchase</BtnRainbow>
+          <Heading lineHeight={1} mb={3} fontSize={[6,7]} color="white">$50</Heading>
+          <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Get Access Now</BtnRainbow>
         </Box>
       </Flex>
 

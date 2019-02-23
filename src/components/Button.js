@@ -10,6 +10,7 @@ export const BtnLink = styled(Btn).attrs({ as: 'a' })`
 
 export const BtnRainbow = styled(BtnLink)`
   animation: ${colorChange("background")} 10s infinite alternate;
+  margin-right: 0;
 `
 
 export const BtnInput = styled(BtnRainbow).attrs({ as: 'input' })`

@@ -8,7 +8,7 @@ const Videos = function(props) {
   return (
     <Container pt={[4,5]}>
       <Box px={[3,6]} mt={4} width={["100%", "850px"]}>
-        <Heading color="white" mb={2} fontSize={[4,5]}>A Course for Designers</Heading>
+        <Heading color="white" mb={2} fontSize={[4,5]}>Use React for Design Work</Heading>
         <Text>This course is focused on teaching the parts of React.js that you need as a designer. Below is the list of videos that are currently available and a few that are still in the works. It's an ongoing course, so more lessons will be added in the future.</Text>
         <ProgressList my={5}/>
       </Box>
