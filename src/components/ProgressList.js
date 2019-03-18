@@ -15,11 +15,14 @@ const ProgressList = function(props) {
         <ListItem active>{`Designing with Realistic Data Sets`}</ListItem>
         <ListItem active>{`Styling with Javascript`}</ListItem>
         <ListItem active>{`Creating an Icon Component Library`}</ListItem>
-        <ListItem active >
-          {`Building a Design System, Part 1: Reusable Components`}
+        <ListItem active >{`Building a Design System, Part 1: Flexible Components`}</ListItem>
+        <ListItem active>
+          {`Building a Design System, Part 2: Organization & Extension`}
           <NewBadge>New!</NewBadge>
         </ListItem>
-        <ListItem>{`Building a Design System, Part 2: Organization & Extension`}</ListItem>
+        <ListItem>{`Building a Design System, Part 3: Component Walkthrough`}</ListItem>
+        <ListItem>{`Composing Styles with Style Props`}</ListItem>
+        <ListItem>{`Creating Interactive Components`}</ListItem>
         <Text color="white" >More Coming...</Text>
       </Box>
     </Box>
