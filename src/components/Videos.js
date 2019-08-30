@@ -24,12 +24,12 @@ const Container = styled(Box)`
   max-width: 70em;
   margin: 0 auto;
 
-  @media(max-width: 1090px){
+  @media(max-width: 1100px){
     background: none;
   }
 
   @media(max-width: 1400px){
-    background-position: calc(100% + 300px) 100%;
+    background-position: calc(100% + 330px) 100%;
   }
 `
 
