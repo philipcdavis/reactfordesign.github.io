@@ -3,6 +3,21 @@ module.exports = {
     title: 'React for Design',
   },
   plugins: [
+    {
+     resolve: `gatsby-transformer-remark`,
+     options: {
+       plugins: [
+         "gatsby-remark-prismjs"
+       ],
+     },
+   },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/posts`,
+        name: "markdown-pages",
+      },
+    },
     'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-google-analytics`,
