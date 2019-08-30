@@ -28,8 +28,8 @@ const Container = styled(Box)`
     background: none;
   }
 
-  @media(max-width: 1400px){
-    background-position: calc(100% + 330px) 100%;
+  @media(max-width: 1500px){
+    background-position: calc(100% + 300px) 100%;
   }
 `
 
