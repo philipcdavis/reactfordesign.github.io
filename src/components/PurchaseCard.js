@@ -25,7 +25,7 @@ const PurchaseCard = function(props) {
         </Box>
         <Box align="center" mx="auto" width={[1,"250px"]}>
           <Strikethrough mt={0} fontSize={[3,4]} color={color.gray1}>$100</Strikethrough>
-          <Heading lineHeight={1} mb={3} fontSize={[6,7]} color="white">$50</Heading>
+          <Heading lineHeight={1} mb={3} fontSize={[6,7]} color="white">$60</Heading>
           <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Get Access Now</BtnRainbow>
         </Box>
       </Flex>
