@@ -34,7 +34,7 @@ export const Markdown = styled.div`
   & h2 {
     font-size: 1.2em;
     text-align: center;
-    margin: 2em;
+    margin-top: 2em;
   }
 
   & h3 {
@@ -56,7 +56,7 @@ export const Markdown = styled.div`
   }
 
   & a {
-    color: white;
+    color: inherit;
     text-decoration: none;
     border-bottom: 2px solid ${color.gray1};
 

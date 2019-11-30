@@ -22,9 +22,6 @@ export default function Template({
       <Box>
       <CodeAnimation />
         <Box px={[3,3,6]} py={[5,5]}>
-          <Nav />
-        </Box>
-        <Box px={[3,3,6]} py={[5,5]}>
           {frontmatter.title && (
             <RainbowHeading textAlign="center">{frontmatter.title}</RainbowHeading>
           )}
@@ -33,9 +30,6 @@ export default function Template({
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </Box>
-        </Box>
-        <Box px={[3,3,6]} py={[3,4]}>
-          <Footer />
         </Box>
       </Box>
     </React.Fragment>

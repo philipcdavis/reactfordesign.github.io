@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import Styled from "styled-components"
-import {scaleLinear, scaleQuantize} from "d3-scale";
-import {timer} from "d3-timer";
-import {range} from "d3-array";
-import {select} from "d3-selection";
+import {scaleLinear, scaleQuantize} from "d3-scale"
+import {timer} from "d3-timer"
+import {range} from "d3-array"
+import {select} from "d3-selection"
+import { color } from '../Tile'
 
 const CanvasContainer = Styled.div`
   & canvas {
     width: 100%;
     height: 150px;
     position: absolute;
-    background-color: black;
+    background-color: transparent;
     z-index: 0;
   }
 `
@@ -33,7 +34,7 @@ class CodeAnimation extends Component {
        .domain([0, 100])
        .range([20, height -20]);
 
-     var colors = ["#0099FF", "#DD3DEC", "#FF4D4D", "#FFC54D", "#6AED76", "#181818", "#181818","#181818" ];
+     var colors = ["#0099FF", "#DD3DEC", "#FF4D4D", "#FFC54D", "#6AED76", "#222", "#222","#222" ];
      var colorScale = scaleQuantize().domain([0,1]).range(colors);
 
      var data = [];
@@ -62,7 +63,7 @@ class CodeAnimation extends Component {
 
      function colorChooser(x,y) {
        if (y === 3 && Math.random() > 0.5) {
-         return "#000"
+         return "transparent"
        } else {
          return colorScale(Math.random());
        }

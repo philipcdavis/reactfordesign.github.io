@@ -24,9 +24,9 @@ date: "2019-04-08"
     position: relative;
     padding: 2px;
     background: linear-gradient(0deg,#F04DFF, #FF4D4D, #FFC54D, #6AED76, #0099FF);
-    background-size: 1000% 1000%;
+    background-size: 300% 300%;
     width: 100px;
-    margin: -80px auto 60px auto;
+    margin: 100px auto 60px auto;
     animation: TerminalBackground 10s infinite alternate;
     border-radius: 12px;
   ">
@@ -38,7 +38,7 @@ date: "2019-04-08"
       left: 0;
       opacity: 0.3;
       background: linear-gradient(0deg,#F04DFF, #FF4D4D, #FFC54D, #6AED76, #0099FF);
-      background-size: 1000% 1000%;
+      background-size: 300% 300%;
       width: 100px;
       animation: TerminalBackground 10s infinite alternate;
       border-radius: 12px;
@@ -61,24 +61,23 @@ date: "2019-04-08"
 </div>
 
 # A Guide to the Terminal
-If you know how to use Finder you mostly know how to use the Terminal.
+If you know how to use Finder on MacOS you mostly know how to use the Terminal.
 
-## What the Terminal is
 The terminal allows you to view, move, rename, copy, delete and open files. It allows you to create, modify and move about directories. All basic functions that you get with finder.
 
-In addition, the terminal gets you access to a slew of power tools.
-You can install and run programs without using a browser.
-You can version files.
-You can read documentation.
-You can write scripts to automate your life.
-You can edit programs.
-You can configure hidden OS settings.
-You can tunnel into servers.
-You can leverage the work of millions of developers.
+You can do more than file management.  
+You can install and run programs without using a browser.  
+You can version files.  
+You can read documentation.  
+You can write scripts to automate your life.  
+You can edit programs.  
+You can configure hidden OS settings.  
+You can tunnel into servers.  
+You can leverage the work of millions of developers.  
 
-If you're using React, you can spin up applications.
-You can install design systems.
-You can contribute to the execution of your design work.
+If you're using React, you can spin up applications.  
+You can install design systems.  
+You can contribute to the execution of your design work.  
 
 The terminal itself is a powerful tool.
 It's a powerful tool for designers.
@@ -90,7 +89,7 @@ I recommend making it look nice first.
 Download a nice theme [link].
 Extract the zip file, and import it into your terminal.
 1. Open Terminal
-2. `CMD + ,` to open up settings
+2. `CMD` + `,` to open up settings
 3. Import the `.terminal` file and set it to default.
 4. Restart the Terminal
 
@@ -108,15 +107,15 @@ Here are 7 commands that are important as you get started:
 
 1. `ls` shows the files and folder of your current directory.
 
-2. `cd` is how you move around.
-`cd ..` will take you to the parent directory.  
+2. `cd` is how you move around.  
+`cd ..` will take you to the parent directory.    
 `cd Documents` will take you into the `Documents` directory. For this to work, you need to be currently in a location that contains a `Documents` directory.
 
-3. `mv` moves files from one directory to another.
+3. `mv` moves files from one directory to another.  
 `mv file.txt newLocation/file.txt` moves a file from your current directory to the `newLocation` directory.
 `mv file.txt renamedFile.txt` will rename `file.txt` to `renamedFile.txt`.
 
-4. `touch` creates an empty file.
+4. `touch` creates an empty file.  
 `touch hello.md` creates a file named `hello.md` in your current directory.
 
 5. `mkdir` creates a directory.
@@ -133,9 +132,9 @@ Here are 7 commands that are important as you get started:
 ## Locations
 If you're on a Mac some locations have a shorthand.
 
-`/` is shorthand for your root directory
-`~` is shorthand for your user directory
-`.` is shorthand for your current directory
+`/` is shorthand for your root directory  
+`~` is shorthand for your user directory  
+`.` is shorthand for your current directory  
 
 I use [bashmarks](https://github.com/huyng/bashmarks) to save and jump to commonly used directories.
 
@@ -149,7 +148,7 @@ Parameters for terminal commands are often passed after a `-` dash. `ls -alhG` s
 
 After writing that line in your .bash_profile, save the file and run `source ~/.bash_profile` to refresh
 
-## sudo Release the Kraken
+## sudo release-the-kraken.exe
 In additional to basic shell commands there are a number of powerful tools that allow you do more in your terminal. I've listed a few below. Each takes time to learn. Each has something valuable to offer. If you're looking to pick up a skill, here are some options.
 
 `git` for versioning all the things
@@ -159,4 +158,4 @@ In additional to basic shell commands there are a number of powerful tools that 
 `ssh` can be used to tunnel into servers.
 `vim` for editing files in the terminal.
 
-Go forth and conquer.
+Go forth and h4ck.

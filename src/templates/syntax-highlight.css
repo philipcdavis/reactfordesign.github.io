@@ -6,10 +6,10 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-size: 14px;
+  font-size: 20px;
 	color: #c5c8c6;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+    font-family: Menlo, Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;

@@ -5,11 +5,11 @@ export const color = {
   yellow: '#FFC54D',
   green: '#6AED76',
   white: '#ffffff',
-  gray0: '#AAAAAA',
+  gray0: '#BBBBBB',
   gray1: '#606060',
   gray2: '#313131',
   gray3: '#181818',
-  black: '#000000',
+  black: '#020202',
 }
 
 export const space = [
