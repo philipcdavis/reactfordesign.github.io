@@ -6,8 +6,8 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-size: 20px;
-	color: #c5c8c6;
+  font-size: 1.1rem;
+	color: white;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
     font-family: Menlo, Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
 	direction: ltr;
@@ -37,12 +37,12 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #0F1010;
+	background: #181818;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
+	padding: .05em .3em;
 	border-radius: .3em;
 }
 

@@ -25,7 +25,7 @@ export default function Template({
           {frontmatter.title && (
             <RainbowHeading textAlign="center">{frontmatter.title}</RainbowHeading>
           )}
-          <Box color={color.gray0} width={["100%", "670px"]} mx="auto">
+          <Box color={color.gray0} width={["100%", "600px"]} mx="auto">
             <Markdown
               dangerouslySetInnerHTML={{ __html: html }}
             />

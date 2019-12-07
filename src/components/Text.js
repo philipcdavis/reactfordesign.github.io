@@ -16,6 +16,8 @@ export const P = styled(Text)`
 `
 
 export const Markdown = styled.div`
+  font-size: 1.2rem;
+
   & h1, & h2, & h3, & h4 {
     color: white;
     margin-bottom: 0;
@@ -55,13 +57,19 @@ export const Markdown = styled.div`
     padding-left: 0;
   }
 
+  & ol {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
   & a {
     color: inherit;
     text-decoration: none;
-    border-bottom: 2px solid ${color.gray1};
+    border-bottom: 2px solid ${color.gray2};
 
     &:hover {
-      border-bottom-color: ${color.gray0};
+      color: white;
+      border-bottom-color: ${color.white};
     }
   }
 
