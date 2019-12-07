@@ -164,7 +164,7 @@ I've created aliases for scaffolding react applications, and starting node appli
 
 
 ## The Power Tools
-<img src="./assets/terminal/logos.png" />
+<img src="../static/terminal/logos.png" />
 In additional to basic shell commands there are a number of powerful tools that allow you do more in your terminal. I've listed a few below. Each takes time to learn. Each has something valuable to offer. If you're looking to pick up a skill, here are some good options.
 
 `git` for versioning and collaboration.  
