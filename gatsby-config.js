@@ -4,18 +4,17 @@ module.exports = {
   },
   plugins: [
     {
-     resolve: `gatsby-transformer-remark`,
-     options: {
-       plugins: [
-         "gatsby-remark-prismjs"
-       ],
-     },
-   },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/posts`,
-        name: "markdown-pages",
+        name: "posts",
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: "images",
       },
     },
     'gatsby-plugin-styled-components',
@@ -42,12 +41,26 @@ module.exports = {
         name: 'React for Design',
         short_name: 'React For Design',
         start_url: '/',
-        background_color: '#000',
+        background_color: '#040404',
         theme_color: '#FFF',
         display: 'minimal-ui',
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          "gatsby-remark-prismjs",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 500,
+            },
+          },
+        ],
+      },
+    },
   ],
 }

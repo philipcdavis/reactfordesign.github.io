@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { GlobalStyle, color } from '../Tile'
-import Nav from '../components/Nav'
 import { Box } from 'rebass'
-import Footer from '../components/Footer'
 import { Markdown, RainbowHeading } from '../components/Text'
 import CodeAnimation from '../components/CodeAnimation'
+import PostFooter from './PostFooter'
 
 import "./syntax-highlight.css"
 
@@ -15,7 +14,6 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { html } = markdownRemark
   const { frontmatter } = markdownRemark
-  console.log(data);
   return (
     <React.Fragment>
       <GlobalStyle />
@@ -30,6 +28,7 @@ export default function Template({
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </Box>
+          <PostFooter />
         </Box>
       </Box>
     </React.Fragment>

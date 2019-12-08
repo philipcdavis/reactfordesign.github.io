@@ -4,7 +4,6 @@ import {scaleLinear, scaleQuantize} from "d3-scale"
 import {timer} from "d3-timer"
 import {range} from "d3-array"
 import {select} from "d3-selection"
-import { color } from '../Tile'
 
 const CanvasContainer = Styled.div`
   & canvas {

@@ -18,6 +18,20 @@ export const P = styled(Text)`
 export const Markdown = styled.div`
   font-size: 1.2rem;
 
+  & img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+  }
+
+  & .img-large {
+    width: 140%;
+    margin-left: -20%;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
   & h1, & h2, & h3, & h4 {
     color: white;
     margin-bottom: 0;
@@ -96,8 +110,8 @@ export const Markdown = styled.div`
   }
 
   & hr {
-    border-color: ${color.gray2};
-    border-width: 2px;
+    border: none;
+    border-bottom: 2px solid ${color.gray2};
     width: 60%;
     margin-top: 2.5em;
     margin-bottom: 2.5em;
