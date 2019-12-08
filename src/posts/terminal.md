@@ -82,7 +82,7 @@ It's a powerful tool for designers.
 It's a powerful tool for anyone.
 
 ## Make it look nice
-<img src="./assets/terminal/color.png" />
+<img src="./colors.png" />
 The Terminal can also be a bit daunting.
 I recommend making it look nice first.
 Download a nice theme [link].
@@ -149,9 +149,9 @@ Typing long location names gets old. In addition to shorthand, you can autocompl
 Parameters for terminal commands are often passed after a `-` dash. `ls -alhG` shows you all files (including dot files) in an easier to scan format, with file size and colorized folders.
 
 This is what the normal `ls` looks like.
-<img src="./assets/terminal/ls.png" />
+<img src="./ls.png" />
 And now with the additional parameters.
-<img src="./assets/terminal/lsAlhg.png" />
+<img src="./lsAlhg.png" />
 
 It looks much better but it's a pain to remember. If you create a `.bash_profile` file in your user directory you can write aliases for commonly used commands.
 
@@ -164,7 +164,7 @@ I've created aliases for scaffolding react applications, and starting node appli
 
 
 ## The Power Tools
-<img src="../static/terminal/logos.png" />
+<img src="./logos.png" />
 In additional to basic shell commands there are a number of powerful tools that allow you do more in your terminal. I've listed a few below. Each takes time to learn. Each has something valuable to offer. If you're looking to pick up a skill, here are some good options.
 
 `git` for versioning and collaboration.  
