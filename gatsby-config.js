@@ -11,12 +11,21 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/images`,
-        name: "images",
-      },
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 900,
+            quality: 80,
+            backgroundColor: 'transparent',
+            linkImagesToOriginal: false,
+          },
+        },
+      ],
     },
+  },
     'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -26,13 +35,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -48,19 +50,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          "gatsby-remark-prismjs",
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 500,
-            },
-          },
-        ],
-      },
-    },
   ],
 }

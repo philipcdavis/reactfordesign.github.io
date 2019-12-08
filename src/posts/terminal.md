@@ -148,16 +148,16 @@ You can use a tool like [bashmarks](https://github.com/huyng/bashmarks) to save 
 Typing long location names gets old. In addition to shorthand, you can autocomplete locations using the tab button.
 
 ## Custom Aliases
-<img width="400px" src="../bash-profile.png" />
+<img width="400px" src="./terminal/bash-profile.png" />
 Parameters for terminal commands are often passed after a `-` dash. `ls -alhG` shows you all files (including dot files) in an easier to scan format, with file size and colorized folders.
 
 This is what the normal `ls` looks like.
 <div class="img-large">
-  <img src="./list.png" />
+  <img src="./terminal/list.png" />
 </div>
 And now with the additional parameters.
 <div class="img-large">
-  <img src="./list-formatted.png" />
+  <img src="./terminal/list-formatted.png" />
 </div>
 
 It looks much better but it's a pain to remember. If you create a `.bash_profile` file in your user directory you can write aliases for commonly used commands.
@@ -171,7 +171,7 @@ I've created aliases for scaffolding react applications, and starting node appli
 
 
 ## The Power Tools
-<img width="75%" src="./logos.png" />
+<img width="75%" src="./terminal/logos.png" />
 In additional to basic shell commands there are a number of powerful tools that allow you do more in your terminal. I've listed a few below. Each takes time to learn. Each has something valuable to offer. If you're looking to pick up a skill, here are some good options.
 
 `git` for versioning and collaboration.  
