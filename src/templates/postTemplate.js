@@ -27,8 +27,8 @@ export default function Template({
             <Markdown
               dangerouslySetInnerHTML={{ __html: html }}
             />
-          </Box>
           <PostFooter />
+          </Box>
         </Box>
       </Box>
     </React.Fragment>

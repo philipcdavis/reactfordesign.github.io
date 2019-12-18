@@ -18,18 +18,25 @@ export const P = styled(Text)`
 export const Markdown = styled.div`
   font-size: 1.2rem;
 
-  & img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px auto;
-    display: block;
-  }
-
-  & .img-large {
-    width: 140%;
-    margin-left: -20%;
+  & .img-lg {
+    width: 130%;
+    margin-left: -15%;
     margin-bottom: 40px;
     margin-top: 20px;
+  }
+
+  & .img-sm {
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 700px) {
+    .img-sm, .img-lg {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 
   & h1, & h2, & h3, & h4 {
@@ -43,7 +50,6 @@ export const Markdown = styled.div`
     text-align: center;
     margin-bottom: 2em;
     margin-top: 0;
-    line-height: 0;
     font-weight: bold;
   }
 
@@ -67,13 +73,15 @@ export const Markdown = styled.div`
     font-weight: bold;
   }
 
-  & ul {
-    padding-left: 0;
-  }
+  @media (min-width: 700px) {
+    & ul {
+      padding-left: 0;
+    }
 
-  & ol {
-    margin-left: 0;
-    padding-left: 0;
+    & ol {
+      margin-left: 0;
+      padding-left: 0;
+    }
   }
 
   & a {
@@ -112,7 +120,7 @@ export const Markdown = styled.div`
   & hr {
     border: none;
     border-bottom: 2px solid ${color.gray2};
-    width: 60%;
+    width: 70%;
     margin-top: 2.5em;
     margin-bottom: 2.5em;
   }

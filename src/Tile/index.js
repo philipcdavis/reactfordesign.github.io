@@ -27,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export * from './Button';
 export * from './Input';
+export * from './Icon';
 export * from './Modal';
 export * from './Tooltip';
 export * from './Alert';

@@ -82,54 +82,63 @@ It's a powerful tool for designers.
 It's a powerful tool for anyone.
 
 ## Make it look nice
-<div class="img-large">
-  <img src="./colors.png" />
+<div class="img-lg">
+  <img src="./terminal/colors.png" />
 </div>
 
 The Terminal can also be a bit daunting.
 I recommend making it look nice first.
 Download a nice theme [link].
 Extract the zip file, and import it into your terminal.
-1. Open Terminal
-2. `CMD` + `,` to open up settings
-3. Import the `.terminal` file and set it to default.
-4. Restart the Terminal
 
-There are a number of good monospace font options as well:
-1. SF Mono (Pre-installed)
-2. [Input](https://input.fontbureau.com/)
-3. [Inconsolata](https://fonts.google.com/specimen/Inconsolata)
-4. [Space Mono](https://fonts.google.com/specimen/Space+Mono)
-6. [Office Code Pro](https://github.com/nathco/Office-Code-Pro)
-6. [PragmataPro (paid)](https://www.fsd.it/shop/fonts/pragmatapro/)
-6. [Operator (paid)](https://www.typography.com/blog/introducing-operator)
-6. [Cartograph (paid)](https://connary.com/cartograph.html)
+Open Terminal.  
+`CMD` + `,` to open up settings.  
+Import the `.terminal` file and set it to default.  
+Restart the Terminal.  
+
+Next, find a monospace font you like:  
+
+SF Mono (Pre-installed)  
+[Input](https://input.fontbureau.com/)  
+[Inconsolata](https://fonts.google.com/specimen/Inconsolata)  
+[Space Mono](https://fonts.google.com/specimen/Space+Mono)  
+[Office Code Pro](https://github.com/nathco/Office-Code-Pro)  
+[PragmataPro (paid)](https://www.fsd.it/shop/fonts/pragmatapro/)  
+[Operator (paid)](https://www.typography.com/blog/introducing-operator)  
+[Cartograph (paid)](https://connary.com/cartograph.html)  
 
 ## Starter Commands
 The Terminal helps you move around and modify the file system.
 Here are 7 commands that are important as you get started:
 
-1. `ls` shows the files and directories in your current directory.
+### 1. List  — `ls`
+`ls` shows the files and directories in your current directory.
 
-2. `cd` is how you move around.  
+### 2. Change Directory  — `cd`
+`cd` is how you move around.  
 `cd ..` will take you to the parent directory.  
 `cd Documents` will take you into the `Documents` directory. For this to work, you need to be currently in a location that contains a `Documents` directory.
 
-3. `mv` is used to move files from one directory to another.  
-`mv file.txt newLocation/file.txt` moves a file from your current directory to the `newLocation` directory.  
-`mv file.txt renamedFile.txt` will rename `file.txt` to `renamedFile.txt`.  
+### 3. Move  — `mv`
+`mv` is used to move files from one directory to another.  
+`mv file.txt new/file.txt` moves a file from your current directory to the `new` directory.  
+`mv file.txt new.txt` will rename `file.txt` to `new.txt`.
 
-4. `touch` is used to create files.  
+### 4. Create  — `touch`
+`touch` is used to create files.  
 `touch hello.md` creates a file named `hello.md` in your current directory.
 
-5. `mkdir` creates a directory.  
+### 5. Make Directory  — `mkdir`
+`mkdir` creates a directory.  
 `mkdir images` creates a directory named `images` in your current directory.
 
-6. `rm` removes a file.  
+### 6. Remove  — `rm`
+`rm` removes a file.  
 `rm -d` removes a directory.  
 `rm -rf node_modules` will recursively delete the `node_modules` directory and every file/directory inside of it. Most commands you run in your terminal are harmless. This one isn't. Please be careful, you could end up deleting much more than you want.
 
-7. `open` will open a file in the using the default program for that filetype.  
+### 7. Open  — `open`
+`open` will open a file in the using the default program for that filetype.  
 `open index.html` will launch your default browser with the html page in the location bar.  
 `open README.md` will open up your default markdown editor.
 
@@ -147,45 +156,103 @@ You can use a tool like [bashmarks](https://github.com/huyng/bashmarks) to save 
 
 Typing long location names gets old. In addition to shorthand, you can autocomplete locations using the tab button.
 
-## Custom Aliases
-<img width="400px" src="./terminal/bash-profile.png" />
+## Custom Prompts and Commands
+By default your Terminal includes computer and user information to the prompt.
+
+```
+Philips-MacBook:Documents philipdavis$
+```
+
+It's common to remove this and replacing it with the current location followed by a `$` sign.
+
+```
+Documents $
+```
+
+To do this, we need to edit a `.bash_profile` file which allows us to customize our terminal further.
+The `.bash_profile` file is located in the home `~` directory. If you run ls and you don't see it, it's because it's a dot file.
+Dot files are hidden by default, but we can see them if we add parameters to our `ls` command.
+
 Parameters for terminal commands are often passed after a `-` dash. `ls -alhG` shows you all files (including dot files) in an easier to scan format, with file size and colorized folders.
 
 This is what the normal `ls` looks like.
-<div class="img-large">
+<div class="img-lg">
   <img src="./terminal/list.png" />
 </div>
 And now with the additional parameters.
-<div class="img-large">
+<div class="img-lg">
   <img src="./terminal/list-formatted.png" />
 </div>
 
-It looks much better but it's a pain to remember. If you create a `.bash_profile` file in your user directory you can write aliases for commonly used commands.
+If you don't see a `.bash_profile` in your home directory, you will need to create it.
 
-`alias ls="ls -alhG"`
+```
+touch .bash_profile
+```
 
-Save the `.bash_profile` file and run `source ~/.bash_profile` to refresh.
+Once you have the file you can open it in your favorite text editor.
+I'm using atom with the cli tools.
+
+```
+atom .bash_profile
+```
+
+Once the file is opened, you can add the following string to replace the prompt cruft (computer name, location and user) with the location and a money `$` sign.
+
+```
+export PS1="\W \$ "
+```
+
+In addition, instead of remembering all the parameters for `ls -alhG` you can add an alias so that `ls` uses it by default.
+
+```
+alias ls="ls -alhG"
+```
+
+Save the `.bash_profile` file, run `source ~/.bash_profile` and then restart the terminal to start using the new settings.
 
 You can create aliases for any commands that you commonly use.
-I've created aliases for scaffolding react applications, and starting node applications.
+I've created aliases for scaffolding react applications, and starting node applications. Here's what your `.bash_profile` might look like after you've added your own custom aliases.
 
+```
+export PS1="\W \$ "
+alias ls="ls -alhG"
+alias ns="npm start"
+alias cra="create-react-app"
+```
 
 ## The Power Tools
-<img width="75%" src="./terminal/logos.png" />
+<div class="img-sm">
+  <img src="./terminal/logos.png" />
+</div>
 In additional to basic shell commands there are a number of powerful tools that allow you do more in your terminal. I've listed a few below. Each takes time to learn. Each has something valuable to offer. If you're looking to pick up a skill, here are some good options.
 
-`git` for versioning and collaboration.  
-`npm` for installing and versioning node_modules.  
-`atom` or `code` for opening and preloading your editor.  
-`homebrew` can be used for installing programs and applications.  
-`ssh` can be used to tunnel into servers.  
-`vim` for editing files in the terminal.  
+**[git](https://git-scm.com/)** for versioning and collaboration.  
+**[npm](https://www.npmjs.com/)** or **[yarn](https://yarnpkg.com/lang/en/)** for installing and versioning node modules.  
+**[homebrew](https://brew.sh/)** for installing programs and applications.  
+**ssh** for tunneling into servers.  
+**[vim](https://www.vim.org/docs.php)** for editing files in the terminal.  
+**[create-react-app](https://github.com/facebook/create-react-app)** for scaffolding react applications
 
-Once you jump in, you'll never want to get out.
-If you have questions about using the terminal, or just want some guidance getting set up, please reach out to me.
+## Piping and Chaining *EDIT*
+By default, output from your terminal is displayed within your terminal. You can reroute the output of a command to another file or to your clipboard by using the pipe command `||`.
 
-<hr />
+You can use the base64 command with the pipe operator to base64 an image, and then copy the results to your clipboard. pbcopy and pbpaste are the commands to copy and paste in terminal.
 
-[Share on Twitter]
+```
+base64 file.jpg || pbcopy
+```
 
-[React for Designers]
+You can use the `&&` operator to chain commands. This is useful when you need to wait for commands to execute. You might want to install node_modules library and then start a development environment. Instead of watching the terminal window, waiting for the command to finish you can string both commands together.
+
+```
+npm install && atom . && npm start
+```
+
+When `npm install` is finished, atom will open with the current directory loaded and then `npm start` will run.
+
+
+
+## sudo run GoForthAndH4ck.exe
+The terminal is a powerful application. It doesn't need to feel intimidating.
+If you have questions about using the terminal, or just want some guidance getting set up, please **[reach out](https://twitter.com/philipcdavis)** to me.

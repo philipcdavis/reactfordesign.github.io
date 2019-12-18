@@ -14,11 +14,13 @@ module.exports = {
     resolve: `gatsby-transformer-remark`,
     options: {
       plugins: [
+        "gatsby-remark-prismjs",
         {
           resolve: `gatsby-remark-images`,
           options: {
             maxWidth: 900,
             quality: 80,
+            loading: "auto",
             backgroundColor: 'transparent',
             linkImagesToOriginal: false,
           },

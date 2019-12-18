@@ -29,6 +29,7 @@
     "react-feather": "^1.1.5",
     "react-helmet": "^5.2.0",
     "rebass": "^2.3.4",
+    "reflexbox": "^4.0.6",
     "styled-components": "^4.0.3"
   },
   "keywords": [
