@@ -9,7 +9,7 @@ export const Btn = styled.button`
   border: none;
   border-radius: 4px;
   font-weight: bold;
-  transition: 0.2s all ease;
+  transition: 0.4s all cubic-bezier(0.15, 0.75, 0.45, 0.95);
   background-color: ${props => props.color ? color[props.color] : color.blue};
 
   font-size: 16px;

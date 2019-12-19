@@ -2,14 +2,14 @@ export const color = {
   blue: '#0099FF',
   purple: '#F04DFF',
   red: '#FF4D4D',
-  green: '#6AED76',
   yellow: '#FFC54D',
+  green: '#6AED76',
   white: '#ffffff',
-  gray0: '#888888',
+  gray0: '#BBBBBB',
   gray1: '#606060',
   gray2: '#313131',
   gray3: '#181818',
-  black: '#000000',
+  black: '#040404',
 }
 
 export const space = [

@@ -12,6 +12,7 @@ import { RainbowHr } from '../components/Text'
 import { Box } from 'rebass'
 
 
+
 const IndexPage = () => (
   <React.Fragment>
     <GlobalStyle />

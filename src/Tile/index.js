@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    background-color: black;
+    background-color: ${color.black};
     font-family: Chivo, sans-serif;
     color: ${color.gray0};
     font-size: 1.4em;
@@ -27,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export * from './Button';
 export * from './Input';
+export * from './Icon';
 export * from './Modal';
 export * from './Tooltip';
 export * from './Alert';
