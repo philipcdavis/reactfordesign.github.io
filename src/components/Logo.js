@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const Logo = function(props) {
   let { width="68px", ...rest } = props;
   return (
-    <Box { ...rest } width={width}>
+    <Box { ...rest }>
       <LogoLink to="/">
         <svg width={width} height="74px" viewBox="0 0 68 74">
           <g transform="translate(-431.000000, -144.000000)">

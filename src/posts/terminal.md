@@ -47,7 +47,7 @@ date: "2019-04-08"
 
   </div>
   <div style="
-    background-color: black;
+    background: rgba(0, 0, 0, 0.80) linear-gradient(0deg, black, transparent);
     border-radius: 11px;
     height: 76px;
     opacity: 0.95;
@@ -253,6 +253,6 @@ When `npm install` is finished, atom will open with the current directory loaded
 
 
 
-## sudo run GoForthAndH4ck.exe
-The terminal is a powerful application. It doesn't need to feel intimidating.
+## sudo GoForthAndH4ck.exe
+The terminal is a powerful application but it doesn't need to feel intimidating.
 If you have questions about using the terminal, or just want some guidance getting set up, please **[reach out](https://twitter.com/philipcdavis)** to me.
