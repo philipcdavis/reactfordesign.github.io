@@ -88,7 +88,7 @@ It's a powerful tool for anyone.
 
 The Terminal can also be a bit daunting.
 I recommend making it look nice first.
-Download a nice theme [link].
+[Download](https://github.com/philipcdavis/laurelin) a nice theme.
 Extract the zip file, and import it into your terminal.
 
 Open Terminal.  
