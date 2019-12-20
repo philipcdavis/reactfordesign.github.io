@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
+import SEO from '../components/SEO'
 import { GlobalStyle } from '../Tile'
 import Nav from '../components/Nav'
 import Intro from '../components/Intro'
@@ -17,6 +18,7 @@ const IndexPage = () => (
   <React.Fragment>
     <GlobalStyle />
     <Layout>
+      <SEO />
       <Box>
         <CodeAnimation />
         <Box px={[3,3,6]} py={[5,5]}>
