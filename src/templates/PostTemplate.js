@@ -16,7 +16,6 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { html } = markdownRemark
   const { frontmatter } = markdownRemark
-  console.log("sleep", frontmatter)
   return (
     <React.Fragment>
       <GlobalStyle />
@@ -51,6 +50,7 @@ export const pageQuery = graphql`
         path
         title
         image
+        description
       }
     }
   }

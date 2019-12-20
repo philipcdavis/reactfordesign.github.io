@@ -17,6 +17,8 @@ function SEO({ description, lang, meta, keywords, title, image }) {
 
         const metaImage =
           image || data.site.siteMetadata.image
+
+          console.log("still", metaImage, metaTitle, metaDescription)
         return (
           <Helmet
             link={[
