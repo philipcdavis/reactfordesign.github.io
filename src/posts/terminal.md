@@ -1,9 +1,9 @@
 ---
 path: "/terminal"
-date: "2019-04-08"
+date: "2019-12-20"
 title: "A Designers Guide to the Terminal"
 description: "You can learn how to use the terminal in a fairly short amount of time. You don't need a C.S. degree. You don't need to know how to hack any mainframes."
-image: "/social/terminal.png"
+image: "../social/terminal.png"
 ---
 <style>
   @keyframes TerminalBackground {
