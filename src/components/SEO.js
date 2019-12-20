@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
+import FavIcon from '../images/icon.png'
 
 function SEO({ description, lang, meta, keywords, title, image }) {
   return (
@@ -18,6 +19,9 @@ function SEO({ description, lang, meta, keywords, title, image }) {
           image || data.site.siteMetadata.image
         return (
           <Helmet
+            link={[
+                { rel: 'shortcut icon', type: 'image/png', href: FavIcon }
+            ]}
             htmlAttributes={{
               lang,
             }}
@@ -92,7 +96,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 }
 
 export default SEO
@@ -104,6 +108,8 @@ const detailsQuery = graphql`
         title
         description
         author
+        image
+        lang
       }
     }
   }
