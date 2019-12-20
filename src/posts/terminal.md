@@ -157,7 +157,8 @@ Additionally, `cd` without a provided location will move you into your user dire
 
 You can use a tool like [bashmarks](https://github.com/huyng/bashmarks) to save and visit commonly used directories.
 
-Typing long location names gets old. In addition to shorthand, you can autocomplete locations using the tab button.
+Typing long location names gets old.
+In addition to shorthand, you can autocomplete locations using the `tab` button.
 
 ## Custom Prompts and Commands
 By default your Terminal includes computer and user information to the prompt.

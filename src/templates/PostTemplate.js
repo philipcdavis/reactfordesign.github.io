@@ -16,7 +16,7 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { html } = markdownRemark
   const { frontmatter } = markdownRemark
-  console.log("frontmatter", frontmatter)
+  console.log("frontmatter", frontmatter.image)
   return (
     <React.Fragment>
       <GlobalStyle />
