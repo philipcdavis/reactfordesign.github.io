@@ -63,7 +63,7 @@ image: "./terminal/social.png"
   </div>
 </div>
 
-# A Designers Guide to the Terminal
+# A Designers Guide to the Terminalz
 You can learn how to use the terminal in a fairly short amount of time. You don't need a C.S. degree. You don't need to know how to hack any mainframes.
 
 With the Terminal, you can open, move, rename, copy and delete files. Same with directories (folders). The terminal is the Finder application on steroids. File management is just the start. It's the entry point for a slew of power tools.
@@ -157,8 +157,7 @@ Additionally, `cd` without a provided location will move you into your user dire
 
 You can use a tool like [bashmarks](https://github.com/huyng/bashmarks) to save and visit commonly used directories.
 
-Typing long location names gets old.
-In addition to shorthand, you can autocomplete locations using the `tab` button.
+Typing long location names gets old. In addition to shorthand, you can autocomplete locations using the `tab` button.
 
 ## Custom Prompts and Commands
 By default your Terminal includes computer and user information to the prompt.
