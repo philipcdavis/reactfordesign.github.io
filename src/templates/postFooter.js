@@ -4,8 +4,6 @@ import { Heading, Text } from 'rebass'
 import Logo from '../components/Logo'
 import { BtnRainbow } from '../components/Button'
 import { RainbowHr } from '../components/Text'
-import { Btn, color } from '../Tile'
-import Icon from '../Tile/Icon'
 
 const PostFooter = function(props) {
   return (

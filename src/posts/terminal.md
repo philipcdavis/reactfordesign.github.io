@@ -234,23 +234,23 @@ In additional to basic shell commands there are a number of powerful tools that 
 **[vim](https://www.vim.org/docs.php)** for editing files in the terminal.  
 **[create-react-app](https://github.com/facebook/create-react-app)** for scaffolding react applications
 
-## Piping and Chaining *EDIT*
-By default, output from your terminal is displayed within your terminal. You can reroute the output of a command to another file or to your clipboard by using the pipe command `||`.
+## Piping and Chaining
+By default, output from your terminal is displayed in your terminal. You can reroute the output of a command to another file or to your clipboard by using the pipe command `|`.
 
-You can use the base64 command with the pipe operator to base64 an image, and then copy the results to your clipboard. pbcopy and pbpaste are the commands to copy and paste in terminal.
 
 ```
-base64 file.jpg || pbcopy
+base64 file.jpg | pbcopy
 ```
 
-You can use the `&&` operator to chain commands. This is useful when you need to wait for commands to execute. You might want to install node_modules library and then start a development environment. Instead of watching the terminal window, waiting for the command to finish you can string both commands together.
+Here we are running `base64` on an image which converts it to a [data URI](https://css-tricks.com/data-uris/). We are then copying the data URI to our clipboard. `pbcopy` and `pbpaste` are the commands to copy and paste in terminal.
+
+You can use the `&&` operator to chain commands. This is useful when you need to wait for commands to execute. The `&&` operator acts as a queue. If the first command successfully executes the second will  begin running.
 
 ```
 npm install && atom . && npm start
 ```
 
-When `npm install` is finished, atom will open with the current directory loaded and then `npm start` will run.
-
+Here, when `npm install` is finished, atom will open with the current directory loaded and then `npm start` will run.
 
 
 ## sudo GoForthAndH4ck.exe

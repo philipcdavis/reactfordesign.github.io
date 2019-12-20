@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: 'React for Design',
+    author: "@philipcdavis",
+    image: "https://farm2.staticflickr.com/1849/43676135265_5d6be8f15a_o.png",
+    description: "React is a powerful design tool. There's a lot you can do with it that would be difficult with a traditional design application. Prototyping with realistic data sets, creating complex interactions and shared component libraries are just the tip of the iceberg.",
+    lang: "en",
   },
   plugins: [
     {
