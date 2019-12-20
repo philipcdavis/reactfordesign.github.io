@@ -66,19 +66,19 @@ image: "https://react.design/social/terminal.png"
 # A Designers Guide to the Terminal
 You can learn how to use the terminal in a fairly short amount of time. You don't need a C.S. degree. You don't need to know how to hack any mainframes.
 
-With the Terminal, you can open, move, rename, copy and delete files. Same with directories (folders). The terminal is the Finder application on steroids. File management is just the start. It's the entry point for a slew of power tools.
+With the terminal, you can open, move, rename, copy and delete files. Same with directories (folders). The terminal is the Finder app on steroids. File management is just the start. The terminal is the interface for a slew of power tools.
 
-You can install and run programs without using a browser.  
+You can install and run programs.  
 You can version files.  
-You can read offline documentation.  
+You can read documentation offline.  
 You can write scripts to automate tasks.  
 You can edit programs.  
 You can configure hidden OS settings.  
 You can tunnel into servers.  
 You can take full advantage of open source resources.  
 
-If you're using React, you can quickly spin up applications and install design systems.  
-You can meaningfully contribute to the execution of your design work.  
+If you're using React, you can quickly spin up applications and install design systems.
+If you're using git you can contribute to the execution of your design work.  
 
 The terminal is a powerful tool.  
 It's a powerful tool for designers.  
@@ -99,7 +99,7 @@ Open Terminal.
 Import the `.terminal` file and set it to default.  
 Restart the Terminal.  
 
-Next, find a monospace font you like:  
+If you aren't happy with the default monospace font, there are plenty of good options to choose from:  
 
 SF Mono (Pre-installed)  
 [Input](https://input.fontbureau.com/)  
@@ -138,10 +138,10 @@ Here are 7 commands that are important as you get started:
 ### 6. Remove  — `rm`
 `rm` removes a file.  
 `rm -d` removes a directory.  
-`rm -rf node_modules` will recursively delete the `node_modules` directory and every file/directory inside of it. Most commands you run in your terminal are harmless. This one isn't. Please be careful, you could end up deleting much more than you want.
+`rm -rf node_modules` will recursively delete the `node_modules` directory and every file/directory inside of it. Most commands you run in your terminal are harmless. Be careful with the `rm -rf` command, you could end up deleting much more than you want.
 
 ### 7. Open  — `open`
-`open` will open a file in the using the default program for that filetype.  
+`open` will open a file in the using the default program for that file type.  
 `open index.html` will launch your default browser with the html page in the location bar.  
 `open README.md` will open up your default markdown editor.
 
@@ -152,15 +152,15 @@ If you're on a Mac some locations have a shorthand.
 `~` is shorthand for your user directory.  
 `.` is shorthand for your current directory.  
 
-You can change directory from any location into your user or root directory by using these shorthands.
-Additionally, `cd` without a provided location will move you into your user direction
+You can change directory from any location into your user (`cd ~`) or root (`cd /`) directory by using these shorthand locations.
+Additionally, `cd` without a provided location will move you into your user directory.
 
 You can use a tool like [bashmarks](https://github.com/huyng/bashmarks) to save and visit commonly used directories.
 
-Typing long location names gets old. In addition to shorthand, you can autocomplete locations using the `tab` button.
+Typing long location names gets old. In addition to shorthand, you can autocomplete locations using `tab`.
 
 ## Custom Prompts and Commands
-By default your Terminal includes computer and user information to the prompt.
+By default your Terminal includes computer and user information in the prompt.
 
 ```
 Philips-MacBook:Documents philipdavis$
@@ -193,9 +193,7 @@ If you don't see a `.bash_profile` in your home directory, you will need to crea
 touch .bash_profile
 ```
 
-Once you have the file you can open it in your favorite text editor.
-I'm using atom with the cli tools.
-
+Once you have the file you can open it in a text editor.
 ```
 atom .bash_profile
 ```
@@ -228,7 +226,7 @@ alias cra="create-react-app"
 <div class="img-sm">
   <img src="./terminal/logos.png" />
 </div>
-In additional to basic shell commands there are a number of powerful tools that allow you do more in your terminal. I've listed a few below. Each takes time to learn. Each has something valuable to offer. If you're looking to pick up a skill, here are some good options.
+In additional to basic shell commands there are a number of powerful tools that allow you do more in your terminal. I've listed a few below. Each takes time to learn. Each has something valuable to offer.
 
 **[git](https://git-scm.com/)** for versioning and collaboration.  
 **[npm](https://www.npmjs.com/)** or **[yarn](https://yarnpkg.com/lang/en/)** for installing and versioning node modules.  
@@ -247,7 +245,7 @@ base64 file.jpg | pbcopy
 
 Here we are running `base64` on an image which converts it to a [data URI](https://css-tricks.com/data-uris/). We are then copying the data URI to our clipboard. `pbcopy` and `pbpaste` are the commands to copy and paste in terminal.
 
-You can use the `&&` operator to chain commands. This is useful when you need to wait for commands to execute. The `&&` operator acts as a queue. If the first command successfully executes the second will  begin running.
+You can use the `&&` operator to chain commands. This is useful when you need to wait for commands to execute. The `&&` operator acts as a queue. If the first command successfully executes the second will begin running.
 
 ```
 npm install && atom . && npm start
