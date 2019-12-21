@@ -10,7 +10,7 @@ const PostFooter = function(props) {
     <Box textAlign="center" mt={[4,5]}>
       <RainbowHr width="70%"/>
       <Flex flexWrap="wrap" mt={[4,5]} mb={[4,5]}>
-        <Box mx="auto" width={["70%"]}>
+        <Box mx="auto" width={["100%", "70%"]}>
           <Logo width="60px" />
           <Heading fontSize={3} color="white">A React Course for Designers</Heading>
           <Text mt="15px" mb="25px" fontSize={2}>React is a powerful design tool. If you're interested in using React for design work I made a course for you.</Text>
