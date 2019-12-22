@@ -63,7 +63,7 @@ image: "https://react.design/social/terminal.png"
   </div>
 </div>
 
-# A Designer's Guide to the Terminal
+# A Designer’s Guide to the Terminal
 You can learn how to use the terminal in a fairly short amount of time. You don't need a C.S. degree. You don't need to know how to hack any mainframes.
 
 With the terminal, you can open, move, rename, copy and delete files. Same with directories (folders). The terminal is the Finder app on steroids. File management is just the start. The terminal is the interface for a slew of power tools.
@@ -138,7 +138,7 @@ Here are 7 commands that are important as you get started:
 ### 6. Remove  — `rm`
 `rm` removes a file.  
 `rm -d` removes a directory.  
-`rm -rf node_modules` will recursively delete the `node_modules` directory and every file/directory inside of it. Most commands you run in your terminal are harmless. 🚨 **Be careful with this command.** Deleted objects aren't stored in Trash, and there's no undo.
+`rm -rf node_modules` will recursively delete the `node_modules` directory and every file/directory inside of it. Most commands you run in your terminal are harmless. **Be careful with this command.** Deleted objects aren't stored in Trash, and there's no undo.
 
 ### 7. Open  — `open`
 `open` will open a file in the using the default program for that file type.  
