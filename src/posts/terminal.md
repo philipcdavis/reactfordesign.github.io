@@ -1,8 +1,8 @@
 ---
 path: "/terminal"
 date: "2019-12-20"
-title: "A Designer's Guide to the Terminal"
-description: "You can learn how to use the terminal in a fairly short amount of time. You don't need a C.S. degree. You don't need to know how to hack any mainframes."
+title: "A Designer’s Guide to the Terminal"
+description: "You can learn how to use the terminal in a fairly short amount of time. You don’t need a C.S. degree. You don’t need to know how to hack any mainframes."
 image: "https://react.design/social/terminal.png"
 ---
 <style>
@@ -138,7 +138,7 @@ Here are 7 commands that are important as you get started:
 ### 6. Remove  — `rm`
 `rm` removes a file.  
 `rm -d` removes a directory.  
-`rm -rf node_modules` will recursively delete the `node_modules` directory and every file/directory inside of it. Most commands you run in your terminal are harmless. 🚨 Be careful with this command 🚨. Deleted objects aren't stored in Trash, and there's no undo.
+`rm -rf node_modules` will recursively delete the `node_modules` directory and every file/directory inside of it. Most commands you run in your terminal are harmless. 🚨 **Be careful with this command.** Deleted objects aren't stored in Trash, and there's no undo.
 
 ### 7. Open  — `open`
 `open` will open a file in the using the default program for that file type.  
@@ -172,7 +172,7 @@ It's common to remove this and replacing it with the current location followed b
 Documents $
 ```
 
-To do this, we need to edit a `.bash_profile` file which allows us to customize our terminal further.
+To do this, we need to edit a `.bash_profile` file (`.zprofile` if you're running MacOS Catalina) which allows us to customize our terminal further.
 The `.bash_profile` file is located in the home `~` directory. If you run ls and you don't see it, it's because it's a dot file.
 Dot files are hidden by default, but we can see them if we add parameters to our `ls` command.
 
@@ -256,4 +256,4 @@ Here, when `npm install` is finished, atom will open with the current directory 
 
 ## sudo GoForthAndH4ck.exe
 The terminal is a powerful application but it doesn't need to feel intimidating.
-If you have questions about using the terminal, or just want some guidance getting set up, please **[reach out](https://twitter.com/philipcdavis)** to me.
+If you have questions about using the terminal, or just want some guidance getting set up, please [reach out](https://twitter.com/philipcdavis) to me.
