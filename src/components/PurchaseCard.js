@@ -13,13 +13,13 @@ const PurchaseCard = function(props) {
       <Box width={[1]} css={{maxWidth: "500px"}} mb={[3,5]} mx="auto">
         <Heading color="white" align={["center"]} mb={2} fontSize={[4,5]}>Introductory Pricing</Heading>
         <Text color="white" align={["center"]} fontSize={[18, 21]} mb={4} mt={3}>
-          Get Access to future videos as they are released.
-          The Price will be going up as more videos finish.
+          Get access to future videos as they are released.
+          The price will be going up as more videos finish.
         </Text>
       </Box>
       <Flex flexWrap="wrap">
         <Box width={[1,"500px"]} mx="auto" pt={2}>
-          <PurchasePoint>One time payment</PurchasePoint>
+          <PurchasePoint>One Time Payment</PurchasePoint>
           <PurchasePoint>Source Files Included</PurchasePoint>
           <PurchasePoint>Download or Stream HD Videos</PurchasePoint>
         </Box>
