@@ -33,7 +33,6 @@ const LogoLink = styled(Link)`
   }
 
   &:hover svg {
-
     transform: rotate(200deg);
   }
 `
