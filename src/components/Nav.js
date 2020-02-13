@@ -14,7 +14,7 @@ const Nav = () => (
     pb={2}
     alignItems="flex-start"
   >
-    <Logo flex={1} width="58px" display='block' />
+    <Logo mt={"4px"} flex={1} width="58px" display='block' />
     <Box mt={2}>
       <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Purchase</BtnRainbow>
     </Box>
