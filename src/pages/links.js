@@ -33,66 +33,78 @@ export default function Free() {
   });
 
   return (
-    <div>
+    <Box>
       <GlobalStyle />
       <Layout>
-        <Nav>
-          <Flex justifyContent="space-between">
-            <Flex px={[3,6]} pt={4} >
-                <Logo width={60} />
-                <Box ml={4} alignSelf="center">
-                  <Text lineHeight={1.2} fontSize={[18]} color={"white"}>React Links for Designers</Text>
-                  <Text lineHeight={1.2} fontSize={[18]} color={color["gray1"]} >Free, curated resources.</Text>
-                </Box>
+        <Flex minHeight={"100vh"} flexDirection={"column"}>
+          <Nav>
+            <Flex justifyContent="space-between">
+              <Flex px={[3,6]} pt={4} >
+                  <Logo width={60} />
+                  <Box ml={4} alignSelf="center">
+                    <Text lineHeight={1.2} fontSize={[18]} color={"white"}>React Links for Designers</Text>
+                    <Text lineHeight={1.2} fontSize={[18]} color={color["gray1"]} >Free, curated resources.</Text>
+                  </Box>
+              </Flex>
+              <Box px={[3,6]} pt={4} alignSelf="center">
+                <BtnRainbow>React for Design</BtnRainbow>
+              </Box>
             </Flex>
-            <Box px={[3,6]} pt={4} alignSelf="center">
-              <BtnRainbow>React for Design</BtnRainbow>
+
+            <Box px={[3,6]} ml={-3} mt={4} mb={3}>
+              <Tag name="getting-started" filter={filter} onClick={() => toggleFilter("getting-started")} color="green">#getting-started</Tag>
+              <Tag name="library" filter={filter} onClick={() => toggleFilter("library")} color="blue">#library</Tag>
+              <Tag name="article" filter={filter} onClick={() => toggleFilter("article")} color="purple">#article</Tag>
+              <Tag name="video" filter={filter} onClick={() => toggleFilter("video")} color="red">#video</Tag>
             </Box>
-          </Flex>
+          </Nav>
 
-          <Box px={[3,6]} ml={-3} mt={4} mb={3}>
-            <Tag name="getting-started" filter={filter} onClick={() => toggleFilter("getting-started")} color="green">#getting-started</Tag>
-            <Tag name="library" filter={filter} onClick={() => toggleFilter("library")} color="blue">#library</Tag>
-            <Tag name="article" filter={filter} onClick={() => toggleFilter("article")} color="purple">#article</Tag>
-            <Tag name="video" filter={filter} onClick={() => toggleFilter("video")} color="red">#video</Tag>
+          <Box flexGrow={1} width={"100%"} px={[3,6]} ml={-3} pt={3}>
+
+            {
+              filteredData.map(function(resource, i) {
+                const title = resource.title;
+                const description = resource.description;
+                const url = resource.url;
+                const tags = resource.tags;
+
+                return (
+                  <Box key={i}>
+                    <ResourceCard
+                      key={i}
+                      py={[2]}
+                      href={url}
+                    >
+                      <StatusContainer>
+                        {tags.map((tag, i) => <Status id={i} key={i} kind={tag} /> )}
+                      </StatusContainer>
+
+                      <Title fontSize={[2,3]} >{title}</Title>
+
+                      <Url color={color.gray1} fontSize={[1,2]}>{ getHostName(url) }</Url>
+
+
+                    </ResourceCard>
+                  </Box>
+                )
+            })}
           </Box>
-        </Nav>
 
-        <Box width={"100%"} px={[3,6]} ml={-3} pt={3}>
-
-          {
-            filteredData.map(function(resource, i) {
-              const title = resource.title;
-              const description = resource.description;
-              const url = resource.url;
-              const tags = resource.tags;
-
-              return (
-                <Box key={i}>
-                  <ResourceCard
-                    key={i}
-                    py={[3]}
-                    href={url}
-                  >
-                    <StatusContainer>
-                      {tags.map((tag, i) => <Status id={i} key={i} kind={tag} /> )}
-                    </StatusContainer>
-
-                    <Title fontSize={[2,3]} >{title}</Title>
-
-                    <Url color={color.gray1} fontSize={[1,2]}>{ getHostName(url) }</Url>
-
-
-                  </ResourceCard>
-                </Box>
-              )
-          })}
-        </Box>
-
+          <Footer px={6} py={4} mt={4}>
+            <Text fontSize={2}>
+            Curated by <Link sx={{textDecoration: 'none'}}color={color['white']} href="https://twitter.com/philipcdavis">@philipcdavis</Link>
+            </Text>
+          </Footer>
+        </Flex>
       </Layout>
-    </div>
+    </Box>
   )
 }
+
+const Footer = styled(Box)`
+  opacity: 0.5;
+  border-top: 2px solid ${color.gray2};
+`
 
 const StatusContainer = styled(Box)`
   position: relative;
@@ -125,7 +137,7 @@ const ResourceCard = styled(Link)`
   border-radius: 12px;
   transition: 0.1s border-color ease-in;
   &:hover {
-    background-color: rgba(255,255,255,0.02);
+    background-color: rgba(255,255,255,0.04);
   }
   line-height: 1;
   margin-bottom: 0px;
