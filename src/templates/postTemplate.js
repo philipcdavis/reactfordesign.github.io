@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { GlobalStyle, color } from '../Tile'
-import { Box } from 'rebass'
+import { Box } from 'rebass/styled-components'
 import { Markdown } from '../components/Text'
 import CodeAnimation from '../components/CodeAnimation'
 import PostFooter from './PostFooter'

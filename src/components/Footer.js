@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Box, Flex, Link } from 'rebass'
+import { Text, Box, Flex, Link } from 'rebass/styled-components'
 
 const Footer = function(props) {
   return (

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout'
 import { GlobalStyle, color, fontSize } from '../Tile'
-import { Box, Flex, Text, Link } from 'rebass'
+import { Box, Flex, Text, Link } from 'rebass/styled-components'
 import CodeAnimation from '../components/CodeAnimation'
 import PostFooter from '../templates/PostFooter'
 import Logo from '../components/Logo'
@@ -36,15 +36,29 @@ export default function Free() {
     <div>
       <GlobalStyle />
       <Layout>
+        <Nav>
+          <Flex justifyContent="space-between">
+            <Flex px={[3,6]} pt={4} >
+                <Logo width={60} />
+                <Box ml={4} alignSelf="center">
+                  <Text lineHeight={1.2} fontSize={[18]} color={"white"}>React Links for Designers</Text>
+                  <Text lineHeight={1.2} fontSize={[18]} color={color["gray1"]} >Free, curated resources.</Text>
+                </Box>
+            </Flex>
+            <Box px={[3,6]} pt={4} alignSelf="center">
+              <BtnRainbow>React for Design</BtnRainbow>
+            </Box>
+          </Flex>
 
-        <Box width={["700px"]} mx="auto" mt={5}>
-          <Tag name="getting-started" filter={filter} onClick={() => toggleFilter("getting-started")} color="green">#getting-started</Tag>
-          <Tag name="library" filter={filter} onClick={() => toggleFilter("library")} color="blue">#library</Tag>
-          <Tag name="article" filter={filter} onClick={() => toggleFilter("article")} color="purple">#article</Tag>
-          <Tag name="video" filter={filter} onClick={() => toggleFilter("video")} color="red">#video</Tag>
-        </Box>
+          <Box px={[3,6]} ml={-3} mt={4} mb={3}>
+            <Tag name="getting-started" filter={filter} onClick={() => toggleFilter("getting-started")} color="green">#getting-started</Tag>
+            <Tag name="library" filter={filter} onClick={() => toggleFilter("library")} color="blue">#library</Tag>
+            <Tag name="article" filter={filter} onClick={() => toggleFilter("article")} color="purple">#article</Tag>
+            <Tag name="video" filter={filter} onClick={() => toggleFilter("video")} color="red">#video</Tag>
+          </Box>
+        </Nav>
 
-        <Box width={["700px"]} mx="auto" pt={5}>
+        <Box width={"100%"} px={[3,6]} ml={-3} pt={3}>
 
           {
             filteredData.map(function(resource, i) {
@@ -57,15 +71,17 @@ export default function Free() {
                 <Box key={i}>
                   <ResourceCard
                     key={i}
-                    py={3}
+                    py={[3]}
                     href={url}
                   >
                     <StatusContainer>
                       {tags.map((tag, i) => <Status id={i} key={i} kind={tag} /> )}
                     </StatusContainer>
 
-                    <Title fontSize={3} >{title}</Title>
-                    <Url display='inline-block' color={color.gray1} fontSize={2}>{ getHostName(url) }</Url>
+                    <Title fontSize={[2,3]} >{title}</Title>
+
+                    <Url color={color.gray1} fontSize={[1,2]}>{ getHostName(url) }</Url>
+
 
                   </ResourceCard>
                 </Box>
@@ -112,24 +128,13 @@ const ResourceCard = styled(Link)`
     background-color: rgba(255,255,255,0.02);
   }
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   padding-left: 40px;
   padding-right: 30px;
 `
 
-const Nav = styled(Flex)`
+const Nav = styled(Box)`
   border-bottom: 2px solid ${color.gray3};
-  padding: 15px 20px;
-  position: fixed;
-  left: 0;
-  right: 0;
-  background-color: ${color.black};
-`;
-
-const NavLogo = styled(Logo)`
-  position: absolute;
-  top: 13px;
-  left: 20px;
 `;
 
 const Tag = styled(Link)`
@@ -140,14 +145,13 @@ const Tag = styled(Link)`
   color: ${props => props.filter === props.name ? color.black : color[props.color]};
   background-color: ${props => props.filter === props.name ? color[props.color] : "transparent"};
   padding: 3px 17px;
-  margin-right: 10px;
   border-radius: 50px;
   border: 2px solid transparent;
   cursor: pointer;
   transition: 0.15s transform ease-in;
 
   &:hover {
-    border-color: ${props => props.active ? "transparent" : color.gray3};
+    border-color: ${props => props.filter === props.name ? "transparent" : color.gray3};
   }
 `;
 

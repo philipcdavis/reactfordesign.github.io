@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../components/Logo'
 import { BtnRainbow } from '../components/Button'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Box, Flex } from 'rebass'
+import { Box, Flex } from 'rebass/styled-components'
 
 const Nav = () => (
   <Flex css={{

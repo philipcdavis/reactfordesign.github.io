@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { InputDark } from '../Tile'
 import { BtnInput } from '../components/Button'
-import {Box, Flex} from 'rebass'
+import {Box, Flex} from 'rebass/styled-components'
 
 const url = "https://twitter.us18.list-manage.com/subscribe/post?u=4b8048aee994b838162f80e3a&amp;id=21229251bb";
 
@@ -11,7 +11,7 @@ class SignupForm extends Component {
       <div id="mc_embed_signup">
         <form action={url} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
           <Flex id="mc_embed_signup_scroll" mx="auto">
-            <Box width={"100%"} className="mc-field-group">
+            <Box flexGrow={1} className="mc-field-group">
             	<InputDark group type="email" placeholder="Email Address" name="EMAIL" className="required email" id="mce-EMAIL" />
             </Box>
           	<span id="mce-responses" className="clear">

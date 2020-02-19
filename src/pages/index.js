@@ -10,7 +10,7 @@ import FAQ from '../components/FreqAskedQuestions'
 import Footer from '../components/Footer'
 import CodeAnimation from '../components/CodeAnimation'
 import { RainbowHr } from '../components/Text'
-import { Box } from 'rebass'
+import { Box } from 'rebass/styled-components'
 
 
 

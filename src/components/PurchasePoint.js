@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from 'rebass'
+import { Box } from 'rebass/styled-components'
 import { RainbowHeading } from './Text'
 import { CheckCircle } from 'react-feather'
 import { media, colorChange } from './Utils'

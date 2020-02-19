@@ -1,4 +1,4 @@
-import { Heading, Text } from 'rebass'
+import { Heading, Text } from 'rebass/styled-components'
 import styled from 'styled-components'
 import { colorChange } from '../components/Utils'
 import { color } from '../Tile'

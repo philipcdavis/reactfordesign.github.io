@@ -1,6 +1,5 @@
 import React from 'react'
-import { Flex, Box } from 'reflexbox'
-import { Heading, Text } from 'rebass'
+import { Heading, Text, Flex, Box } from 'rebass/styled-components'
 import Logo from '../components/Logo'
 import { BtnRainbow } from '../components/Button'
 import { RainbowHr } from '../components/Text'

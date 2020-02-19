@@ -9,7 +9,7 @@ export const color = {
   gray1: '#606060',
   gray2: '#313131',
   gray3: '#181818',
-  black: '#040404',
+  black: '#101010',
 }
 
 export const space = [
