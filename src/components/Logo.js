@@ -29,7 +29,7 @@ const Logo = function(props) {
 
 const LogoLink = styled(Link)`
   svg {
-    transition: 0.2s all ease;
+    transition: 0.7s all ease;
   }
 
   &:hover svg {

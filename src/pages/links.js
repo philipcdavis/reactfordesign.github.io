@@ -39,27 +39,35 @@ export default function Free() {
         <Flex minHeight={"100vh"} flexDirection={"column"}>
           <Nav>
             <Flex justifyContent="space-between">
-              <Flex px={[3,6]} pt={4} >
-                  <Logo width={60} />
-                  <Box ml={4} alignSelf="center">
-                    <Text lineHeight={1.2} fontSize={[18]} color={"white"}>React Links for Designers</Text>
-                    <Text lineHeight={1.2} fontSize={[18]} color={color["gray1"]} >Free, curated resources.</Text>
-                  </Box>
-              </Flex>
-              <Box px={[3,6]} pt={4} alignSelf="center">
-                <BtnRainbow>React for Design</BtnRainbow>
+              <Box px={[3,4,4,6]} flexGrow={1} pt={4}>
+                <Logo width={50} />
+              </Box>
+              <Box px={[3,4,4,6]} pt={"40px"}>
+                <BtnRainbow size={"sm"}>React for Design</BtnRainbow>
               </Box>
             </Flex>
+            <Box px={[3,4,4,6]} sx={{position: "relative", top: [0, "-55px"]}} mt={[4, 0]} display={"inline-block"} ml={[0 ,"75px"]}>
+              <Text lineHeight={1.2} fontSize={[3,18]} color={"white"}>React Links for Designers</Text>
+              <Text lineHeight={1.2} fontSize={[3,18]} color={color["gray1"]} >Free, curated resources</Text>
+            </Box>
 
-            <Box px={[3,6]} ml={-3} mt={4} mb={3}>
-              <Tag name="getting-started" filter={filter} onClick={() => toggleFilter("getting-started")} color="green">#getting-started</Tag>
-              <Tag name="library" filter={filter} onClick={() => toggleFilter("library")} color="blue">#library</Tag>
-              <Tag name="article" filter={filter} onClick={() => toggleFilter("article")} color="purple">#article</Tag>
-              <Tag name="video" filter={filter} onClick={() => toggleFilter("video")} color="red">#video</Tag>
+            <Box textAlign={"left"} px={[3,4,4,6]} ml={-3} mt={4} mb={3}>
+              <Box display="inline-block" width={["50%", "auto"]}>
+                <Tag my={[1,0]} mx={[2, 0]} px={["10px","17px"]} py={["2px","3px"]} fontSize={[1,2]} name="getting-started" filter={filter} onClick={() => toggleFilter("getting-started")} color="green">#getting-started</Tag>
+              </Box>
+              <Box display="inline-block" width={["50%", "auto"]}>
+                <Tag my={[1,0]} mx={[2, 2]} px={["10px","17px"]} py={["1px","3px"]} fontSize={[1,2]} name="library" filter={filter} onClick={() => toggleFilter("library")} color="blue">#library</Tag>
+              </Box>
+              <Box display="inline-block" width={["50%", "auto"]}>
+                <Tag my={[1,0]} mx={[2, 0]} px={["10px","17px"]} py={["1px","3px"]} fontSize={[1,2]} name="article" filter={filter} onClick={() => toggleFilter("article")} color="purple">#article</Tag>
+              </Box>
+              <Box display="inline-block" width={["50%", "auto"]}>
+                <Tag my={[1,0]} mx={[2, 2]} px={["10px","17px"]} py={["1px","3px"]} fontSize={[1,2]} name="video" filter={filter} onClick={() => toggleFilter("video")} color="red">#video</Tag>
+              </Box>
             </Box>
           </Nav>
 
-          <Box flexGrow={1} width={"100%"} px={[3,6]} ml={-3} pt={3}>
+          <Box flexGrow={1} width={"100%"} px={[3,4,4,6]} ml={-3} pt={3}>
 
             {
               filteredData.map(function(resource, i) {
@@ -72,8 +80,9 @@ export default function Free() {
                   <Box key={i}>
                     <ResourceCard
                       key={i}
-                      py={[2]}
+                      py={["12px"]}
                       href={url}
+                      width={["100%", "auto"]}
                     >
                       <StatusContainer>
                         {tags.map((tag, i) => <Status id={i} key={i} kind={tag} /> )}
@@ -92,7 +101,7 @@ export default function Free() {
 
           <Footer px={6} py={4} mt={4}>
             <Text fontSize={2}>
-            Curated by <Link sx={{textDecoration: 'none'}}color={color['white']} href="https://twitter.com/philipcdavis">@philipcdavis</Link>
+            Made by <Link sx={{textDecoration: 'none'}}color={color['white']} href="https://twitter.com/philipcdavis">@philipcdavis</Link>
             </Text>
           </Footer>
         </Flex>
@@ -153,10 +162,8 @@ const Tag = styled(Link)`
   user-select: none;
   display: inline-block;
   font-weight: bold;
-  font-size: ${fontSize[1]};
   color: ${props => props.filter === props.name ? color.black : color[props.color]};
   background-color: ${props => props.filter === props.name ? color[props.color] : "transparent"};
-  padding: 3px 17px;
   border-radius: 50px;
   border: 2px solid transparent;
   cursor: pointer;
