@@ -51,7 +51,7 @@ export default function Free() {
               <Text lineHeight={1.2} fontSize={[3,18]} color={color["gray1"]} >Free, curated resources</Text>
             </Box>
 
-            <Box textAlign={"left"} px={[3,4,4,6]} ml={-3} mt={4} mb={3}>
+            <Box textAlign={"left"} px={[3,4,4,6]} ml={-3} mr={0} mt={[4, -3]} mb={3}>
               <Box display="inline-block" width={["50%", "auto"]}>
                 <Tag my={[1,0]} mx={[2, 0]} px={["10px","17px"]} py={["2px","3px"]} fontSize={[1,2]} name="getting-started" filter={filter} onClick={() => toggleFilter("getting-started")} color="green">#getting-started</Tag>
               </Box>
@@ -67,7 +67,7 @@ export default function Free() {
             </Box>
           </Nav>
 
-          <Box flexGrow={1} width={"100%"} px={[3,4,4,6]} ml={-3} pt={3}>
+          <Box flexGrow={1} width={"100%"} px={[0,4,4,6]} ml={[0, -3]} pt={3}>
 
             {
               filteredData.map(function(resource, i) {
@@ -80,9 +80,11 @@ export default function Free() {
                   <Box key={i}>
                     <ResourceCard
                       key={i}
-                      py={["12px"]}
+                      py={["10px"]}
+                      my={2}
                       href={url}
                       width={["100%", "auto"]}
+                      sx={{borderRadius: [0, 10]}}
                     >
                       <StatusContainer>
                         {tags.map((tag, i) => <Status id={i} key={i} kind={tag} /> )}
@@ -99,7 +101,7 @@ export default function Free() {
             })}
           </Box>
 
-          <Footer px={6} py={4} mt={4}>
+          <Footer textAlign={["center", "left"]} px={[3,4,4,6]} py={[3,4]} mt={4}>
             <Text fontSize={2}>
             Made by <Link sx={{textDecoration: 'none'}}color={color['white']} href="https://twitter.com/philipcdavis">@philipcdavis</Link>
             </Text>
@@ -122,9 +124,9 @@ const StatusContainer = styled(Box)`
 const Status = styled(Box)`
   width: 12px;
   height: 12px;
-  border-radius: 10px;
   background-color: ${ props => color[tagColor[props.kind]]} ;
   position: absolute;
+  border-radius: 10px;
   left: ${props => (props.id * -8) - 20}px;
   border: 2px solid ${color.black};
   top: 5px;
@@ -143,7 +145,6 @@ const ResourceCard = styled(Link)`
   color: white;
   text-decoration: none;
   display: inline-block;
-  border-radius: 12px;
   transition: 0.1s border-color ease-in;
   &:hover {
     background-color: rgba(255,255,255,0.04);
