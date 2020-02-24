@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 import { GlobalStyle, color, fontSize } from '../Tile'
 import { Box, Flex, Text, Link } from 'rebass/styled-components'
 import CodeAnimation from '../components/CodeAnimation'
-import PostFooter from '../templates/PostFooter'
 import Logo from '../components/Logo'
 import { BtnRainbow } from '../components/Button'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
@@ -44,6 +43,7 @@ export default function Free() {
               </Box>
               <Box px={[3,4,4,6]} pt={"40px"}>
                 <BtnRainbow size={"sm"}>React for Design</BtnRainbow>
+                <BtnRainbow size={"sm"} as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">React for Design</BtnRainbow>
               </Box>
             </Flex>
             <Box px={[3,4,4,6]} sx={{position: "relative", top: [0, "-55px"]}} mt={[4, 0]} display={"inline-block"} ml={[0 ,"75px"]}>
