@@ -90,7 +90,9 @@ export default function Free() {
                         {tags.map((tag, i) => <Status id={i} key={i} kind={tag} /> )}
                       </StatusContainer>
 
-                      <Title fontSize={[2,3]} >{title}</Title>
+                      <Box sx={{display: ["block","inline-block"]}}>
+                        <Title fontSize={[2,3]} >{title}</Title>
+                      </Box>
 
                       <Url color={color.gray1} fontSize={[1,2]}>{ getHostName(url) }</Url>
 
@@ -101,7 +103,7 @@ export default function Free() {
             })}
           </Box>
 
-          <Footer textAlign={["center", "left"]} px={[3,4,4,6]} py={[3,4]} mt={4}>
+          <Footer textAlign={["center", "left"]} px={[3,4,4,6]} py={[4]} mt={4}>
             <Text fontSize={2}>
             Made by <Link sx={{textDecoration: 'none'}}color={color['white']} href="https://twitter.com/philipcdavis">@philipcdavis</Link>
             </Text>
@@ -139,6 +141,7 @@ const Url = styled(Text)`
 const Title = styled(Text)`
   display: inline-block;
   margin-right: 7px;
+  line-height: 1.2;
 `
 
 const ResourceCard = styled(Link)`
