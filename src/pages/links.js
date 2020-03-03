@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout'
-import { GlobalStyle, color, fontSize } from '../Tile'
+import { GlobalStyle, color } from '../Tile'
 import { Box, Flex, Text, Link } from 'rebass/styled-components'
-import CodeAnimation from '../components/CodeAnimation'
 import Logo from '../components/Logo'
 import { BtnRainbow } from '../components/Button'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import data from '../../static/data/resources'
+import SEO from '../components/SEO'
 
 const tagColor = {
   "getting-started": "green",
@@ -35,6 +34,11 @@ export default function Free() {
     <Box>
       <GlobalStyle />
       <Layout>
+        <SEO
+          title={"React Links for Designers"}
+          image={"https://react.design/social/links.png"}
+          description={"Free React Resources for Designers"}
+        />
         <Flex minHeight={"100vh"} flexDirection={"column"}>
           <Nav>
             <Flex justifyContent="space-between">
@@ -42,13 +46,12 @@ export default function Free() {
                 <Logo width={50} />
               </Box>
               <Box px={[3,4,4,6]} pt={"40px"}>
-                <BtnRainbow size={"sm"}>React for Design</BtnRainbow>
-                <BtnRainbow size={"sm"} as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">React for Design</BtnRainbow>
+                <BtnRainbow href="https:react.design" size={"sm"}>React for Design</BtnRainbow>
               </Box>
             </Flex>
             <Box px={[3,4,4,6]} sx={{position: "relative", top: [0, "-55px"]}} mt={[4, 0]} display={"inline-block"} ml={[0 ,"75px"]}>
               <Text lineHeight={1.2} fontSize={[3,18]} color={"white"}>React Links for Designers</Text>
-              <Text lineHeight={1.2} fontSize={[3,18]} color={color["gray1"]} >Free, curated resources</Text>
+              <Text lineHeight={1.2} fontSize={[3,18]} color={color["gray1"]} >Free and Curated Resources</Text>
             </Box>
 
             <Box textAlign={"left"} px={[3,4,4,6]} ml={-3} mr={0} mt={[4, -3]} mb={3}>
@@ -72,7 +75,6 @@ export default function Free() {
             {
               filteredData.map(function(resource, i) {
                 const title = resource.title;
-                const description = resource.description;
                 const url = resource.url;
                 const tags = resource.tags;
 
