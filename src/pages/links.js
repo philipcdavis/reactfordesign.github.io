@@ -46,7 +46,7 @@ export default function Free() {
                 <Logo width={50} />
               </Box>
               <Box px={[3,4,4,6]} pt={"40px"}>
-                <BtnRainbow href="https:react.design" size={"sm"}>React for Design</BtnRainbow>
+                <BtnRainbow href="/" size={"sm"}>React for Design</BtnRainbow>
               </Box>
             </Flex>
             <Box px={[3,4,4,6]} sx={{position: "relative", top: [0, "-55px"]}} mt={[4, 0]} display={"inline-block"} ml={[0 ,"75px"]}>
