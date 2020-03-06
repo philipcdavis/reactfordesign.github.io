@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import Nav from '../components/Nav'
 import { BtnRainbow } from '../components/Button'
-import { Text, Box, Heading } from 'rebass'
+import { Text, Box, Heading } from 'rebass/styled-components'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { GlobalStyle } from '../Tile'
 
@@ -40,7 +40,7 @@ const Preview = () => (
         />
       </Box>
 
-      <Box align="center">
+      <Box textAlign="center">
         <Text textAlign={["left","center"]} fontSize={3} mt={5} mb={3}>If you like this video, you'll probably like the full course.</Text>
         <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Get the Full Course</BtnRainbow>
       </Box>

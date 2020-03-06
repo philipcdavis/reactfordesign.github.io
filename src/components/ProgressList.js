@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { color } from '../Tile'
-import { Box, Text, Button, Flex } from 'rebass'
+import { Box, Text, Button, Flex } from 'rebass/styled-components'
 import { colorChange } from '../components/Utils'
 
 const ProgressList = function(props) {

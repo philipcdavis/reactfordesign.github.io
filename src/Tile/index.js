@@ -18,6 +18,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
   }
 
+  h1,h2,h3,h4 {
+    font-family: inherit !important;
+  }
+
   @media (max-width: 600px) {
     body {
       font-size: 1.2em;

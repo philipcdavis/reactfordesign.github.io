@@ -1,13 +1,13 @@
 import React from 'react'
-import { Text, Box, Flex, Link, Heading } from 'rebass'
+import { Text, Box, Flex, Link, Heading } from 'rebass/styled-components'
 
 const FAQ = function(props) {
   return (
-    <Box css={{
+    <Box sx={{
       maxWidth: "50em",
       margin: "0 auto"
     }} pt={[3,5]}>
-      <Heading mt={[5]} mb={-3} fontSize={[2,3]} css={{
+      <Heading mt={[5]} mb={-3} fontSize={[2,3]} sx={{
         textTransform: "uppercase",
       }}>
         Frequently Asked Questions
