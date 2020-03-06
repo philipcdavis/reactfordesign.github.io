@@ -15,7 +15,7 @@ const Intro = () => (
       React opens up new ways of designing interfaces and the systems that support them. If you're interested in using React for design work but not sure where to start, I made this course for you.
     `}</P>
     <Box p={[0,3]} mb={4} mx="auto" width={["100%", "500px"]}>
-      <Heading color="white" fontSize={3} mb={3} textAlign="center">Try out a sample lesson for free</Heading>
+      <Heading color="white" fontSize={3} mb={3} textAlign="center">Try out a lesson for free</Heading>
       <SignupForm />
     </Box>
   </Box>
