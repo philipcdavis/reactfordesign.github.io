@@ -1,6 +1,6 @@
 import React from 'react'
 import { P } from '../components/Text'
-import { Heading, Box } from 'rebass'
+import { Heading, Box } from 'rebass/styled-components'
 import SignupForm from '../components/SignupForm'
 
 const Intro = () => (
