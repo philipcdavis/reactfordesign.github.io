@@ -29,14 +29,12 @@ const PurchaseCard = function(props) {
           <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Get Access Now</BtnRainbow>
         </Box>
       </Flex>
-
-
     </Card>
   )
 };
 
 const Card = styled(Box)`
-  border-radius: 4px;
+  border-radius: 8px;
   border: 2px solid white;
   animation: ${colorChange("border-color", 0.3)} 10s infinite alternate;
   max-width: 50em;

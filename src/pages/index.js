@@ -5,14 +5,12 @@ import { GlobalStyle } from '../Tile'
 import Nav from '../components/Nav'
 import Intro from '../components/Intro'
 import PurchaseCard from '../components/PurchaseCard'
-import Videos from '../components/Videos'
+import Lessons from '../components/Lessons'
 import FAQ from '../components/FreqAskedQuestions'
 import Footer from '../components/Footer'
 import CodeAnimation from '../components/CodeAnimation'
 import { RainbowHr } from '../components/Text'
 import { Box } from 'rebass/styled-components'
-
-
 
 const IndexPage = () => (
   <React.Fragment>
@@ -26,7 +24,9 @@ const IndexPage = () => (
           <Intro />
         </Box>
         <RainbowHr />
-        <Videos />
+        <Box px={[3,3,6]} pb={[4,5]}>
+          <Lessons />
+        </Box>
         <Box px={[3,3,6]} pb={[4,5]}>
           <PurchaseCard />
           <FAQ />
