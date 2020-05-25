@@ -23,6 +23,10 @@ export const Markdown = styled.div`
            margin-left: -15%;
            margin-bottom: 40px;
            margin-top: 20px;
+
+           & img {
+             max-width: 100%;
+           }
          }
 
          & .img-sm {
@@ -30,6 +34,10 @@ export const Markdown = styled.div`
            margin-left: 15%;
            margin-bottom: 40px;
            margin-top: 20px;
+
+           & img {
+             max-width: 100%;
+           }
          }
 
          @media (max-width: 700px) {
@@ -136,21 +144,21 @@ export const Markdown = styled.div`
          }
 
          & code {
-          color: white;
-          border-radius: 0.3em;
-          text-shadow: 0 1px rgba(0, 0, 0, 0.5);
-          padding-top: 3px;
-          padding-right: 6px;
-          padding-bottom: 3px;
-          padding-left: 6px;
+           color: white;
+           border-radius: 0.3em;
+           text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+           padding-top: 3px;
+           padding-right: 6px;
+           padding-bottom: 3px;
+           padding-left: 6px;
          }
 
          & pre > code {
-          background-color: transparent;
-          padding-top: 0;
-          padding-right: 0;
-          padding-bottom: 0;
-          padding-left: 0;
+           background-color: transparent;
+           padding-top: 0;
+           padding-right: 0;
+           padding-bottom: 0;
+           padding-left: 0;
          }
 
          & pre,

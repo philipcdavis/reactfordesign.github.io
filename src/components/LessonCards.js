@@ -7,6 +7,7 @@ import DesigningWithData from './Lessons/DesigningWithData'
 import StylingInJavascript from './Lessons/StylingInJavascript'
 import IconComponentLibrary from './Lessons/IconComponentLibrary'
 
+
 const LessonCardContainer = styled(Box)`
   height: 260px;
   margin-top: 50px;
@@ -31,13 +32,13 @@ const LessonCards = function(props) {
       <Flex flexWrap='wrap' mx={"auto"} mt={5}>
         <LessonCardContainer px={3} width={[1,1/2,1/3]}>
           <LessonCard>
-            {/* <SimpleComponent /> */}
+            <SimpleComponent />
           </LessonCard>
           <LessonText mt={3}>Building a Simple Component</LessonText>
         </LessonCardContainer>
         <LessonCardContainer px={3} width={[1,1/2,1/3]}>
           <LessonCard>
-            {/* <DesigningWithData /> */}
+            <DesigningWithData />
           </LessonCard>
           <LessonText mt={3}>Designing with Realistic Data</LessonText>
         </LessonCardContainer>
@@ -49,7 +50,7 @@ const LessonCards = function(props) {
         </LessonCardContainer>
         <LessonCardContainer px={3} width={[1,1/2,1/3]}>
           <LessonCard style={{backgroundColor: "transparent"}}>
-            {/* <StylingInJavascript /> */}
+            <StylingInJavascript />
           </LessonCard>
           <LessonText mt={3}>Styling in JavaScript</LessonText>
         </LessonCardContainer>

@@ -86,7 +86,7 @@ It's a powerful tool for anyone.
 
 ## Make it look nice
 <div class="img-lg">
-  <img src="./terminal/colors.png" />
+  <img src="./assets/terminal/colors.png" />
 </div>
 
 The Terminal can also be a bit daunting.
@@ -180,11 +180,11 @@ Parameters for terminal commands are often passed after a `-` dash. `ls -alhG` s
 
 This is what the normal `ls` looks like.
 <div class="img-lg">
-  <img src="./terminal/list.png" />
+  <img src="./assets/terminal/list.png" />
 </div>
 And now with the additional parameters.
 <div class="img-lg">
-  <img src="./terminal/list-formatted.png" />
+  <img src="./assets/terminal/list-formatted.png" />
 </div>
 
 If you don't see a `.bash_profile` in your home directory, you will need to create it.
@@ -224,7 +224,7 @@ alias cra="create-react-app"
 
 ## The Power Tools
 <div class="img-sm">
-  <img src="./terminal/logos.png" />
+  <img src="./assets/terminal/logos.png" />
 </div>
 In additional to basic shell commands there are a number of powerful tools that allow you do more in your terminal. I've listed a few below. Each takes time to learn. Each has something valuable to offer.
 

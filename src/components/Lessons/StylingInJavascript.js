@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { color } from '../../Tile'
 import { hexToRGB } from '../Utils'
 import { Box } from 'rebass/styled-components'
+import RangeInput from '../RangeInput'
 
 const Container = styled.div`
   position: absolute;
@@ -38,32 +39,6 @@ const Invisinput = styled.input`
   &::selection {
     background: ${props => color[props.inputColor] ? hexToRGB(color[props.inputColor], 0.2) : color.black};
   }
-`
-
-const InputRange = styled.input`
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &::-ms-track {
-    width: 100%;
-    cursor: pointer;
-
-    /* Hides the slider so custom styles can be added */
-    background: transparent; 
-    border-color: transparent;
-    color: transparent;
-  }
-
-  max-width: 200px;
 `
 
 
@@ -111,7 +86,7 @@ const StylingInJavascript = () => {
             {`border-radius: ${radius}px` }
           </Box>
           <Box mt={1}>
-            <InputRange type="range" min={0} max={24} value={radius} onChange={handleSlide} />
+            <RangeInput type="range" min={0} max={24} value={radius} onChange={handleSlide} />
           </Box>
         </Box>
       </Code>

@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { color } from '../../Tile'
 import { Box, Flex } from 'rebass/styled-components'
 import * as Icon from 'react-feather'
-import Crosshair from '../../../public/assets/crosshair.svg'
-import CrosshairActive from '../../../public/assets/crosshairActive.svg'
+// import Crosshair from '../../../public/assets/crosshair.svg'
+// import CrosshairActive from '../../../public/assets/crosshairActive.svg'
 
 const Container = styled(Box)`
   position: absolute;
@@ -24,7 +24,7 @@ const GameScreen = styled(Box)`
   border-radius: 8px;
   background-color: ${color.black};
   overflow: hidden;
-  cursor: url(${Crosshair}), crosshair;
+  // cursor: url(${Crosshair}), crosshair;
 `
 
 const GameBoard = styled(Box)`
@@ -52,7 +52,7 @@ const Target = styled(Icon.Target)`
   line-height: 0;
   padding: 0px;
   border-radius: 100px;
-  cursor: url(${CrosshairActive}), crosshair;
+  // cursor: url(${CrosshairActive}), crosshair;
 
   & path, & circle {
     stroke-width: 1;
