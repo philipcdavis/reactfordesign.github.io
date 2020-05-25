@@ -8,8 +8,22 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.4",
+    "@next/mdx": "^9.4.2",
+    "@svgr/webpack": "^5.4.0",
+    "d3": "^5.16.0",
+    "gray-matter": "^4.0.2",
     "next": "9.4.2",
+    "next-compose-plugins": "^2.2.0",
+    "raw-loader": "^4.0.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-feather": "^2.0.8",
+    "react-markdown": "^4.3.1",
+    "rebass": "^4.0.7",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7"
   }
 }
