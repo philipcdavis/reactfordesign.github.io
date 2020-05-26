@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { GlobalStyle, color } from '../src/Tile'
+import { GlobalStyle, color } from '../components/Tile'
 import { Box, Flex, Text, Link } from 'rebass/styled-components'
-import Logo from '../src/components/Logo'
-import { BtnRainbow } from '../src/components/Button'
+import Logo from '../components/Logo'
+import { BtnRainbow } from '../components/Button'
 import data from '../public/data/resources'
 // import SEO from '../components/SEO'
 

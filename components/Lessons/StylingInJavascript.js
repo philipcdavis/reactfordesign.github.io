@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import styled from 'styled-components'
-import { color } from '../../Tile'
+import { color } from '../Tile'
 import { hexToRGB } from '../Utils'
 import { Box } from 'rebass/styled-components'
 import RangeInput from '../RangeInput'

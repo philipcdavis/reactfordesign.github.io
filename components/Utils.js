@@ -1,5 +1,5 @@
 import { keyframes, css } from 'styled-components'
-import { color } from '../Tile'
+import { color } from './Tile'
 
 const sizes = {
   desktop: "64em",

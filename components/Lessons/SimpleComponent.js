@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { color } from '../../Tile'
+import { color } from '../Tile'
 
 const Container = styled.div`
   position: absolute;

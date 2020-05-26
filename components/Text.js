@@ -1,7 +1,7 @@
 import { Heading, Text } from 'rebass/styled-components'
 import styled from 'styled-components'
 import { colorChange, hexToRGB } from '../components/Utils'
-import { color } from '../Tile'
+import { color } from './Tile'
 
 export const RainbowHeading = styled(Heading)`
   animation: ${colorChange("color")} 10s infinite alternate;

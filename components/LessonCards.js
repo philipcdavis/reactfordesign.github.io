@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Box, Flex, Text } from 'rebass/styled-components'
-import { color } from '../Tile'
+import { color } from './Tile'
 import SimpleComponent from './Lessons/SimpleComponent'
 import DesigningWithData from './Lessons/DesigningWithData'
 import StylingInJavascript from './Lessons/StylingInJavascript'

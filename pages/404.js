@@ -1,7 +1,7 @@
 import React from 'react'
-import Logo from '../src/components/Logo'
+import Logo from '../components/Logo'
 import { Text, Box, Heading, Link } from 'rebass/styled-components'
-import { GlobalStyle } from '../src/Tile'
+import { GlobalStyle } from '../components/Tile'
 
 const NotFoundPage = () => (
   <React.Fragment>

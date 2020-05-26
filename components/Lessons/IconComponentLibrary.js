@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
-import { color } from '../../Tile'
+import { color } from '../Tile'
 import { Box, Flex } from 'rebass/styled-components'
 import * as Icon from 'react-feather'
 // import Crosshair from '../../../public/assets/crosshair.svg'

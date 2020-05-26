@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState} from 'react'
 import styled from 'styled-components'
-import { color } from '../../Tile'
+import { color } from '../Tile'
 import { hexToRGB } from '../Utils'
 import { Flex, Image, Text } from 'rebass/styled-components'
 import { select, scaleBand, scaleLinear } from 'd3';

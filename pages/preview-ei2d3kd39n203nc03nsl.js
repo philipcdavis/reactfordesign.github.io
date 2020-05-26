@@ -1,13 +1,12 @@
 import React from 'react'
-import Layout from '../components/layout'
 import Nav from '../components/Nav'
+import { GlobalStyle } from "../components/Tile";
+import { Text, Box, Heading } from "rebass/styled-components";
 import { BtnRainbow } from '../components/Button'
-import { Text, Box, Heading } from 'rebass/styled-components'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { GlobalStyle } from '../Tile'
+// import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const Preview = () => (
-  <Layout>
+  <>
     <GlobalStyle />
     <Box px={[3,6]} py={[3,5]}>
       <Nav />
@@ -42,10 +41,10 @@ const Preview = () => (
 
       <Box textAlign="center">
         <Text textAlign={["left","center"]} fontSize={3} mt={5} mb={3}>If you like this video, you'll probably like the full course.</Text>
-        <BtnRainbow as={OutboundLink} href="https://gumroad.com/l/reactfordesign" target="_blank">Get the Full Course</BtnRainbow>
+        <BtnRainbow href="https://gumroad.com/l/reactfordesign" target="_blank">Get the Full Course</BtnRainbow>
       </Box>
     </Box>
-  </Layout>
+  </>
 )
 
 export default Preview

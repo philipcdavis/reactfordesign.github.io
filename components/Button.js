@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Btn } from '../Tile'
+import { Btn } from './Tile'
 import { colorChange } from './Utils'
 
 export const BtnLink = styled(Btn).attrs({ as: 'a' })`

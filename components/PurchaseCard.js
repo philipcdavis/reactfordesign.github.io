@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { color } from '../Tile'
+import { color } from './Tile'
 import { Text, Box, Heading, Flex } from 'rebass/styled-components'
-import { BtnRainbow } from '../components/Button'
-import { colorChange } from '../components/Utils'
-import PurchasePoint from '../components/PurchasePoint'
+import { BtnRainbow } from './Button'
+import { colorChange } from './Utils'
+import PurchasePoint from './PurchasePoint'
 
 const PurchaseCard = function(props) {
   return (

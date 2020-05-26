@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { InputDark } from '../Tile'
+import { InputDark } from './Tile'
 import { BtnInput } from '../components/Button'
 import {Box, Flex} from 'rebass/styled-components'
 
