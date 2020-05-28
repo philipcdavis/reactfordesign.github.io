@@ -1,10 +1,22 @@
 import React, { useRef, useEffect } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from "styled-components";
 import { color } from '../Tile'
 import { Box, Flex } from 'rebass/styled-components'
 import * as Icon from 'react-feather'
-// import Crosshair from '../../../public/assets/crosshair.svg'
-// import CrosshairActive from '../../../public/assets/crosshairActive.svg'
+import { hexToRGB } from '../Utils'
+
+const cursor = (cursor) => {
+  return `
+    cursor: url("./assets/${cursor}.png") 10 10, crosshair; .* Legacy */
+    cursor: url("./assets/${cursor}.svg") 10 10, crosshair; /* FF */
+    cursor: -webkit-image-set(
+          url("./assets/${cursor}.png") 1x,
+          url("./assets/${cursor}@2x.png") 2x
+        )
+        10 10,
+      crosshair; /* Webkit */
+  `;
+}
 
 const Container = styled(Box)`
   position: absolute;
@@ -24,8 +36,8 @@ const GameScreen = styled(Box)`
   border-radius: 8px;
   background-color: ${color.black};
   overflow: hidden;
-  // cursor: url(${Crosshair}), crosshair;
-`
+  ${cursor("crosshair")}
+`;
 
 const GameBoard = styled(Box)`
   position: absolute;
@@ -46,23 +58,86 @@ const GameTileCell = styled.div`
 `
 
 
+
+const StartButton = styled.div`
+  background-color: ${hexToRGB(color.green, 0.1)};
+  color: ${color.green};
+  border-radius: 4px;
+  border: 2px solid ${color.green};
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 8px 16px;
+  font-weight: bold;
+  transition: 0.2s all ease;
+
+  &:hover {
+    ${cursor("crosshairActive")}
+    transform: scale(1.1);
+    background-color: ${hexToRGB(color.green, 0.2)};
+  }
+`;
+
+const PlayIcon = styled(Icon.Play)`
+  position: relative;
+  top: 2px;
+  left: 1px;
+  stroke-width: 4px;
+`
+
 const Target = styled(Icon.Target)`
   display: inline-block;
   height: auto;
   line-height: 0;
   padding: 0px;
   border-radius: 100px;
-  // cursor: url(${CrosshairActive}), crosshair;
+  transition: 0.2s all ease-in-out;
+  ${cursor("crosshairActive")}
 
-  & path, & circle {
+  & path,
+  & circle {
     stroke-width: 1;
     stroke: ${color.gray1};
   }
 
-  &:hover circle, &:hover path {
+  &:hover circle,
+  &:hover path {
     stroke: ${color.blue};
   }
-`
+
+  &.target-hidden {
+    transform: scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.target-missed {
+    transform: scale(0.5px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    & path,
+    & circle {
+      stroke-width: 1;
+      stroke: ${color.red};
+    }
+  }
+
+  &.target-placeholder {
+    opacity: 0.4;
+    transition: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &.target-hit {
+    transform: scale(1.2);
+    opacity: 0;
+    visibility: hidden;
+  }
+`;
 
 const NavHealth = styled(Icon.Heart)`
   margin-left: 3px;
@@ -74,7 +149,11 @@ const NavHealth = styled(Icon.Heart)`
     fill: ${color.red};
     stroke: none;
   }
-`
+
+  &.heart-hidden {
+    display: none;
+  }
+`;
 
 const NavIcon = styled.div`
   margin-right: 4px;
@@ -127,22 +206,25 @@ const IconComponentLibrary = () => {
   const hole8 = useRef();
   const hole9 = useRef();
   const scorecard = useRef();
-  const health = useRef();
+  const hearts = [useRef(), useRef(), useRef()];
+  const timeCounter = useRef();
   const highscore = useRef();
   const holes = [hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9];
 
   let timeUp = true;
   let score = 0;
-  let heart = 7;
+  let heart = hearts.length;
+  let time = 20;
 
   const peep = () => {
     let hole = randomHole(holes);
-    console.log('random holes', randomHole(holes))
     let time = randomTime(400, 800);
-    hole.current.classList.add("hole-highlight")
+    hole.current.classList.remove("target-hidden");
+    hole.current.classList.remove("target-missed");
 
     setTimeout(() => {
-      hole.current.classList.remove("hole-highlight");
+      hole.current.classList.add("target-missed");
+      hole.current.classList.add("target-hidden");
       if (timeUp) {
         endGame();
       } else {
@@ -169,11 +251,13 @@ const IconComponentLibrary = () => {
     score = 0;
     heart = 7;
     scorecard.current.textContent = score;
-    health.current.textContent = heart;
+    //heart
     timeUp = false;
     peep();
 
-    setTimeout(() => timeUp = true, 20000)
+    setTimeout(() => {
+      timeUp = true;
+    }, time * 1000);
   }
 
   const bonk = (e) => {
@@ -187,69 +271,137 @@ const IconComponentLibrary = () => {
   const miss = (e) => {
     if (!e.isTrusted) return;
     heart--;
-    health.current.textContent = heart;
+    hearts.slice().reverse()[heart].current.classList.add("heart-hidden");
     if (heart <= 0) endGame();
   }
 
   return (
     <Container>
       <Flex p={"2px 10px"}>
-        <button onClick={startGame}>Start</button>
+        
         <NavItem>
           <NavIcon as={Icon.Target} color={color.green} size={16} />
-          <span>0</span>
+          <span ref={scorecard}>0</span>
         </NavItem>
 
         <NavItem>
           <NavIcon as={Icon.Award} color={color.yellow} size={16} />
-          <span>0</span>
+          <span ref={highscore}>0</span>
         </NavItem>
 
         <NavItem>
           <NavIcon as={Icon.Clock} color={color.gray4} size={16} />
-          <span>0</span>
+          <span ref={timeCounter}>{time}</span>
         </NavItem>
 
         <Box ml={"auto"}>
-          <NavHealth size={12} color={color.red} />
-          <NavHealth size={12} color={color.red} />
-          <NavHealth size={12} color={color.red} />
-          <span>5</span>
+          <NavHealth ref={hearts[0]} size={12} color={color.red} />
+          <NavHealth ref={hearts[1]} size={12} color={color.red} />
+          <NavHealth ref={hearts[2]} size={12} color={color.red} />
         </Box>
       </Flex>
       <GameScreen>
-        <GameBoard onClick={miss}>
+        <GameBoard>
+          
+          {Array(9)
+            .fill("")
+            .map((d, i) => {
+              if(i !== 4) {
+                return (
+                  <GameTileCell>
+                    <Target className="target-placeholder" size={44} />
+                  </GameTileCell>
+                );
+              } else {
+                return (
+                  <GameTileCell>
+                    <StartButton onClick={startGame}>
+                      <PlayIcon size={14} />
+                    </StartButton>
+                  </GameTileCell>
+                );
+              }
+              
+            })}
+          
+        </GameBoard>
+        <GameBoard style={{display: "none"}}>
           <GameTileCell>
-            <Target className="hole hole1" onClick={bonk} size={44} />
-          </GameTileCell> 
+            <Target
+              ref={hole1}
+              className="hole hole1 target-hidden"
+              onClick={bonk}
+              size={44}
+            />
+          </GameTileCell>
           <GameTileCell>
-            <Target className="hole hole2" onClick={bonk} size={44} />
-          </GameTileCell> 
+            <Target
+              ref={hole2}
+              className="hole hole2 target-hidden"
+              onClick={bonk}
+              size={44}
+            />
+          </GameTileCell>
           <GameTileCell>
-            <Target className="hole hole3" onClick={bonk} size={44} />
-          </GameTileCell> 
+            <Target
+              ref={hole3}
+              className="hole hole3 target-hidden"
+              onClick={bonk}
+              size={44}
+            />
+          </GameTileCell>
           <GameTileCell>
-            <Target className="hole hole4" onClick={bonk} size={44} />
-          </GameTileCell> 
+            <Target
+              ref={hole4}
+              className="hole hole4 target-hidden"
+              onClick={bonk}
+              size={44}
+            />
+          </GameTileCell>
           <GameTileCell>
-            <Target className="hole hole5" onClick={bonk} size={44} />
-          </GameTileCell> 
+            <Target
+              ref={hole5}
+              className="hole hole5 target-hidden"
+              onClick={bonk}
+              size={44}
+            />
+          </GameTileCell>
           <GameTileCell>
-            <Target className="hole hole6" onClick={bonk} size={44} />
-          </GameTileCell> 
+            <Target
+              ref={hole6}
+              className="hole hole6 target-hidden"
+              onClick={bonk}
+              size={44}
+            />
+          </GameTileCell>
           <GameTileCell>
-            <Target className="hole hole7" onClick={bonk} size={44} />
-          </GameTileCell> 
+            <Target
+              ref={hole7}
+              className="hole hole7 target-hidden"
+              onClick={bonk}
+              size={44}
+            />
+          </GameTileCell>
           <GameTileCell>
-            <Target className="hole hole8" onClick={bonk} size={44} />
-          </GameTileCell> 
+            <Target
+              ref={hole8}
+              className="hole hole8 target-hidden"
+              onClick={bonk}
+              size={44}
+            />
+          </GameTileCell>
           <GameTileCell>
-            <Target className="hole hole9" onClick={bonk} size={44} />
-          </GameTileCell> 
+            <Target
+              ref={hole9}
+              className="hole hole9 target-hidden"
+              onClick={bonk}
+              size={44}
+            />
+          </GameTileCell>
         </GameBoard>
       </GameScreen>
     </Container>
-  )
+  );
 }
 
 export default IconComponentLibrary;
