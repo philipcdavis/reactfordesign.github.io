@@ -27,36 +27,37 @@ const LessonText = styled(Text)`
   margin-left: 10px;
 `
 
+const breakpoints = [1, 1/2, 1/2, 1/3];
+
 const LessonCards = function(props) {
   return (
-      <Flex flexWrap='wrap' mx={"auto"} mt={5}>
-        <LessonCardContainer px={3} width={[1,1/2,1/3]}>
-          <LessonCard>
-            <SimpleComponent />
-          </LessonCard>
-          <LessonText mt={3}>Building a Simple Component</LessonText>
-        </LessonCardContainer>
-        <LessonCardContainer px={3} width={[1,1/2,1/3]}>
-          <LessonCard>
-            <DesigningWithData />
-          </LessonCard>
-          <LessonText mt={3}>Designing with Realistic Data</LessonText>
-        </LessonCardContainer>
-        <LessonCardContainer px={3} width={[1, 1 / 2, 1 / 3]}>
-          <LessonCard>
-            <IconComponentLibrary />
-          </LessonCard>
-          <LessonText mt={3}>Styling in JavaScript</LessonText>
-        </LessonCardContainer>
-        <LessonCardContainer px={3} width={[1,1/2,1/3]}>
-          <LessonCard style={{backgroundColor: "transparent"}}>
-            <StylingInJavascript />
-          </LessonCard>
-          <LessonText mt={3}>Styling in JavaScript</LessonText>
-        </LessonCardContainer>
-       
-      </Flex>
-  )
+    <Flex flexWrap="wrap" mx={-3} mt={5}>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard>
+          <SimpleComponent />
+        </LessonCard>
+        <LessonText mt={3}>Building a Simple Component</LessonText>
+      </LessonCardContainer>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard>
+          <DesigningWithData />
+        </LessonCard>
+        <LessonText mt={3}>Designing with Realistic Data</LessonText>
+      </LessonCardContainer>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard>
+          <IconComponentLibrary />
+        </LessonCard>
+        <LessonText mt={3}>Styling in JavaScript</LessonText>
+      </LessonCardContainer>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard style={{ backgroundColor: "transparent" }}>
+          <StylingInJavascript />
+        </LessonCard>
+        <LessonText mt={3}>Styling in JavaScript</LessonText>
+      </LessonCardContainer>
+    </Flex>
+  );
 }
 
 export default LessonCards;

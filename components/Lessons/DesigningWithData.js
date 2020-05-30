@@ -25,21 +25,21 @@ const BarContainer = styled.svg`
 `;
 
 const Card = styled.div`
-  background-color: ${color.black};
+  background: ${color.gray3};
   height: 150px;
   width: 150px;
   border-radius: 24px;
   position: relative;
   top: -5px;
   z-index: 1;
-  box-shadow: inset 0 0 0 2px ${color.gray2};
+  box-shadow: inset 0 0 0 3px ${color.black};
   box-sizing: content-box;
   transition: all 0.1s ease-in-out;
   font-family: menlo, monospace;
   font-weight: bold;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: 0;
@@ -48,7 +48,8 @@ const Card = styled.div`
     z-index: -1;
     opacity: 0;
     border-radius: 24px;
-    box-shadow: 0 0px 20px ${hexToRGB(color.blue, 0.5)}, inset 0 0 0 2px ${color.blue};
+    box-shadow: 0 0px 20px ${hexToRGB(color.gray1, 0.5)},
+      inset 0 0 0 3px ${color.gray2};
     transition: all 0.1s ease-in-out;
   }
 

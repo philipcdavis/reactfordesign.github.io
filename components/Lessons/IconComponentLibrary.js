@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 import styled, { keyframes } from "styled-components";
 import { color } from '../Tile'
 import { Box, Flex } from 'rebass/styled-components'
@@ -18,6 +18,12 @@ const cursor = (cursor) => {
   `;
 }
 
+const blink = keyframes`
+    0%{  opacity: 0; transform: scale(0.25); }
+    50%{ opacity: 0.5; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.25); }
+`;
+
 const Container = styled(Box)`
   position: absolute;
   top: 0;
@@ -36,6 +42,7 @@ const GameScreen = styled(Box)`
   border-radius: 8px;
   background-color: ${color.black};
   overflow: hidden;
+  visibility: visible;
   ${cursor("crosshair")}
 `;
 
@@ -47,7 +54,11 @@ const GameBoard = styled(Box)`
   right: 10px;
   display: flex;
   flex-wrap: wrap;
-`
+  background-color: ${color.black};
+  &.view-hidden {
+    visibility: hidden;
+  }
+`;
 
 const GameTileCell = styled.div`
   width: calc(33.333%);
@@ -124,12 +135,10 @@ const Target = styled(Icon.Target)`
   }
 
   &.target-placeholder {
-    opacity: 0.4;
-    transition: none;
-
-    &:hover {
-      opacity: 1;
-    }
+    pointer-events: none;
+    opacity: 0;
+    animation: ${blink} 10s linear infinite;
+    animation-delay: ${(props) => props.delay * 1000}ms;
   }
 
   &.target-hit {
@@ -210,30 +219,37 @@ const IconComponentLibrary = () => {
   const timeCounter = useRef();
   const highscore = useRef();
   const holes = [hole1, hole2, hole3, hole4, hole5, hole6, hole7, hole8, hole9];
+  const startView = useRef();
+  const inGameView = useRef();
+  const endView = useRef();
 
   let timeUp = true;
   let score = 0;
   let heart = hearts.length;
-  let time = 20;
+  let time = 5;
 
   const peep = () => {
-    let hole = randomHole(holes);
-    let time = randomTime(400, 800);
-    hole.current.classList.remove("target-hidden");
-    hole.current.classList.remove("target-missed");
+    let rHole = randomHole(holes);
+    let rTime = randomTime(400, 800);
+    rHole.current.classList.remove("target-hidden");
+    rHole.current.classList.remove("target-missed");
 
     setTimeout(() => {
-      hole.current.classList.add("target-missed");
-      hole.current.classList.add("target-hidden");
+      rHole.current.classList.add("target-missed");
+      rHole.current.classList.add("target-hidden");
+
       if (timeUp) {
         endGame();
       } else {
         peep();
       }
-    }, time)
+    }, rTime);
   }
 
   const endGame = () => {
+    console.log("game ended");
+    inGameView.current.classList.add("view-hidden");
+    endView.current.classList.remove("view-hidden");
     timeUp = true;
     if (localStorage.getItem("highscore")) {
       if (Number(localStorage.getItem("highscore")) < score) {
@@ -248,16 +264,35 @@ const IconComponentLibrary = () => {
   }
 
   const startGame = () => {
-    score = 0;
-    heart = 7;
-    scorecard.current.textContent = score;
-    //heart
+    if (!timeUp) return;
+    startView.current.classList.add("page");
+    inGameView.current.classList.remove("view-hidden");
+    endView.current.classList.add("view-hidden");
     timeUp = false;
+    score = 0;
+    heart = hearts.length;
+    time = 5;
+    scorecard.current.textContent = score;
+    timeCounter.current.textContent = time;
+
+    gameClock();
     peep();
 
     setTimeout(() => {
       timeUp = true;
     }, time * 1000);
+  }
+
+  const gameClock = () => {
+    if (timeUp) {
+      return;
+    } 
+
+    setTimeout(() => {
+      time--;
+      timeCounter.current.textContent = time;
+      return gameClock();
+    }, 1000)
   }
 
   const bonk = (e) => {
@@ -278,20 +313,19 @@ const IconComponentLibrary = () => {
   return (
     <Container>
       <Flex p={"2px 10px"}>
-        
         <NavItem>
           <NavIcon as={Icon.Target} color={color.green} size={16} />
-          <span ref={scorecard}>0</span>
+          <div ref={scorecard}>0</div>
         </NavItem>
 
         <NavItem>
           <NavIcon as={Icon.Award} color={color.yellow} size={16} />
-          <span ref={highscore}>0</span>
+          <div ref={highscore}>0</div>
         </NavItem>
 
         <NavItem>
           <NavIcon as={Icon.Clock} color={color.gray4} size={16} />
-          <span ref={timeCounter}>{time}</span>
+          <div ref={timeCounter}>0</div>
         </NavItem>
 
         <Box ml={"auto"}>
@@ -301,31 +335,37 @@ const IconComponentLibrary = () => {
         </Box>
       </Flex>
       <GameScreen>
-        <GameBoard>
-          
+        <GameBoard ref={startView} name="Start View">
           {Array(9)
             .fill("")
             .map((d, i) => {
-              if(i !== 4) {
+              if (i !== 4) {
                 return (
-                  <GameTileCell>
-                    <Target className="target-placeholder" size={44} />
+                  <GameTileCell key={i}>
+                    <Target
+                      delay={i}
+                      className="target-placeholder"
+                      size={44}
+                    />
                   </GameTileCell>
                 );
               } else {
                 return (
-                  <GameTileCell>
+                  <GameTileCell key={i}>
                     <StartButton onClick={startGame}>
                       <PlayIcon size={14} />
                     </StartButton>
                   </GameTileCell>
                 );
               }
-              
             })}
-          
         </GameBoard>
-        <GameBoard style={{display: "none"}}>
+
+        <GameBoard
+          ref={inGameView}
+          className="view-hidden"
+          name="In Game View"
+        >
           <GameTileCell>
             <Target
               ref={hole1}
@@ -398,6 +438,10 @@ const IconComponentLibrary = () => {
               size={44}
             />
           </GameTileCell>
+        </GameBoard>
+
+        <GameBoard className="view-hidden" ref={endView} name="End View">
+          Game Over
         </GameBoard>
       </GameScreen>
     </Container>
