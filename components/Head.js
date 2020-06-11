@@ -1,7 +1,7 @@
 import React from 'react';
 import NextHead from 'next/head';
 
-const Head = function (props) {
+const Head = function(props) {
   return (
     <NextHead>
       <link
@@ -9,7 +9,7 @@ const Head = function (props) {
         rel="stylesheet"
       />
       <title>{props.title}</title>
-      <link rel="icon" href="/icon.png" />
+      <link rel="icon" href="/icon-thick.png" />
     </NextHead>
   );
 };

@@ -1,9 +1,16 @@
 import React, { useRef } from 'react'
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { color } from '../Tile'
-import { Box, Flex } from 'rebass/styled-components'
+import { Box, Flex, Text } from 'rebass/styled-components'
 import * as Icon from 'react-feather'
 import { hexToRGB } from '../Utils'
+
+const ResultsRow = styled(Flex)`
+  width: 60%;
+  margin: 0 auto;
+  border-bottom: 2px solid ${color.gray2};
+  height: 30px;
+`;
 
 const cursor = (cursor) => {
   return `
@@ -17,13 +24,6 @@ const cursor = (cursor) => {
       crosshair; /* Webkit */
   `;
 }
-
-const blink = keyframes`
-    0%{  opacity: 0; transform: scale(0.25); }
-    50%{ opacity: 0.5; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.25); }
-`;
-
 const Container = styled(Box)`
   position: absolute;
   top: 0;
@@ -97,6 +97,9 @@ const PlayIcon = styled(Icon.Play)`
 
 const Target = styled(Icon.Target)`
   display: inline-block;
+  visibility: hidden;
+  transform: scale(0.5);
+  opacity: 0;
   height: auto;
   line-height: 0;
   padding: 0px;
@@ -106,19 +109,20 @@ const Target = styled(Icon.Target)`
 
   & path,
   & circle {
+    pointer-events: none;
     stroke-width: 1;
     stroke: ${color.gray1};
   }
 
   &:hover circle,
   &:hover path {
-    stroke: ${color.blue};
+    stroke: ${color.gray0};
   }
 
-  &.target-hidden {
-    transform: scale(0.5);
-    opacity: 0;
-    visibility: hidden;
+  &.target-show {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
   }
 
   &.target-missed {
@@ -126,25 +130,17 @@ const Target = styled(Icon.Target)`
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-
-    & path,
-    & circle {
-      stroke-width: 1;
-      stroke: ${color.red};
-    }
-  }
-
-  &.target-placeholder {
-    pointer-events: none;
-    opacity: 0;
-    animation: ${blink} 10s linear infinite;
-    animation-delay: ${(props) => props.delay * 1000}ms;
   }
 
   &.target-hit {
     transform: scale(1.2);
     opacity: 0;
     visibility: hidden;
+
+    &:hover circle,
+    &:hover path {
+      stroke: ${color.green};
+    }
   }
 `;
 
@@ -186,6 +182,8 @@ const NavItem = styled(Box)`
 `
 
 let lastHole;
+let heartValue = 20;
+let targetValue = 10;
 
 const randomTime = (min, max) => {
   return Math.round((Math.random() * max) + min);
@@ -202,6 +200,9 @@ const randomHole = (holes) => {
   return hole;
 }
 
+const finalScore = (hearts, score) => {
+  return ((hearts * heartValue) + (score * targetValue));
+}
 
 const IconComponentLibrary = () => {
   
@@ -222,21 +223,26 @@ const IconComponentLibrary = () => {
   const startView = useRef();
   const inGameView = useRef();
   const endView = useRef();
+  const healthLabel = useRef();
+  const scoreLabel = useRef();
+  const totalLabel = useRef();
 
   let timeUp = true;
-  let score = 0;
-  let heart = hearts.length;
-  let time = 5;
+  let score;
+  let health;
+  let time;
 
   const peep = () => {
     let rHole = randomHole(holes);
-    let rTime = randomTime(400, 800);
-    rHole.current.classList.remove("target-hidden");
+    let rTime = randomTime(600, 1200);
+    rHole.current.classList.add("target-show");
     rHole.current.classList.remove("target-missed");
+    rHole.current.classList.remove("target-hit");
+
 
     setTimeout(() => {
       rHole.current.classList.add("target-missed");
-      rHole.current.classList.add("target-hidden");
+      rHole.current.classList.remove("target-show");
 
       if (timeUp) {
         endGame();
@@ -247,9 +253,11 @@ const IconComponentLibrary = () => {
   }
 
   const endGame = () => {
-    console.log("game ended");
     inGameView.current.classList.add("view-hidden");
     endView.current.classList.remove("view-hidden");
+    scoreLabel.current.textContent = score;
+    healthLabel.current.textContent = health;
+
     timeUp = true;
     if (localStorage.getItem("highscore")) {
       if (Number(localStorage.getItem("highscore")) < score) {
@@ -270,7 +278,7 @@ const IconComponentLibrary = () => {
     endView.current.classList.add("view-hidden");
     timeUp = false;
     score = 0;
-    heart = hearts.length;
+    health = hearts.length;
     time = 5;
     scorecard.current.textContent = score;
     timeCounter.current.textContent = time;
@@ -299,14 +307,19 @@ const IconComponentLibrary = () => {
     if (!e.isTrusted) return;
     score++;
     scorecard.current.textContent = score;
-    e.target.classList.remove("hole-highlight")
-    e.stopPropagation();
+    e.target.classList.add("target-hit");
+  }
+
+  const pew = (e) => {
+    if (!e.isTrusted) return;
+    console.log("pew")
+    e.target.classList.add("target-hit");
   }
 
   const miss = (e) => {
     if (!e.isTrusted) return;
-    heart--;
-    hearts.slice().reverse()[heart].current.classList.add("heart-hidden");
+    health--;
+    hearts.slice().reverse()[health].current.classList.add("heart-hidden");
     if (heart <= 0) endGame();
   }
 
@@ -343,8 +356,8 @@ const IconComponentLibrary = () => {
                 return (
                   <GameTileCell key={i}>
                     <Target
-                      delay={i}
-                      className="target-placeholder"
+                      onClick={pew}
+                      className="target-show"
                       size={44}
                     />
                   </GameTileCell>
@@ -361,87 +374,107 @@ const IconComponentLibrary = () => {
             })}
         </GameBoard>
 
-        <GameBoard
-          ref={inGameView}
-          className="view-hidden"
-          name="In Game View"
-        >
+        <GameBoard ref={inGameView} className="view-hidden" name="In Game View">
           <GameTileCell>
             <Target
+              onClick={bonk}
               ref={hole1}
-              className="hole hole1 target-hidden"
-              onClick={bonk}
+              className="hole hole1"
               size={44}
             />
           </GameTileCell>
           <GameTileCell>
             <Target
+              onClick={bonk}
               ref={hole2}
-              className="hole hole2 target-hidden"
-              onClick={bonk}
+              className="hole hole2"
               size={44}
             />
           </GameTileCell>
           <GameTileCell>
             <Target
+              onClick={bonk}
               ref={hole3}
-              className="hole hole3 target-hidden"
-              onClick={bonk}
+              className="hole hole3"
               size={44}
             />
           </GameTileCell>
           <GameTileCell>
             <Target
+              onClick={bonk}
               ref={hole4}
-              className="hole hole4 target-hidden"
-              onClick={bonk}
+              className="hole hole4"
               size={44}
             />
           </GameTileCell>
           <GameTileCell>
             <Target
+              onClick={bonk}
               ref={hole5}
-              className="hole hole5 target-hidden"
-              onClick={bonk}
+              className="hole hole5"
               size={44}
             />
           </GameTileCell>
           <GameTileCell>
             <Target
+              onClick={bonk}
               ref={hole6}
-              className="hole hole6 target-hidden"
-              onClick={bonk}
+              className="hole hole6"
               size={44}
             />
           </GameTileCell>
           <GameTileCell>
             <Target
+              onClick={bonk}
               ref={hole7}
-              className="hole hole7 target-hidden"
-              onClick={bonk}
+              className="hole hole7"
               size={44}
             />
           </GameTileCell>
           <GameTileCell>
             <Target
+              onClick={bonk}
               ref={hole8}
-              className="hole hole8 target-hidden"
-              onClick={bonk}
+              className="hole hole8"
               size={44}
             />
           </GameTileCell>
           <GameTileCell>
             <Target
-              ref={hole9}
-              className="hole hole9 target-hidden"
               onClick={bonk}
+              ref={hole9}
+              className="hole hole9"
               size={44}
             />
           </GameTileCell>
         </GameBoard>
 
-        <GameBoard className="view-hidden" ref={endView} name="End View">
-          Game Over
+        <GameBoard flexDirection={"column"} alignContent={"center"} className="view-hidden" ref={endView} name="End View">
+         
+            <ResultsRow>
+              <Box><Icon.Heart size={17} color={color.red}/></Box>
+              <Text fontSize={16} ref={healthLabel}>0</Text>
+            </ResultsRow>
+
+            <ResultsRow>
+            <Box><Icon.Target size={17} color={color.green} /></Box>
+              <Box ref={scoreLabel}>0</Box>
+            </ResultsRow>
+
+            <ResultsRow>
+              <Box>Total</Box>
+              <Box ref={totalLabel}>0</Box>
+            </ResultsRow>
+            <Flex alignItems="center" justifyContent="center">
+              <GameTileCell>
+                <StartButton onClick={startGame}>
+                  <PlayIcon size={14} />
+                </StartButton>
+              </GameTileCell>
+            </Flex>
+          
+        
+         
         </GameBoard>
       </GameScreen>
     </Container>

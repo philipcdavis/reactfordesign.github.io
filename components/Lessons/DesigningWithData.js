@@ -48,8 +48,9 @@ const Card = styled.div`
     z-index: -1;
     opacity: 0;
     border-radius: 24px;
-    box-shadow: 0 0px 20px ${hexToRGB(color.gray1, 0.5)},
-      inset 0 0 0 3px ${color.gray2};
+    box-shadow: 0 0px 20px ${hexToRGB(color.blue, 0.3)},
+      inset 0 0 0 2px ${color.blue},
+      inset 0 0px 20px ${hexToRGB(color.blue, 0.2)};
     transition: all 0.1s ease-in-out;
   }
 

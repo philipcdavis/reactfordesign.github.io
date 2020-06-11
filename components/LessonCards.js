@@ -45,16 +45,16 @@ const LessonCards = function(props) {
         <LessonText mt={3}>Designing with Realistic Data</LessonText>
       </LessonCardContainer>
       <LessonCardContainer px={3} width={breakpoints}>
-        <LessonCard>
-          <IconComponentLibrary />
-        </LessonCard>
-        <LessonText mt={3}>Styling in JavaScript</LessonText>
-      </LessonCardContainer>
-      <LessonCardContainer px={3} width={breakpoints}>
         <LessonCard style={{ backgroundColor: "transparent" }}>
           <StylingInJavascript />
         </LessonCard>
         <LessonText mt={3}>Styling in JavaScript</LessonText>
+      </LessonCardContainer>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard>
+          <IconComponentLibrary />
+        </LessonCard>
+        <LessonText mt={3}>Building an Icon Library</LessonText>
       </LessonCardContainer>
     </Flex>
   );
