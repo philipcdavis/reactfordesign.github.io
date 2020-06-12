@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import styled from "styled-components";
 import { color } from '../Tile'
 import { Box, Flex, Text } from 'rebass/styled-components'
@@ -6,10 +6,11 @@ import * as Icon from 'react-feather'
 import { hexToRGB } from '../Utils'
 
 const ResultsRow = styled(Flex)`
-  width: 60%;
-  margin: 0 auto;
-  border-bottom: 2px solid ${color.gray2};
-  height: 30px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  font-family: menlo, monospace;
 `;
 
 const cursor = (cursor) => {
@@ -55,6 +56,7 @@ const GameBoard = styled(Box)`
   display: flex;
   flex-wrap: wrap;
   background-color: ${color.black};
+
   &.view-hidden {
     visibility: hidden;
   }
@@ -77,7 +79,7 @@ const StartButton = styled.div`
   border: 2px solid ${color.green};
   text-transform: uppercase;
   font-size: 14px;
-  padding: 8px 16px;
+  padding: ${props => props.small ? "4px 12px" : "8px 16px"};
   font-weight: bold;
   transition: 0.2s all ease;
 
@@ -149,6 +151,7 @@ const NavHealth = styled(Icon.Heart)`
   margin-right: 2px;
   position: relative;
   top: -2px;
+  opacity: 1;
 
   & path {
     fill: ${color.red};
@@ -156,7 +159,7 @@ const NavHealth = styled(Icon.Heart)`
   }
 
   &.heart-hidden {
-    display: none;
+    opacity: 0;
   }
 `;
 
@@ -174,8 +177,8 @@ const NavItem = styled(Box)`
   font-size: 14px;
   position: relative;
   top: -1px;
+  margin-right: 15px;
   left: 5px;
-  width: 45px;
   color: ${color.gray1};
   display:flex;
   align-items: center;
@@ -205,7 +208,10 @@ const finalScore = (hearts, score) => {
 }
 
 const IconComponentLibrary = () => {
-  
+  useEffect(() => {
+    highscore.current.textContent = localStorage.getItem("highscore") ? localStorage.getItem("highscore") : 0;
+  });
+
   const hole1 = useRef();
   const hole2 = useRef();
   const hole3 = useRef();
@@ -226,21 +232,26 @@ const IconComponentLibrary = () => {
   const healthLabel = useRef();
   const scoreLabel = useRef();
   const totalLabel = useRef();
+  const healthCountLabel = useRef();
+  const scoreCountLabel = useRef();
 
   let timeUp = true;
+  let gameTimer;
+  let gameClockTimer;
+  let peepTimer;
+  let time;
   let score;
   let health;
-  let time;
 
   const peep = () => {
     let rHole = randomHole(holes);
-    let rTime = randomTime(600, 1200);
+    let rTime = randomTime(400, 1200);
     rHole.current.classList.add("target-show");
     rHole.current.classList.remove("target-missed");
     rHole.current.classList.remove("target-hit");
 
 
-    setTimeout(() => {
+    peepTimer = setTimeout(() => {
       rHole.current.classList.add("target-missed");
       rHole.current.classList.remove("target-show");
 
@@ -253,40 +264,49 @@ const IconComponentLibrary = () => {
   }
 
   const endGame = () => {
+    clearTimeout(gameTimer);
+    clearTimeout(gameClockTimer);
+    clearTimeout(peepTimer);
+    holes.forEach(hole => hole.current.classList.remove("target-show"))
     inGameView.current.classList.add("view-hidden");
     endView.current.classList.remove("view-hidden");
-    scoreLabel.current.textContent = score;
-    healthLabel.current.textContent = health;
+    scoreLabel.current.textContent = score * targetValue;
+    healthLabel.current.textContent = health * heartValue;
+    totalLabel.current.textContent = finalScore(health, score);
+
+    scoreCountLabel.current.textContent = "x" + score;
+    healthCountLabel.current.textContent = "x" + health;
 
     timeUp = true;
     if (localStorage.getItem("highscore")) {
-      if (Number(localStorage.getItem("highscore")) < score) {
-        localStorage.setItem("highscore", score)
-        highscore.current.textContent = score;
+      if (Number(localStorage.getItem("highscore")) < finalScore(health, score)) {
+        localStorage.setItem("highscore", finalScore(health, score))
+        highscore.current.textContent = finalScore(health, score);
       }
     } else {
-      localStorage.setItem("highscore", score)
-      highscore.current.textContent = score;
+      localStorage.setItem("highscore", finalScore(health, score))
+      highscore.current.textContent = finalScore(health, score);
     }
 
   }
 
   const startGame = () => {
     if (!timeUp) return;
-    startView.current.classList.add("page");
-    inGameView.current.classList.remove("view-hidden");
-    endView.current.classList.add("view-hidden");
     timeUp = false;
     score = 0;
     health = hearts.length;
-    time = 5;
+    time = 15;
+
+    startView.current.classList.add("page");
+    inGameView.current.classList.remove("view-hidden");
+    endView.current.classList.add("view-hidden");
     scorecard.current.textContent = score;
     timeCounter.current.textContent = time;
-
+    hearts.forEach(heart => heart.current.classList.remove("heart-hidden"));
     gameClock();
     peep();
 
-    setTimeout(() => {
+    gameTimer = setTimeout(() => {
       timeUp = true;
     }, time * 1000);
   }
@@ -296,7 +316,7 @@ const IconComponentLibrary = () => {
       return;
     } 
 
-    setTimeout(() => {
+    gameClockTimer = setTimeout(() => {
       time--;
       timeCounter.current.textContent = time;
       return gameClock();
@@ -308,11 +328,11 @@ const IconComponentLibrary = () => {
     score++;
     scorecard.current.textContent = score;
     e.target.classList.add("target-hit");
+    e.stopPropagation();
   }
 
   const pew = (e) => {
     if (!e.isTrusted) return;
-    console.log("pew")
     e.target.classList.add("target-hit");
   }
 
@@ -320,7 +340,7 @@ const IconComponentLibrary = () => {
     if (!e.isTrusted) return;
     health--;
     hearts.slice().reverse()[health].current.classList.add("heart-hidden");
-    if (heart <= 0) endGame();
+    if (health <= 0) endGame();
   }
 
   return (
@@ -374,7 +394,7 @@ const IconComponentLibrary = () => {
             })}
         </GameBoard>
 
-        <GameBoard ref={inGameView} className="view-hidden" name="In Game View">
+        <GameBoard onClick={miss} ref={inGameView} className="view-hidden" name="In Game View">
           <GameTileCell>
             <Target
               onClick={bonk}
@@ -450,24 +470,26 @@ const IconComponentLibrary = () => {
         </GameBoard>
 
         <GameBoard flexDirection={"column"} alignContent={"center"} className="view-hidden" ref={endView} name="End View">
-         
-            <ResultsRow>
-              <Box><Icon.Heart size={17} color={color.red}/></Box>
-              <Text fontSize={16} ref={healthLabel}>0</Text>
+          
+            <ResultsRow mt={3}>
+              <Box><Icon.Heart style={{fill: color.red}} size={15} color={color.red}/></Box>
+              <Text opacity={0.5} ml={1} fontSize={14} ref={healthCountLabel}>000</Text>
+              <Text ml="auto" fontSize={18} ref={healthLabel}>000</Text>
+            </ResultsRow>
+
+            <ResultsRow pb={1} mb={1} style={{borderBottom: `2px solid ${color.gray2}`}}>
+              <Box><Icon.Target size={17} color={color.green} /></Box>
+              <Text opacity={0.5} ml={1} fontSize={14} ref={scoreCountLabel}>000</Text>
+              <Text ml="auto" fontSize={18} ref={scoreLabel}>000</Text>
             </ResultsRow>
 
             <ResultsRow>
-            <Box><Icon.Target size={17} color={color.green} /></Box>
-              <Box ref={scoreLabel}>0</Box>
+              <Text opacity={0.5} fontSize={14}>Total</Text>
+              <Text ml="auto" fontSize={18} ref={totalLabel}>000</Text>
             </ResultsRow>
-
-            <ResultsRow>
-              <Box>Total</Box>
-              <Box ref={totalLabel}>0</Box>
-            </ResultsRow>
-            <Flex alignItems="center" justifyContent="center">
+          <Flex mt={3} alignItems="center" justifyContent="center">
               <GameTileCell>
-                <StartButton onClick={startGame}>
+                <StartButton small onClick={startGame}>
                   <PlayIcon size={14} />
                 </StartButton>
               </GameTileCell>
