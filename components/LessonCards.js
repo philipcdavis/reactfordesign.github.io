@@ -6,6 +6,7 @@ import SimpleComponent from './Lessons/SimpleComponent'
 import DesigningWithData from './Lessons/DesigningWithData'
 import StylingInJavascript from './Lessons/StylingInJavascript'
 import IconComponentLibrary from './Lessons/IconComponentLibrary'
+import DSFlexibleComponent from './Lessons/DSFlexibleComponent'
 
 
 const LessonCardContainer = styled(Box)`
@@ -55,6 +56,15 @@ const LessonCards = function(props) {
           <IconComponentLibrary />
         </LessonCard>
         <LessonText mt={3}>Building an Icon Library</LessonText>
+      </LessonCardContainer>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard>
+          <DSFlexibleComponent />
+        </LessonCard>
+        <LessonText mt={3}>
+          Building a Design System Part 1:
+          <div>Flexible Components</div>
+        </LessonText>
       </LessonCardContainer>
     </Flex>
   );

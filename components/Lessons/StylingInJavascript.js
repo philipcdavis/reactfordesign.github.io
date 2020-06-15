@@ -29,11 +29,12 @@ const Invisinput = styled.input`
   background-color: transparent;
   border: none;
   outline: none;
-  display: inline;
+  display: inline-block;
+  padding: 0;
   font-size: 16px;
-  font-family: menlo;
-  min-width: 1ch;
-  width: calc(${props => props.inputColor.length}ch + 2px);
+  font-family: menlo, monospace;
+  min-width: 4px;
+  width: ${props => `calc(${props.inputColor.length}ch + 1px)`};
   color: ${props => color[props.inputColor] ? color[props.inputColor] : color.white};
 
   &::selection {
