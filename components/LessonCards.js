@@ -7,6 +7,8 @@ import DesigningWithData from './Lessons/DesigningWithData'
 import StylingInJavascript from './Lessons/StylingInJavascript'
 import IconComponentLibrary from './Lessons/IconComponentLibrary'
 import DSFlexibleComponent from './Lessons/DSFlexibleComponent'
+import DSOrgExt from "./Lessons/DSOrgExt";
+import DSWalkthrough from "./Lessons/DSWalkthrough";
 
 
 const LessonCardContainer = styled(Box)`
@@ -66,6 +68,25 @@ const LessonCards = function(props) {
           <div>Flexible Components</div>
         </LessonText>
       </LessonCardContainer>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard>
+          <DSOrgExt />
+        </LessonCard>
+        <LessonText mt={3}>
+          Building a Design System Part 2:
+          <div>Organization & Extension</div>
+        </LessonText>
+      </LessonCardContainer>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard>
+          <DSWalkthrough />
+        </LessonCard>
+        <LessonText mt={3}>
+          Building a Design System Part 3:
+          <div>Component Walkthrough</div>
+        </LessonText>
+      </LessonCardContainer>
+      
     </Flex>
   );
 }

@@ -245,7 +245,7 @@ const IconComponentLibrary = () => {
 
   const peep = () => {
     let rHole = randomHole(holes);
-    let rTime = randomTime(400, 1200);
+    let rTime = randomTime(800, 1200);
     rHole.current.classList.add("target-show");
     rHole.current.classList.remove("target-missed");
     rHole.current.classList.remove("target-hit");
