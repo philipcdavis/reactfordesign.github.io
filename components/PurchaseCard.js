@@ -33,7 +33,7 @@ const PurchaseCard = function(props) {
 };
 
 const Card = styled(Box)`
-  border-radius: 8px;
+  border-radius: 12px;
   border: 2px solid white;
   animation: ${colorChange("border-color", 0.3)} 10s infinite alternate;
   max-width: 50em;

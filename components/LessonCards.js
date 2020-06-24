@@ -9,6 +9,8 @@ import IconComponentLibrary from './Lessons/IconComponentLibrary'
 import DSFlexibleComponent from './Lessons/DSFlexibleComponent'
 import DSOrgExt from "./Lessons/DSOrgExt";
 import DSWalkthrough from "./Lessons/DSWalkthrough";
+import ComposingStyles from "./Lessons/ComposingStyles";
+import InProgress from "./Lessons/InProgress";
 
 
 const LessonCardContainer = styled(Box)`
@@ -84,6 +86,22 @@ const LessonCards = function(props) {
         <LessonText mt={3}>
           Building a Design System Part 3:
           <div>Component Walkthrough</div>
+        </LessonText>
+      </LessonCardContainer>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard>
+          <ComposingStyles />
+        </LessonCard>
+        <LessonText mt={3}>
+          Composing Styles with Utility Props
+        </LessonText>
+      </LessonCardContainer>
+      <LessonCardContainer px={3} width={breakpoints}>
+        <LessonCard>
+          <InProgress />
+        </LessonCard>
+        <LessonText opacity={0.5} mt={3}>
+          Creating Interactive Components
         </LessonText>
       </LessonCardContainer>
       

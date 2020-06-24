@@ -9,7 +9,7 @@ export const Btn = styled.button`
   backface-visibility: hidden;
   margin-right: 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   user-select: none;
   font-weight: bold;
   transition: 0.4s all cubic-bezier(0.15, 0.75, 0.45, 0.95);
@@ -40,6 +40,6 @@ export const Btn = styled.button`
   &:hover {
     cursor: pointer;
     transform: translateZ(0) scale(1.1);
-    border-radius: 4px;
+    border-radius: 6px;
   }
 `;

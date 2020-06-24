@@ -13,8 +13,8 @@ export const InputLight = styled.input`
   transition: 0.2s opacity ease;
   opacity: 0.9;
   width: 100%;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
   border-top-right-radius: ${props => props.group ? 0 : 4 + "px"};
   border-bottom-right-radius: ${props => props.group ? 0 : 4 + "px"};
   border-left: 2px solid transparent;
