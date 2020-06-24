@@ -9,6 +9,7 @@ const Label = styled(Text)`
   text-transform: uppercase;
   color: ${color.yellow};
   font-size: 14px;
+  font-weight: bold;
 `;
 
 const rotate = keyframes`
@@ -17,13 +18,9 @@ const rotate = keyframes`
 `
 
 const Clock = styled.svg`
-  
-  & circle {
-    opacity: 0.3;
-  }
 
   & polyline:first-of-type {
-    animation: ${rotate} 10s infinite;
+    animation: ${rotate} 5s infinite;
     animation-timing-function: linear;
     transform-origin: center center;
   }
@@ -48,9 +45,10 @@ const ClockIcon = (props) => {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <circle cx="12" cy="12" r="10"></circle>
+      <circle style={{opacity: 0.3}} cx="12" cy="12" r="10"></circle>
       <polyline points="12 6 12 12"></polyline>
       <polyline points="12 12 16 14"></polyline>
+      <circle stroke="none" fill={color.yellow} cx="12" cy="12" r="2"></circle>
     </Clock>
   );
 }

@@ -13,6 +13,15 @@ const Container = styled.div`
   right: 0;
 `;
 
+const Label = styled(Text)`
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  margin: 0 auto;
+`;
+
 const BarContainer = styled.svg`
   position: absolute;
   top: 10px;
@@ -30,6 +39,7 @@ const Card = styled.div`
   width: 150px;
   border-radius: 24px;
   position: relative;
+  text-align: center;
   top: -5px;
   z-index: 1;
   box-shadow: inset 0 0 0 3px ${color.black};
@@ -37,6 +47,7 @@ const Card = styled.div`
   transition: all 0.1s ease-in-out;
   font-family: menlo, monospace;
   font-weight: bold;
+  line-height: 1.4;
 
   &:before {
     content: "";
@@ -48,15 +59,13 @@ const Card = styled.div`
     z-index: -1;
     opacity: 0;
     border-radius: 24px;
-    box-shadow: 0 0px 20px ${hexToRGB(color.blue, 0.3)},
-      inset 0 0 0 2px ${color.blue},
-      inset 0 0px 20px ${hexToRGB(color.blue, 0.2)};
+    box-shadow: 0 3px 10px ${hexToRGB(color.black, 1)},
+      0 10px 20px ${hexToRGB(color.black, 0.8)};
     transition: all 0.1s ease-in-out;
   }
 
   &:hover {
     cursor: pointer;
-
     &:before {
       opacity: 1;
     }
@@ -65,19 +74,19 @@ const Card = styled.div`
 `;
 
 const CardStatus = styled.div`
-  background-color: ${color.green};
+  background-color: ${props => color[props.status]};
   width: 8px;
   height: 8px;
   border-radius: 10px;
   position: absolute;
   left: 17px;
   top: 17px;
-  box-shadow: 0 0 8px ${color.green};
+  box-shadow: 0 0 8px ${props => color[props.status]};
 `;
 
 
 const DesigningWithData = () => {
-  const dataCount = 24;
+  const dataCount = 20;
   const [cardPosition, setCardPosition] = useState(0);
   const [data, setData] = useState(Array(dataCount).fill(""));
   const svgRef = useRef();
@@ -110,11 +119,11 @@ const DesigningWithData = () => {
       .data(data)
       .join("rect")
       .attr("class", ".bar")
-      .attr("fill", () => hexToRGB(color.white, 0.025))
+      .attr("fill", () => hexToRGB(color.white, 0.040))
       .attr("x", 10)
-      .attr("rx", 2)
+      .attr("rx", 3)
       .attr("y", (d,i) => yScale(i))
-      .attr("height", 4)
+      .attr("height", 7)
       .transition()
       .attr("width", () => xScale(Math.random() * 100));
   }, [data]);
@@ -122,19 +131,23 @@ const DesigningWithData = () => {
   const CardData = [
     {
       name: "Philip Davis",
-      img: "https://pbs.twimg.com/profile_images/659824786260934656/syJKampr_400x400.jpg",
-      location: "Waldorf, MD"
+      img:
+        "https://pbs.twimg.com/profile_images/659824786260934656/syJKampr_400x400.jpg",
+      location: "Waldorf, MD",
+      status: "green",
     },
     {
       name: "Janine Wesley",
       img: "https://randomuser.me/api/portraits/women/83.jpg",
-      location: "New York City, NY"
+      location: "New York City, NY",
+      status: "yellow",
     },
     {
       name: "Jaden Hendrick",
       img: "https://randomuser.me/api/portraits/men/83.jpg",
-      location: "Arlington, VA"
-    }
+      location: "Mount St. Helens, WA",
+      status: "gray1",
+    },
   ];
 
   const handleCardClick = () => {
@@ -149,10 +162,10 @@ const DesigningWithData = () => {
       </BarContainer>
       <Flex height={"100%"} justifyContent="center" alignItems="center">
         <Card onClick={() => handleCardClick()}>
-          <CardStatus />
+          <CardStatus status={CardData[cardPosition].status} />
           <Image mt={"30px"} mb={"10px"} mx={"auto"} display={"block"} width={50} height={50} style={{borderRadius: 50}} src={CardData[cardPosition].img} />
-          <Text color={color.gray0} textAlign={"center"} mt={1} fontSize={"13px"}>{CardData[cardPosition].name}</Text>
-          <Text color={color.gray1} textAlign={"center"} mt={0} fontSize={"13px"}>{CardData[cardPosition].location}</Text>
+          <Text color={color.gray0} textAlign={"center"} mt={1} fontSize={"14px"}>{CardData[cardPosition].name}</Text>
+          <Label color={color.gray1} textAlign={"center"} mt={0} fontSize={"12px"}>{CardData[cardPosition].location}</Label>
         </Card>
       </Flex>
     </Container>

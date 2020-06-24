@@ -12,6 +12,7 @@ const Button = styled(BtnLink)`
     padding-left: 100px;
     padding-right: 100px;
   `}
+  line-height: 1;
 
   ${props => props.br && css`
     border-radius: 100px;
@@ -57,8 +58,8 @@ const ComposingStyles = () => {
     <Flex flexDirection="column" p={4} height="100%">
       <Flex mb={4} height={"99px"} width={"100%"} justifyContent="center">
         <Box>
-          <Button href={"https://twitter.com/"} mt={mt} br={br} px={px} color="black">
-            Share
+          <Button href={"https://twitter.com/philipcdavis"} mt={mt} br={br} px={px} color="black">
+            Follow
           </Button>
         </Box>
       </Flex>
