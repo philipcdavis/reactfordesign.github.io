@@ -10,7 +10,7 @@ const PurchaseCard = function(props) {
   return (
     <Card px={[3,4,"100px"]} py={[4,5]}>
       <Box width={[1]} css={{maxWidth: "580px"}} mb={[3,5]} mx="auto">
-        <Heading color="white" textAlign="center" mb={2} fontSize={[4,5]}>No Subscription Pricing</Heading>
+        <Heading color="white" textAlign="center" mb={2} fontSize={[4,5]}>Introductory Pricing</Heading>
         <Text color="white" textAlign="center" fontSize={[17, 19]} mb={4} mt={3}>
           Pay once and you'll get all future updates. If you're not satisfied with the course, let me know within 7 days and I'll refund you.
         </Text>

@@ -1,0 +1,38 @@
+import React from 'react';
+import styled from "styled-components";
+import { Flex, Box, Image, Text } from "rebass/styled-components";
+import { color } from "./Tile";
+import { BtnLink } from "./Button";
+
+
+function Instructor(props) {
+  return (
+    <Flex mt={[70, 140]} mb={[50, 100]} mx={"auto"} sx={{ maxWidth: "750px" }}>
+      <Box width={[3 / 12]}>
+        <Image
+          height="130px"
+          sx={{ borderRadius: 100, filter: "saturate(1.4)" }}
+          width="130px"
+          src="https://pbs.twimg.com/profile_images/659824786260934656/syJKampr_400x400.jpg"
+        />
+      </Box>
+      <Flex width={[9 / 12]} flexDirection={"column"}>
+        <Text mb={2} color={color.white} fontWeight="bold">
+          About the Instructor
+        </Text>
+        <Text fontSize={18} color={color.gray0}>
+          My name is Philip Davis. I'm a designer who has used React to design
+          interfaces at Apple and Facebook. I built this course to teach you how
+          to get the most out React as a designer.
+        </Text>
+        {/* <Box mt={3}>
+          <BtnLink href="https://twitter.com/philipcdavis" target="_blank" color="black" size="sm">
+            <Box sx={{display: "inline-block"}} pr={2}>👋</Box> Say hi on twitter
+          </BtnLink>
+        </Box> */}
+      </Flex>
+    </Flex>
+  );
+}
+
+export default Instructor;
