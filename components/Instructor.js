@@ -25,11 +25,6 @@ function Instructor(props) {
           interfaces at Apple and Facebook. I built this course to teach you how
           to get the most out React as a designer.
         </Text>
-        {/* <Box mt={3}>
-          <BtnLink href="https://twitter.com/philipcdavis" target="_blank" color="black" size="sm">
-            <Box sx={{display: "inline-block"}} pr={2}>👋</Box> Say hi on twitter
-          </BtnLink>
-        </Box> */}
       </Flex>
     </Flex>
   );

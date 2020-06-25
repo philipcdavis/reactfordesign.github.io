@@ -15,8 +15,8 @@ const Lessons = function(props) {
   return (
     <LessonContainer pt={[4,5]} mb={5}>
       <Box sx={{maxWidth: 700}}mt={4} >
-        <Heading color="white" mb={2} fontSize={[4,5]}>Focused Lessons for Designers</Heading>
-        <Text>This course is focused on teaching the parts of React.js that you need as a designer. Below is the list of videos that are currently available and a those that are still in the works.</Text>
+        <Heading color="white" mb={2} fontSize={[4,5]}>Videos tailored to designers</Heading>
+        <Text>There are plenty of great ways to learn React. This course is focused on the parts of React that are most useful for designers. I've worked hard to create lessons that are laser focused to this end. Below is the list of videos that are currently available and a those that are still in the works.</Text>
       </Box>
       <LessonCards />
 
