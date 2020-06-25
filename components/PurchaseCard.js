@@ -28,6 +28,9 @@ const Strikethrough = styled(Heading)`
 
 const Price = styled(Heading)`
   position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const Largar = styled.span`
@@ -35,11 +38,11 @@ const Largar = styled.span`
   padding: 0px 15px;
 `;
 
-const Smallar = styled.span`
+const Smallar = styled(Text)`
   color: ${color.gray1};
   position: absolute;
-  font-size: 30px;
   top: 3px;
+  left: 4px;
 `;
 
 const PurchaseCard = function(props) {
@@ -70,10 +73,12 @@ const PurchaseCard = function(props) {
           <Strikethrough mt={0} fontSize={[3, 4]} color={color.gray1}>
             $100
           </Strikethrough>
-          <Price lineHeight={1} mb={3} fontSize={[6, 7]} color="white">
-            <Smallar>$</Smallar>
-            <Largar>49</Largar>
-          </Price>
+          <Box>
+            <Price lineHeight={1} mb={3} fontSize={[6, 7]} color="white">
+              <Smallar fontSize={[3, 4]}>$</Smallar>
+              <Largar>49</Largar>
+            </Price>
+          </Box>
           <BtnRainbow
             href="https://gumroad.com/l/reactfordesign"
             target="_blank"
