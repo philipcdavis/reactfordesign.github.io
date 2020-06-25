@@ -5,7 +5,7 @@ import { Box, Flex, Text, Link } from 'rebass/styled-components'
 import Logo from '../components/Logo'
 import { BtnRainbow } from '../components/Button'
 import data from '../public/data/resources'
-// import SEO from '../components/SEO'
+import Head from "../components/Head";
 
 const tagColor = {
   "getting-started": "green",
@@ -31,86 +31,165 @@ export default function Free() {
 
   return (
     <Box>
+      <Head
+        title="React Links for Designers"
+        description="Free React Resources for Designers"
+        image="https://react.design/social/links.png"
+      />
       <GlobalStyle />
-        {/* <SEO
-          title={"React Links for Designers"}
-          image={"https://react.design/social/links.png"}
-          description={"Free React Resources for Designers"}
-        /> */}
-        <Flex minHeight={"100vh"} flexDirection={"column"}>
-          <Nav>
-            <Flex justifyContent="space-between">
-              <Box px={[3,4,4,6]} flexGrow={1} pt={4}>
-                <Logo width={50} />
-              </Box>
-              <Box px={[3,4,4,6]} pt={"40px"}>
-                <BtnRainbow href="/" size={"sm"}>React for Design</BtnRainbow>
-              </Box>
-            </Flex>
-            <Box px={[3,4,4,6]} sx={{position: "relative", top: [0, "-55px"]}} mt={[4, 0]} display={"inline-block"} ml={[0 ,"75px"]}>
-              <Text lineHeight={1.2} fontSize={[3,18]} color={"white"}>React Links for Designers</Text>
-              <Text lineHeight={1.2} fontSize={[3,18]} color={color["gray1"]} >Free and Curated Resources</Text>
+      <Flex minHeight={"100vh"} flexDirection={"column"}>
+        <Nav>
+          <Flex justifyContent="space-between">
+            <Box px={[3, 4, 4, 6]} flexGrow={1} pt={4}>
+              <Logo width={50} />
             </Box>
-
-            <Box textAlign={"left"} px={[3,4,4,6]} ml={-3} mr={0} mt={[4, -3]} mb={3}>
-              <Box display="inline-block" width={["50%", "auto"]}>
-                <Tag my={[1,0]} mx={[2, 0]} px={["10px","17px"]} py={["2px","3px"]} fontSize={[1,2]} name="getting-started" filter={filter} onClick={() => toggleFilter("getting-started")} color="green">#getting-started</Tag>
-              </Box>
-              <Box display="inline-block" width={["50%", "auto"]}>
-                <Tag my={[1,0]} mx={[2, 2]} px={["10px","17px"]} py={["1px","3px"]} fontSize={[1,2]} name="library" filter={filter} onClick={() => toggleFilter("library")} color="blue">#library</Tag>
-              </Box>
-              <Box display="inline-block" width={["50%", "auto"]}>
-                <Tag my={[1,0]} mx={[2, 0]} px={["10px","17px"]} py={["1px","3px"]} fontSize={[1,2]} name="article" filter={filter} onClick={() => toggleFilter("article")} color="purple">#article</Tag>
-              </Box>
-              <Box display="inline-block" width={["50%", "auto"]}>
-                <Tag my={[1,0]} mx={[2, 2]} px={["10px","17px"]} py={["1px","3px"]} fontSize={[1,2]} name="video" filter={filter} onClick={() => toggleFilter("video")} color="red">#video</Tag>
-              </Box>
+            <Box px={[3, 4, 4, 6]} pt={"40px"}>
+              <BtnRainbow href="/" size={"sm"}>
+                React for Design
+              </BtnRainbow>
             </Box>
-          </Nav>
-
-          <Box flexGrow={1} width={"100%"} px={[0,4,4,6]} ml={[0, -3]} pt={3}>
-
-            {
-              filteredData.map(function(resource, i) {
-                const title = resource.title;
-                const url = resource.url;
-                const tags = resource.tags;
-
-                return (
-                  <Box key={i}>
-                    <ResourceCard
-                      key={i}
-                      py={["10px"]}
-                      my={2}
-                      href={url}
-                      width={["100%", "auto"]}
-                      sx={{borderRadius: [0, 10]}}
-                    >
-                      <StatusContainer>
-                        {tags.map((tag, i) => <Status id={i} key={i} kind={tag} /> )}
-                      </StatusContainer>
-
-                      <Box sx={{display: ["block","inline-block"]}}>
-                        <Title fontSize={[2,3]} >{title}</Title>
-                      </Box>
-
-                      <Url color={color.gray1} fontSize={[1,2]}>{ getHostName(url) }</Url>
-
-
-                    </ResourceCard>
-                  </Box>
-                )
-            })}
+          </Flex>
+          <Box
+            px={[3, 4, 4, 6]}
+            sx={{ position: "relative", top: [0, "-55px"] }}
+            mt={[4, 0]}
+            display={"inline-block"}
+            ml={[0, "75px"]}
+          >
+            <Text lineHeight={1.2} fontSize={[3, 18]} color={"white"}>
+              React Links for Designers
+            </Text>
+            <Text lineHeight={1.2} fontSize={[3, 18]} color={color["gray1"]}>
+              Free and Curated Resources
+            </Text>
           </Box>
 
-          <Footer textAlign={["center", "left"]} px={[3,4,4,6]} py={[4]} mt={4}>
-            <Text fontSize={2}>
-            Made by <Link sx={{textDecoration: 'none'}}color={color['white']} href="https://twitter.com/philipcdavis">@philipcdavis</Link>
-            </Text>
-          </Footer>
-        </Flex>
+          <Box
+            textAlign={"left"}
+            px={[3, 4, 4, 6]}
+            ml={-3}
+            mr={0}
+            mt={[4, -3]}
+            mb={3}
+          >
+            <Box display="inline-block" width={["50%", "auto"]}>
+              <Tag
+                my={[1, 0]}
+                mx={[2, 0]}
+                px={["10px", "17px"]}
+                py={["2px", "3px"]}
+                fontSize={[1, 2]}
+                name="getting-started"
+                filter={filter}
+                onClick={() => toggleFilter("getting-started")}
+                color="green"
+              >
+                #getting-started
+              </Tag>
+            </Box>
+            <Box display="inline-block" width={["50%", "auto"]}>
+              <Tag
+                my={[1, 0]}
+                mx={[2, 2]}
+                px={["10px", "17px"]}
+                py={["1px", "3px"]}
+                fontSize={[1, 2]}
+                name="library"
+                filter={filter}
+                onClick={() => toggleFilter("library")}
+                color="blue"
+              >
+                #library
+              </Tag>
+            </Box>
+            <Box display="inline-block" width={["50%", "auto"]}>
+              <Tag
+                my={[1, 0]}
+                mx={[2, 0]}
+                px={["10px", "17px"]}
+                py={["1px", "3px"]}
+                fontSize={[1, 2]}
+                name="article"
+                filter={filter}
+                onClick={() => toggleFilter("article")}
+                color="purple"
+              >
+                #article
+              </Tag>
+            </Box>
+            <Box display="inline-block" width={["50%", "auto"]}>
+              <Tag
+                my={[1, 0]}
+                mx={[2, 2]}
+                px={["10px", "17px"]}
+                py={["1px", "3px"]}
+                fontSize={[1, 2]}
+                name="video"
+                filter={filter}
+                onClick={() => toggleFilter("video")}
+                color="red"
+              >
+                #video
+              </Tag>
+            </Box>
+          </Box>
+        </Nav>
+
+        <Box flexGrow={1} width={"100%"} px={[0, 4, 4, 6]} ml={[0, -3]} pt={3}>
+          {filteredData.map(function (resource, i) {
+            const title = resource.title;
+            const url = resource.url;
+            const tags = resource.tags;
+
+            return (
+              <Box key={i}>
+                <ResourceCard
+                  key={i}
+                  py={["10px"]}
+                  my={2}
+                  href={url}
+                  width={["100%", "auto"]}
+                  sx={{ borderRadius: [0, 10] }}
+                >
+                  <StatusContainer>
+                    {tags.map((tag, i) => (
+                      <Status id={i} key={i} kind={tag} />
+                    ))}
+                  </StatusContainer>
+
+                  <Box sx={{ display: ["block", "inline-block"] }}>
+                    <Title fontSize={[2, 3]}>{title}</Title>
+                  </Box>
+
+                  <Url color={color.gray1} fontSize={[1, 2]}>
+                    {getHostName(url)}
+                  </Url>
+                </ResourceCard>
+              </Box>
+            );
+          })}
+        </Box>
+
+        <Footer
+          textAlign={["center", "left"]}
+          px={[3, 4, 4, 6]}
+          py={[4]}
+          mt={4}
+        >
+          <Text fontSize={2}>
+            Made by{" "}
+            <Link
+              sx={{ textDecoration: "none" }}
+              color={color["white"]}
+              href="https://twitter.com/philipcdavis"
+            >
+              @philipcdavis
+            </Link>
+          </Text>
+        </Footer>
+      </Flex>
     </Box>
-  )
+  );
 }
 
 const Footer = styled(Box)`

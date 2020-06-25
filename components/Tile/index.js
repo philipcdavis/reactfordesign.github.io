@@ -16,6 +16,11 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
   }
 
+  ::selection {
+    background-color: ${color.gray0};
+    color: white;
+  }
+
   h1,h2,h3,h4 {
     font-family: inherit !important;
   }

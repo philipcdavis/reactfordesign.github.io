@@ -1,13 +1,15 @@
 import React from 'react';
 import matter from 'gray-matter';
-import Post from '../../components/Post'
+import Post from '../../components/Post';
 
 export default function Terminal({ content, data }) {
   // This holds the data between `---` from the .md file
   const frontmatter = data;
   
   return (
-    <Post content={content} frontmatter={frontmatter} />
+    <>
+      <Post content={content} frontmatter={frontmatter} />
+    </>
   );
 }
 

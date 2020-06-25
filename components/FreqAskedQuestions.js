@@ -74,13 +74,16 @@ const FAQ = function(props) {
             Do you offer discounts?
           </Heading>
           <Text fontSize={[2, "17px"]}>
-            Not currently. If you're looking
-            for free resources, I made a collection of {" "}
+            Not currently. If you're looking for free resources, I made a
+            collection of {" "}
             <Link
               color="inherit"
               target="_blank"
               href="https://react.design/links"
-            >free react links for designers</Link>.
+            >
+             free react links for designers
+            </Link>
+            .
           </Text>
         </Box>
 
@@ -125,7 +128,7 @@ const FAQ = function(props) {
               href="https://react.design/terminal"
             >
               short guide
-            </Link>
+            </Link>{" "}
             that could be helpful.
           </Text>
         </Box>
