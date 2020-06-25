@@ -9,8 +9,8 @@ const Button = styled(BtnLink)`
   margin-right: 0;
   transition: 0.14s all ease;
   ${props => props.px && css`
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
   `}
   line-height: 1;
 
