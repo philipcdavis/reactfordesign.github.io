@@ -17,8 +17,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${color.gray0};
-    color: white;
+    background-color: ${color.blue};
   }
 
   h1,h2,h3,h4 {
