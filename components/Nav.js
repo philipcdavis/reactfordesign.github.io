@@ -2,7 +2,6 @@ import React from 'react'
 import Logo from '../components/Logo'
 import { BtnRainbow } from '../components/Button'
 import { Box, Flex } from 'rebass/styled-components'
-import { getOutboundLink } from "./Analytics"
 
 const Nav = () => (
   <Flex
@@ -18,7 +17,6 @@ const Nav = () => (
     <Logo mt={"4px"} flex={1} width="58px" display="block" />
     <Box mt={2}>
       <BtnRainbow
-        onClick={getOutboundLink('https://gumroad.com/l/reactfordesign')}
         href="https://gumroad.com/l/reactfordesign"
         target="_blank"
       >
