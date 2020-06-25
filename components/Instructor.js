@@ -7,16 +7,16 @@ import { BtnLink } from "./Button";
 
 function Instructor(props) {
   return (
-    <Flex mt={[70, 140]} mb={[50, 100]} mx={"auto"} sx={{ maxWidth: "750px" }}>
-      <Box width={[3 / 12]}>
+    <Flex textAlign={["center", "left"]} flexDirection={["column", "row"]} mt={[70, 140]} mb={[50, 100]} mx={"auto"} sx={{ maxWidth: "750px" }}>
+      <Box width={[1, 3 / 12]}>
         <Image
           height="130px"
-          sx={{ borderRadius: 100, filter: "saturate(1.4)" }}
+          sx={{ borderRadius: 100, filter: "saturate(1.2)" }}
           width="130px"
           src="https://pbs.twimg.com/profile_images/659824786260934656/syJKampr_400x400.jpg"
         />
       </Box>
-      <Flex width={[9 / 12]} flexDirection={"column"}>
+      <Flex width={[1, 9 / 12]} flexDirection={"column"}>
         <Text mb={2} color={color.white} fontWeight="bold">
           About the Instructor
         </Text>
