@@ -2,9 +2,11 @@ import React from 'react'
 import Logo from '../components/Logo'
 import { BtnRainbow } from '../components/Button'
 import { Box, Flex } from 'rebass/styled-components'
+import { getOutboundLink } from "./Analytics"
 
 const Nav = () => (
-  <Flex css={{
+  <Flex
+    css={{
       maxWidth: "70em",
       position: "relative",
     }}
@@ -13,12 +15,18 @@ const Nav = () => (
     pb={2}
     alignItems="flex-start"
   >
-    <Logo mt={"4px"} flex={1} width="58px" display='block' />
+    <Logo mt={"4px"} flex={1} width="58px" display="block" />
     <Box mt={2}>
-      <BtnRainbow href="https://gumroad.com/l/reactfordesign" target="_blank">Purchase</BtnRainbow>
+      <BtnRainbow
+        onClick={getOutboundLink('https://gumroad.com/l/reactfordesign')}
+        href="https://gumroad.com/l/reactfordesign"
+        target="_blank"
+      >
+        Purchase
+      </BtnRainbow>
     </Box>
   </Flex>
-)
+);
 
 
 export default Nav;

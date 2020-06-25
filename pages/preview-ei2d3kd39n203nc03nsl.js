@@ -3,7 +3,6 @@ import Nav from '../components/Nav'
 import { GlobalStyle } from "../components/Tile";
 import { Text, Box, Heading } from "rebass/styled-components";
 import { BtnRainbow } from '../components/Button'
-// import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const Preview = () => (
   <>
