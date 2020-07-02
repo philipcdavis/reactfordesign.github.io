@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Btn, color, isDarkBackground } from '../Tile'
 import { Box, Flex, Text } from "rebass/styled-components";
 import styled, { keyframes, css } from "styled-components";
+import { hexToRGB } from '../Utils';
 
 const glimmer = keyframes`
   0%{  opacity: 0}
@@ -134,7 +135,7 @@ const Layout = (props) => {
         <Color animated={props.animated} delay={5} bg={color.white} />
         <Color animated={props.animated} delay={6} bg={color.gray0} />
         <Color animated={props.animated} delay={7} bg={color.gray1} />
-        <Color animated={props.animated} delay={8} style={{ border: `1px solid ${color.gray2}` }} bg={color.gray3} />
+        <Color animated={props.animated} delay={8} bg={hexToRGB(color.white, 0.05)} />
         <Color
           animated={props.animated}
           delay={9}
