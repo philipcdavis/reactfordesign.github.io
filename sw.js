@@ -1,4 +1,5 @@
 self.addEventListener('install', function (e) {
+  console.log(self)
   self.skipWaiting();
 });
 
