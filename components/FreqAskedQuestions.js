@@ -145,10 +145,10 @@ const FAQ = function(props) {
         </Link>
       </Text>
 
-      <Text color="white" mb={2} textAlign={["left", "center"]} mt="5">
+      <Text color="white" fontSize={[4]} mb={3} textAlign={"center"} mt="5">
         Ready to start?
       </Text>
-      <Text mb={4} textAlign={["left", "center"]}>
+      <Text mb={4} textAlign={"center"}>
         <BtnRainbow>Get Access Now</BtnRainbow>
       </Text>
       
