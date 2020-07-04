@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, Box, Flex, Link, Heading } from 'rebass/styled-components'
+import { BtnRainbow } from "./Button";
 
 const FAQ = function(props) {
   return (
@@ -133,16 +134,24 @@ const FAQ = function(props) {
           </Text>
         </Box>
       </Flex>
-      <Text color="white" textAlign={["left", "center"]} mt="4">
+      <Text textAlign={["left", "center"]} mt="4">
         Have a different question?{" "}
         <Link
-          color="white"
+          color="inherit"
           target="_blank"
           href="https://twitter.com/philipcdavis"
         >
           Let me know
         </Link>
       </Text>
+
+      <Text color="white" mb={2} textAlign={["left", "center"]} mt="5">
+        Ready to start?
+      </Text>
+      <Text mb={4} textAlign={["left", "center"]}>
+        <BtnRainbow>Get Access Now</BtnRainbow>
+      </Text>
+      
     </Box>
   );
 };
