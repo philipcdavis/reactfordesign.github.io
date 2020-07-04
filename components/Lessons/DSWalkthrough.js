@@ -206,14 +206,11 @@ const DSWalkthrough = () => {
     if (!isActive) { return; } 
     loadingTimer = setTimeout(() => {
       Math.random() > 0.5 ? setState("failure") : setState("success")
-      console.log("first state", state);
     }, 3000)
     return () => clearTimeout(loadingTimer);
   }, [isActive]);
 
   useEffect(() => {
-    console.log("isActive", isActive)
-    console.log("state", state)
     if (!isActive) { return; }
     if (state === "loading" || state === "default") { return; }
 
