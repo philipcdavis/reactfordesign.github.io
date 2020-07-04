@@ -21,7 +21,6 @@ export const InputLight = styled.input`
   border-bottom: 2px solid transparent;
   border-top: 2px solid transparent;
 
-
   &:hover, &:focus {
     opacity: 1;
     outline: none;

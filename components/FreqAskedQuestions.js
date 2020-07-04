@@ -134,7 +134,7 @@ const FAQ = function(props) {
           </Text>
         </Box>
       </Flex>
-      <Text textAlign={["left", "center"]} mt="4">
+      <Text textAlign={["left", "center"]} mt="4" mb={-1}>
         Have a different question?{" "}
         <Link
           color="inherit"
