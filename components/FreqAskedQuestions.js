@@ -149,7 +149,7 @@ const FAQ = function(props) {
         Ready to start?
       </Text>
       <Text mb={4} textAlign={"center"}>
-        <BtnRainbow>Get Access Now</BtnRainbow>
+        <BtnRainbow href="https://gumroad.com/l/reactfordesign">Get Access Now</BtnRainbow>
       </Text>
       
     </Box>
