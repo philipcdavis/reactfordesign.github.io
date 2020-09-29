@@ -25,10 +25,10 @@ image: "https://react.design/social/terminal.png"
 
 <div style="
     position: relative;
-    padding: 2px;
+    padding: 3px;
     background: linear-gradient(0deg,#F04DFF, #FF4D4D, #FFC54D, #6AED76, #0099FF);
     background-size: 300% 300%;
-    width: 100px;
+    width: 120px;
     margin: 100px auto 60px auto;
     animation: TerminalBackground 7s infinite alternate;
     border-radius: 12px;
@@ -39,21 +39,22 @@ image: "https://react.design/social/terminal.png"
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0.3;
+    opacity: 0.4;
     background: linear-gradient(0deg,#F04DFF, #FF4D4D, #FFC54D, #6AED76, #0099FF);
     background-size: 300% 300%;
-    width: 100px;
+    width: 120px;
     animation: TerminalBackground 7s infinite alternate;
     border-radius: 12px;
-    filter: blur(10px);
+    filter: blur(17px);
   ">
   </div>
   
   <div style="
     background: rgba(0, 0, 0, 0.80) linear-gradient(0deg, black, transparent);
-    border-radius: 11px;
-    height: 76px;
+    border-radius: 12px;
+    height: 94px;
     opacity: 0.95;
+    font-weight: bold;
     color: #FFB212;
     animation: TerminalCursor 7s infinite alternate;
     padding: 20px 15px;
