@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Head from './Head';
 import ReactMarkdown from 'react-markdown/with-html';
 import { Heading, Text, Flex, Box } from 'rebass/styled-components';
@@ -8,6 +8,20 @@ import { BtnRainbow } from './Button';
 import { RainbowHr } from './Text';
 import CodeAnimation from './CodeAnimation';
 import { Markdown } from './Text';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Syntax from './Syntax';
+
+
+
+function CodeBlock({ language = null, value }) {
+  return (
+    <SyntaxHighlighter language={language} style={Syntax}>
+      {value}
+    </SyntaxHighlighter>
+  );
+}
+
+
 
 const Post = function (props) {
   return (
@@ -18,12 +32,12 @@ const Post = function (props) {
         image="https://react.design/social/terminal.png"
       />
       <GlobalStyle />
-      <CodeAnimation />
+      <CodeAnimation colors={props.colors} />
 
       <Box px={[3, 3, 6]} py={[5, 5]}>
         <Box color={color.gray0} width={["100%", "600px"]} mx="auto">
           <Markdown>
-            <ReactMarkdown escapeHtml={false} source={props.content} />
+            <ReactMarkdown renderers={{code: CodeBlock}} escapeHtml={false} source={props.content} />
           </Markdown>
 
           <Box textAlign="center" mt={[4, 5]}>

@@ -10,8 +10,6 @@
     "deploy": "yarn export && touch out/.nojekyll && gh-pages -t -d out"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.4",
-    "@next/mdx": "^9.4.2",
     "@svgr/webpack": "^5.4.0",
     "d3": "^5.16.0",
     "gray-matter": "^4.0.2",
@@ -23,6 +21,7 @@
     "react-dom": "16.13.1",
     "react-feather": "^2.0.8",
     "react-markdown": "^4.3.1",
+    "react-syntax-highlighter": "^13.5.3",
     "rebass": "^4.0.7",
     "styled-components": "^5.1.0"
   },

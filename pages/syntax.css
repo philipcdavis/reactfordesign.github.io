@@ -1,0 +1,130 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ffffff;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #aaa;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #aaa;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 0em 2em;
+  margin: 0 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  color: white;
+  background: #1a1a1a;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+
+.token.comment {
+  color: #888888;
+  
+}
+
+.token.punctuation {
+  color: #888888;
+  
+}
+
+.token.constant {
+  color: #FFD14A;
+  
+}
+
+.token.keyword {
+  color: #FFD14A;
+  
+}
+
+.token.variable {
+  color: #FFFFFF;
+  
+}
+
+.token.property {
+  color: #FFFFFF;
+  
+}
+
+.token.string {
+  color: #91DD64;
+  
+}
+
+.token.builtin {
+  color: #00AEFF;
+}
+
+.token.boolean {
+  color: #A47FF9;
+}
+
+.token.attr-name {
+  color: #00AEFF;
+  
+}
+
+.token.tag {
+  color: #00AEFF;
+  
+}
+
+.token.operator {
+  color: #FF66BB;
+  
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}

@@ -30,7 +30,7 @@ class CodeAnimation extends Component {
        .domain([0, 100])
        .range([20, height -20]);
 
-     var colors = ["#0099FF", "#DD3DEC", "#FF4D4D", "#FFC54D", "#6AED76", "#222", "#222","#222" ];
+     var colors = this.props.colors;
      var colorScale = scaleQuantize().domain([0,1]).range(colors);
 
      var data = [];
@@ -108,5 +108,9 @@ class CodeAnimation extends Component {
    }
 
 }
+
+CodeAnimation.defaultProps = {
+  colors: ["#0099FF", "#DD3DEC", "#FF4D4D", "#FFC54D", "#6AED76", "#222", "#222", "#222"],
+};
 
 export default CodeAnimation;

@@ -136,35 +136,8 @@ export const Markdown = styled.div`
            margin-bottom: 2.5em;
          }
 
-         & pre {
-           padding: 1em;
-           margin: 0.5em 0;
-           overflow: auto;
-           border-radius: 0.3em;
-         }
-
-         & code {
-           color: white;
-           border-radius: 0.3em;
-           text-shadow: 0 1px rgba(0, 0, 0, 0.5);
-           padding-top: 3px;
-           padding-right: 6px;
-           padding-bottom: 3px;
-           padding-left: 6px;
-         }
-
-         & pre > code {
-           background-color: transparent;
-           padding-top: 0;
-           padding-right: 0;
-           padding-bottom: 0;
-           padding-left: 0;
-         }
-
-         & pre,
-         & code {
-           background: ${hexToRGB(color.gray2, 0.7)};
-           font-size: 1rem;
-           font-family: menlo, consolas, monospace;
+         & pre, & code {
+           font-size: 16px;
+           font-family: "SF Mono", menlo, 'Consolas';
          }
        `;
