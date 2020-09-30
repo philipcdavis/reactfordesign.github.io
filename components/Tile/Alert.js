@@ -5,7 +5,7 @@ import Icon from './Icon';
 
 const AlertGreenContainer = styled.div`
   color: ${color.black};
-  background-color: ${color.green}
+  background-color: ${color.green};
   margin: 10px 0;
   text-align: center;
   outline: none;

@@ -8,14 +8,16 @@ export default function Terminal({ content, data }) {
   
   return (
     <>
-      <Post content={content} frontmatter={frontmatter} />
+      <Post 
+        content={content} 
+        frontmatter={frontmatter} 
+      />
     </>
   );
 }
 
 Terminal.getInitialProps = async (context) => {
   const content = await import(`./terminal.md`);
-
     // Parse .md data through `matter`
   const data = matter(content.default)
 

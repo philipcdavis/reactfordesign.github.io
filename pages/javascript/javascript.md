@@ -1,8 +1,8 @@
 ---
 date: "2019-12-20"
-title: "A Designer’s Guide to the Terminal"
+title: "A Designer’s Guide to JavaScript"
 description: "You can learn how to use the terminal in a fairly short amount of time. You don’t need a C.S. degree. You don’t need to know how to hack any mainframes."
-image: "https://react.design/social/terminal.png"
+image: "https://react.design/social/javascript.png"
 ---
 
 <style>
@@ -76,15 +76,30 @@ image: "https://react.design/social/terminal.png"
   </div>
 </div>
 
-# A Designers Guide to JavaScript
-You don't need to be a full time engineer to get a lot of value from JavaScript.
+# A Designer's Guide to JavaScript
+You can learn the basics of JavaScript quickly. You don't need a engineering degree, or a front end bootcamp.
 
-You can learn the basics of JavaScript fairly quickly. The basics are more than enough for you to start using modern frameworks.
+Learning the basics of JavaScript is enough to get started with modern frameworks like React.js. Once you know the basics, you can do some truly amazing things.
 
-I wrote this guide to help you quickly get up to speed with the core concepts. Once you feel comfortable with the content here, I'd recommend building something fun in a modern framework like React.js.
+You can quickly spin up interactive prototypes.  
+You can use live data sets.  
+You can create web, mobile, and desktop apps.  
+You can define interfaces in high fidelity.  
+You can write scripts to automate daily tasks.  
+You can make plugins for design tools like Sketch and Figma.  
+You can build with modern frameworks like React.js.
 
-## Make it look nice
-Before we write any code, let's make sure we have an editor that's easy on the eyes. I'd recommend using a text editor like VSCode, or Atom as you write JavaScript. They're both free and support lots of plugins to make things easier. You can also find lots of nice themes. Here's a [dark mode theme](https://marketplace.visualstudio.com/items?itemName=Framer.framer-syntax) I like.
+You can't learn JavaScript in a day, but you can learn it quickly. The best way to learn is to build. This guide is meant to give you enough information to start building. 
+
+## Editor
+
+<div class="img-lg">
+  <img src="./assets/javascript/theme.png" />
+</div>
+
+Before we write any code, it's a good idea to get comfortable with your text editor. I'd recommend using a text editor like VSCode, or Atom as you write JavaScript. They're both free and support lots of plugins to make things easier. You can also find lots of nice themes. Here's a [theme](https://marketplace.visualstudio.com/items?itemName=Framer.framer-syntax) for VSCode that I like.
+
+Learning keyboard shortcuts, and customizing the look of your editor will make for a much more enjoyable coding experience.
 
 ## Setup
 JavaScript is a scripting language that for our intents and purposes, will be executed by the browser.
@@ -107,9 +122,11 @@ There are multiple ways to include javascript inside your webpage. The way we wi
 
 
 We’ll put our javascript inside here, but we could also reference an external file.
-`console.log()` is a helpful tool for debugging. Here I'm writing "Hello Friend!" To the console. You an access the console in Chrome using the CMD+Option+J shortcut.
+`console.log()` is a helpful tool for debugging. Here I'm writing "Hello Friend!" To the console. You an access the console in Chrome using the `CMD+Option+J` shortcut.
 
-[IMG]
+<div class="img-lg">
+  <img src="./assets/javascript/console.png" />
+</div>
 
 Let's first go over 5 core concepts.
 
@@ -269,7 +286,8 @@ One other important thing to note about functions is how they affect variables i
 Javascript is a really fun language to learn. If you feel comfortable with these concepts, that’s great! As you use React, these concepts will become second nature to you. 
 
 ## Modern JavaScript
-In 2015 a set of new syntax and features were introduced that made writing JavaScript easier. If you're using modern frameworks like React you'll want to familiarize yourself with the following concepts. You don't need to use all of these, but you'll often see them in examples.
+In 2015 a set of new syntax and features were introduced that made writing JavaScript easier. Many of the following updates are meant to help you write code faster and cleaner. If you're using modern frameworks like React you'll often see them in examples.
+
 
 ### Const / Let
 This is just a new way to write variables. 
@@ -387,9 +405,6 @@ const welcome = (name, location="Not Set") => { ... };
 
 Here I'm setting the default location set to "Not Set". These can be very useful for empty states.
 
-— 
-
-As you can see, much of modern javascript practices are meant to help you write code faster and cleaner. You don't need to adopt all of these, but I would suggest trying to get comfortable with them over time.
-
 ## const youGotThis = true;
-JavaScript is an amazing language, and it opens up so many doors for designers. It's one of the reason I created [react.design](React for Design). If you're looking for next steps, I'd recommend building a design component using a modern javascript framework, like React.js. If you have questions, please reach out to me.
+
+JavaScript is an amazing language, and it opens up so many doors for designers. It's one of the reason I created [React for Design](https://react.design). If you have questions about JavaScript, or just want some guidance as you get started please [reach out](https://twitter.com/philipcdavis).

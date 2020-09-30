@@ -11,8 +11,6 @@ import { Markdown } from './Text';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Syntax from './Syntax';
 
-
-
 function CodeBlock({ language = null, value }) {
   return (
     <SyntaxHighlighter language={language} style={Syntax}>
@@ -21,15 +19,13 @@ function CodeBlock({ language = null, value }) {
   );
 }
 
-
-
 const Post = function (props) {
   return (
     <>
       <Head
-        title="A Designer’s Guide to the Terminal"
-        description="You can learn how to use the terminal in a fairly short amount of time. You don’t need a C.S. degree. You don’t need to know how to hack any mainframes."
-        image="https://react.design/social/terminal.png"
+        title={props.frontmatter.title}
+        description={props.frontmatter.description}
+        image={props.frontmatter.image}
       />
       <GlobalStyle />
       <CodeAnimation colors={props.colors} />
@@ -37,7 +33,11 @@ const Post = function (props) {
       <Box px={[3, 3, 6]} py={[5, 5]}>
         <Box color={color.gray0} width={["100%", "600px"]} mx="auto">
           <Markdown>
-            <ReactMarkdown renderers={{code: CodeBlock}} escapeHtml={false} source={props.content} />
+            <ReactMarkdown
+              renderers={{ code: CodeBlock }}
+              escapeHtml={false}
+              source={props.content}
+            />
           </Markdown>
 
           <Box textAlign="center" mt={[4, 5]}>

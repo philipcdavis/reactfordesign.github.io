@@ -31,7 +31,7 @@ image: "https://react.design/social/terminal.png"
     width: 120px;
     margin: 100px auto 60px auto;
     animation: TerminalBackground 7s infinite alternate;
-    border-radius: 12px;
+    border-radius: 14px;
 ">
   <div style="
     position: absolute;
@@ -44,14 +44,14 @@ image: "https://react.design/social/terminal.png"
     background-size: 300% 300%;
     width: 120px;
     animation: TerminalBackground 7s infinite alternate;
-    border-radius: 12px;
+    border-radius: 14px;
     filter: blur(17px);
   ">
   </div>
   
   <div style="
     background: rgba(0, 0, 0, 0.80) linear-gradient(0deg, black, transparent);
-    border-radius: 12px;
+    border-radius: 11px;
     height: 94px;
     opacity: 0.95;
     font-weight: bold;
