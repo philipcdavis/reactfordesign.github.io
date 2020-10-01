@@ -97,7 +97,7 @@ You can't learn JavaScript in a day, but you can learn it quickly. The best way 
   <img src="./assets/javascript/theme.png" />
 </div>
 
-Before we write any code, it's a good idea to get comfortable with your text editor. I'd recommend using a text editor like VSCode, or Atom as you write JavaScript. They're both free and support lots of plugins to make things easier. You can also find lots of nice themes. Here's a [theme](https://marketplace.visualstudio.com/items?itemName=Framer.framer-syntax) for VSCode that I like.
+Before we write any code, it's a good idea to get comfortable with your text editor. I'd recommend using a text editor like [VSCode](https://code.visualstudio.com/), or [Atom](https://atom.io/) as you write JavaScript. They're both free and support lots of plugins to make things easier. You can also find lots of nice themes. Here's a [theme](https://marketplace.visualstudio.com/items?itemName=Framer.framer-syntax) for VSCode that I like.
 
 Learning keyboard shortcuts, and customizing the look of your editor will make for a much more enjoyable coding experience.
 
