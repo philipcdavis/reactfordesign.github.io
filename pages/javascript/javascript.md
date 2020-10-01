@@ -1,7 +1,7 @@
 ---
-date: "2019-12-20"
+date: "2020-10-01"
 title: "A Designer’s Guide to JavaScript"
-description: "You can learn how to use the terminal in a fairly short amount of time. You don’t need a C.S. degree. You don’t need to know how to hack any mainframes."
+description: "You can learn the basics of JavaScript quickly. You don't need a engineering degree, or a front end bootcamp."
 image: "https://react.design/social/javascript.png"
 ---
 
@@ -128,7 +128,7 @@ We’ll put our javascript inside here, but we could also reference an external 
   <img src="./assets/javascript/console.png" />
 </div>
 
-Let's first go over 5 core concepts.
+There are 5 core concepts in JavaScript that are important to understand.
 
 **1. Variables**  
 **2. Data Structures**  
@@ -138,10 +138,9 @@ Let's first go over 5 core concepts.
 
 
 ## Variables
-Variables are containers that hold values. These values can take lots of different forms. If you wanted a variable to hold a number you could write `var num = 20;`. If I use `console.log(num)` it should show me the number twenty.
+Variables are containers that hold values. These values can take lots of different forms. If you wanted a variable to hold a number you could write it as `var num = 20;`. If I use `console.log(num)` it should show me the number twenty.
 
-Variables can be referenced later. 
-`var double = num * 2; // 40`
+Variables can be referenced later. `var double = num * 2; // 40`
 
 Variables can hold lots of different data types. I want to discuss a few different common ways to hold data. There are primitive data types like numbers, which we used earlier, There are strings, which are just a way to store text, and booleans which are values that are either true or false.
 
@@ -167,8 +166,7 @@ var obj = {
 ```
 
 
-Keys are labels that help you find the data you want to store. Keys in a single object must be unique Values can be any data type. Numbers, strings, arrays, and even other objects. 
-
+Keys are labels that help you find the data you want to store. Keys in a single object must be unique. Values can be any data type. Numbers, strings, arrays, and even other objects. 
 Here's an example Object with multiple key value pairs in action:
 
 ```js
@@ -201,7 +199,7 @@ var teams = ['lakers', 'nuggets', 'rockets'\];
 
 Instead of using keys, arrays use a built in index to keep track of location. The index of arrays starts at 0. If we wanted to access the second value of this array (nuggets) we could do so by typing `teams[1];`
 
-If your data was as simple as this, using objects and arrays might seem unnecessary. They start to shine when you have data that's a little more complex. To work with more data, we'll probably want to use a loop
+If your data was as simple as this, using objects and arrays might seem unnecessary. They start to shine when you have data sets that are larger. To work with more data, we'll probably want to use a loop
 
 ## Loops
 Loops enable you to run a block of code multiple times. You can use a loop with objects and arrays to execute a block of code on each item in the structure. 
@@ -214,9 +212,9 @@ for (var i=0; i<teams.length; i++) {
 }
 ```
 
-What goes into the parenthesis determines how many times the block of code is executed. The first value is a counter variable. We will start the counter at 0. 
+What goes into the parenthesis determines how many times the block of code is executed. The first value is a counter variable. `i` is often used to refer to the fact that it's used as the index value of the array. We will start the counter at 0. 
 
-The next value is called the conditional, where once this value is false, the loop will end. We can set the value to be i < teams.length. The `.length` is a convenient helper value built into every array you create that will tell you how long the array is. Once the value of the counter is as great as the length of the array, we can stop looping. The last value is what we want to happen after our loop runs. We want our counter to increase in value by one every time the loop runs.
+The next value is called the conditional. Once the conditional is false, the loop will end. We can set the value to be `i < teams.length`. The `.length` is a helper value built into every array that will tell you how many items are in the array. Once the value of the counter is as great as the length of the array, we can stop looping. The last value `i++` is what we want to happen after our loop runs. We want our counter to increase in value by one every time the loop runs.
 
 If we log a string, you can see that it will print out 4 times.
 If we log the value i, you can see that it increments up. If you combine this incremented value i with our array, you can see how we can access each value in our array.
@@ -226,7 +224,6 @@ for (var i=0;i<teams.length;i++) {
 	console.log(teams[i])
 };
 ```
-
 
 There are other types of loops but they all are doing something pretty similar, running a block of code multiple times. That’s the essential work of a loop.
 
@@ -239,11 +236,11 @@ Next up on our list is conditionals. The most common type of conditional is the 
 if (conditional) {
 	console.log('the conditional evaluated to true');
 } else {
-  console.log(’the conditional evaluated to false’);
+  console.log('the conditional evaluated to false');
 }
 ```
 
-If what is inside the parenthesis evaluate to true, the block inside the first set of curly brackets is run, otherwise the else block is run.
+If the `conditional` value in the parenthesis evaluates to true, the block inside the first set of curly brackets is run, otherwise the else block is run.
 
 Let’s use it in combination with our loop to log only the first two items in our array. Because we don’t need the else here, we can remove it, and we’ll get the same result.
 
@@ -281,9 +278,9 @@ What we've created is a function declaration. In order to execute, or invoke our
 
 One other important thing to note about functions is how they affect variables inside them. If you define a variable within a function, the variable cannot be used outside the function. That's because javascript has a function based scope.
 
-—
+<hr />
 
-Javascript is a really fun language to learn. If you feel comfortable with these concepts, that’s great! As you use React, these concepts will become second nature to you. 
+Javascript is a really fun language to learn. If you feel comfortable with the material above you can do a lot! Most of JavaScript is just building on to these core concepts.
 
 ## Modern JavaScript
 In 2015 a set of new syntax and features were introduced that made writing JavaScript easier. Many of the following updates are meant to help you write code faster and cleaner. If you're using modern frameworks like React you'll often see them in examples.
@@ -293,8 +290,8 @@ In 2015 a set of new syntax and features were introduced that made writing JavaS
 This is just a new way to write variables. 
 
 ```js
-const height = 30
-let height = 30 
+const height = 30;
+let height = 30;
 ```
 
 `const` values cannot be reassigned after the initial assignment. This is usually the default way of creating variables. 
@@ -306,7 +303,7 @@ This a shorthand for writing functions.
 Instead of writing:
 
 ```js
-const add = function(a,b){ a + b }
+const add = function(a,b){ return a + b }
 ```
 
 You can use an arrow function which looks like this:
@@ -367,11 +364,11 @@ import Button from './Button'
 Many libraries will allow you to import a default value as well as other values. Here's an example from the `styled-components` library.
 
 ```js
-import styled, {keyframes, css} from 'styled-components'`
+import styled, {keyframes, css} from 'styled-components'
 ```
 
 ### Destructuring
-The syntax for accessing values inside of arrays and objects also got a few upgrades. Previously if you wanted to use the values in an array as variables it would look like this. 
+The syntax for accessing values inside of arrays and objects also got a few upgrades. Previously if you wanted to use values in an array as variables it would look like this. 
 
 ```js
 // Old method
@@ -389,7 +386,7 @@ const [x,y] = coordinates;
 ```
 
 
-Objects have a similar story. You can use the same syntax with curly brackets instead of the square ones.
+Objects work similar. You can use the same syntax with curly brackets instead of the square ones.
 
 ```js
 const user = {name:"Philip Davis", twitter: "@philipcdavis"}
@@ -407,4 +404,4 @@ Here I'm setting the default location set to "Not Set". These can be very useful
 
 ## const youGotThis = true;
 
-JavaScript is an amazing language, and it opens up so many doors for designers. It's one of the reason I created [React for Design](https://react.design). If you have questions about JavaScript, or just want some guidance as you get started please [reach out](https://twitter.com/philipcdavis).
+JavaScript is an amazing language, and it can open up so many doors for designers. It's one of the reason I created [React for Design](https://react.design). If you have questions about JavaScript, or just want some guidance as you get started please [reach out](https://twitter.com/philipcdavis).
