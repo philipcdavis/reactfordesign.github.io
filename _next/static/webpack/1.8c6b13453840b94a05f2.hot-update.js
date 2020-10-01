@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],{
+webpackHotUpdate(1,{
 
 /***/ "./pages/javascript/javascript.md":
 /*!****************************************!*\
@@ -12,4 +12,4 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ })
 
-}]);
+})
