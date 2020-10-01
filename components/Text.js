@@ -144,6 +144,7 @@ export const Markdown = styled.div`
     font-size: 16px;
     font-family: "SF Mono", Menlo, Consolas, Monaco, "Andale Mono",
       "Ubuntu Mono", monospace;
+    white-space: nowrap;
   }
 
   & pre {
