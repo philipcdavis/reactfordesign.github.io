@@ -194,7 +194,7 @@ The other data type that’s important to know about is the Array. You define an
 You can store any type of data inside these arrays and they don't need to all be the same type (though they usually are). An example array might look like this: 
 
 ```js
-var teams = ['lakers', 'nuggets', 'rockets'\];
+var teams = ['lakers', 'nuggets', 'rockets'];
 ```
 
 Instead of using keys, arrays use a built in index to keep track of location. The index of arrays starts at 0. If we wanted to access the second value of this array (nuggets) we could do so by typing `teams[1];`
