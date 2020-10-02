@@ -61,7 +61,6 @@ image: "https://react.design/social/javascript.png"
       background-size: 150% 150%;
       animation: TerminalBackground 2s infinite alternate;
       clip-path: url(#clipping);
-      padding: 10px;
     ">
       <svg width="80px" viewBox="0 0 110 102">
         <defs>
