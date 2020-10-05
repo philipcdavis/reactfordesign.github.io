@@ -33,7 +33,7 @@ export default {
     msHyphens: "none",
     hyphens: "none",
     padding: "1em",
-    margin: "0.5em -1em",
+    margin: "0.5em -1rem",
     overflow: "auto",
     background: "#1a1a1a",
     borderRadius: "8px",
