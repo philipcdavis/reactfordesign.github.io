@@ -1,40 +1,39 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Box, Flex, Text } from 'rebass/styled-components'
-import { color } from './Tile'
-import SimpleComponent from './Lessons/SimpleComponent'
-import DesigningWithData from './Lessons/DesigningWithData'
-import StylingInJavascript from './Lessons/StylingInJavascript'
-import IconComponentLibrary from './Lessons/IconComponentLibrary'
-import DSFlexibleComponent from './Lessons/DSFlexibleComponent'
+import React from "react";
+import styled from "styled-components";
+import { Box, Flex, Text } from "rebass/styled-components";
+import { color } from "./Tile";
+import SimpleComponent from "./Lessons/SimpleComponent";
+import DesigningWithData from "./Lessons/DesigningWithData";
+import StylingInJavascript from "./Lessons/StylingInJavascript";
+import IconComponentLibrary from "./Lessons/IconComponentLibrary";
+import DSFlexibleComponent from "./Lessons/DSFlexibleComponent";
 import DSOrgExt from "./Lessons/DSOrgExt";
 import DSWalkthrough from "./Lessons/DSWalkthrough";
 import ComposingStyles from "./Lessons/ComposingStyles";
-import InProgress from "./Lessons/InProgress";
-
+import InteractiveComponents from "./Lessons/InteractiveComponents";
 
 const LessonCardContainer = styled(Box)`
   height: 260px;
   margin-top: 50px;
   margin-bottom: 50px;
-`
+`;
 
 const LessonCard = styled(Box)`
   background-color: ${color.gray3};
   border-radius: 12px;
   height: 100%;
   position: relative;
-`
+`;
 
 const LessonText = styled(Text)`
   font-size: 17px;
   color: ${color.white};
   margin-left: 10px;
-`
+`;
 
-const breakpoints = [1, 1/2, 1/2, 1/3];
+const breakpoints = [1, 1 / 2, 1 / 2, 1 / 3];
 
-const LessonCards = function(props) {
+const LessonCards = function (props) {
   return (
     <Flex flexWrap="wrap" mx={-3} mt={5}>
       <LessonCardContainer px={3} width={breakpoints}>
@@ -92,21 +91,16 @@ const LessonCards = function(props) {
         <LessonCard>
           <ComposingStyles />
         </LessonCard>
-        <LessonText mt={3}>
-          Composing Styles with Utility Props
-        </LessonText>
+        <LessonText mt={3}>Composing Styles with Utility Props</LessonText>
       </LessonCardContainer>
       <LessonCardContainer px={3} width={breakpoints}>
         <LessonCard>
-          <InProgress />
+          <InteractiveComponents />
         </LessonCard>
-        <LessonText opacity={0.5} mt={3}>
-          Creating Interactive Components
-        </LessonText>
+        <LessonText mt={3}>Creating Interactive Components</LessonText>
       </LessonCardContainer>
-      
     </Flex>
   );
-}
+};
 
 export default LessonCards;
