@@ -1,8 +1,8 @@
-import React from 'react'
-import { Text, Box, Flex, Link, Heading } from 'rebass/styled-components'
+import React from "react";
+import { Text, Box, Flex, Link, Heading } from "rebass/styled-components";
 import { BtnRainbow } from "./Button";
 
-const FAQ = function(props) {
+const FAQ = function (props) {
   return (
     <Box
       sx={{
@@ -31,7 +31,7 @@ const FAQ = function(props) {
             CSS, and HTML. If you've never used React before I wrote a longer{" "}
             <Link
               color="inherit"
-              href="https://philipcdavis.com/react-is-for-designers/"
+              href="https://philipcdavis.com/writing/react-is-for-designers/"
             >
               article
             </Link>{" "}
@@ -53,7 +53,7 @@ const FAQ = function(props) {
             <Link
               target="_blank"
               color="inherit"
-              href="https://philipcdavis.com/react-is-for-designers/"
+              href="https://philipcdavis.com/writing/react-is-for-designers/"
             >
               article
             </Link>{" "}
@@ -76,13 +76,13 @@ const FAQ = function(props) {
           </Heading>
           <Text fontSize={[2, "17px"]}>
             Not currently. If you're looking for free resources, I made a
-            collection of {" "}
+            collection of{" "}
             <Link
               color="inherit"
               target="_blank"
               href="https://react.design/links"
             >
-             free react links for designers
+              free react links for designers
             </Link>
             .
           </Text>
@@ -149,9 +149,10 @@ const FAQ = function(props) {
         Ready to start?
       </Text>
       <Text mb={4} textAlign={"center"}>
-        <BtnRainbow href="https://gumroad.com/l/reactfordesign">Get Access Now</BtnRainbow>
+        <BtnRainbow href="https://gumroad.com/l/reactfordesign">
+          Get Access Now
+        </BtnRainbow>
       </Text>
-      
     </Box>
   );
 };
