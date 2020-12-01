@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import { color } from './Tile'
-import { Text, Box, Heading, Flex } from 'rebass/styled-components'
-import { BtnRainbow } from './Button'
-import { colorChange } from './Utils'
-import PurchasePoint from './PurchasePoint'
+import React from "react";
+import styled from "styled-components";
+import { color } from "./Tile";
+import { Text, Box, Heading, Flex } from "rebass/styled-components";
+import { BtnRainbow } from "./Button";
+import { colorChange } from "./Utils";
+import PurchasePoint from "./PurchasePoint";
 
 const Card = styled(Box)`
   border-radius: 12px;
@@ -42,15 +42,15 @@ const Smallar = styled(Text)`
   color: ${color.gray1};
   position: absolute;
   top: 3px;
-  left: 4px;
+  left: 0px;
 `;
 
-const PurchaseCard = function(props) {
+const PurchaseCard = function (props) {
   return (
     <Card px={[3, 4, "100px"]} py={[4, 5]}>
       <Box width={[1]} css={{ maxWidth: "580px" }} mb={[3, 5]} mx="auto">
         <Heading color="white" textAlign="center" mb={2} fontSize={[4, 5]}>
-          Introductory Pricing
+          One Time Price
         </Heading>
         <Text
           color="white"
@@ -59,8 +59,8 @@ const PurchaseCard = function(props) {
           mb={4}
           mt={3}
         >
-          Pay once and you'll get all future updates. If you're not satisfied
-          with the course, let me know within 7 days and I'll refund you.
+          Pay once for full access. If you're not satisfied with the course, let
+          me know within 7 days and I'll refund you.
         </Text>
       </Box>
       <Flex flexWrap="wrap">
@@ -76,7 +76,7 @@ const PurchaseCard = function(props) {
           <Box>
             <Price lineHeight={1} mb={3} fontSize={[6, 7]} color="white">
               <Smallar fontSize={[3, 4]}>$</Smallar>
-              <Largar>49</Largar>
+              <Largar>75</Largar>
             </Price>
           </Box>
           <BtnRainbow
