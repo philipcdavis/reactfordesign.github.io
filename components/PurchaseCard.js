@@ -50,7 +50,7 @@ const PurchaseCard = function (props) {
     <Card px={[3, 4, "100px"]} py={[4, 5]}>
       <Box width={[1]} css={{ maxWidth: "580px" }} mb={[3, 5]} mx="auto">
         <Heading color="white" textAlign="center" mb={2} fontSize={[4, 5]}>
-          🌼 Spring Sale 🌼
+          One Time Purchase
         </Heading>
         <Text
           color="white"
@@ -76,7 +76,7 @@ const PurchaseCard = function (props) {
           <Box>
             <Price lineHeight={1} mb={3} fontSize={[6, 7]} color="white">
               <Smallar fontSize={[3, 4]}>$</Smallar>
-              <Largar>49</Largar>
+              <Largar>60</Largar>
             </Price>
           </Box>
           <BtnRainbow
