@@ -50,7 +50,7 @@ const PurchaseCard = function (props) {
     <Card px={[3, 4, "100px"]} py={[4, 5]}>
       <Box width={[1]} css={{ maxWidth: "580px" }} mb={[3, 5]} mx="auto">
         <Heading color="white" textAlign="center" mb={2} fontSize={[4, 5]}>
-          🍁 Fall Discount 🍁
+          One Time Purchase
         </Heading>
         <Text
           color="white"
@@ -71,12 +71,12 @@ const PurchaseCard = function (props) {
         </Box>
         <Box textAlign="center" mx="auto" width={[1, "250px"]}>
           <Strikethrough mt={0} fontSize={[3, 4]} color={color.gray1}>
-            $100
+            $75
           </Strikethrough>
           <Box>
             <Price lineHeight={1} mb={3} fontSize={[6, 7]} color="white">
               <Smallar fontSize={[3, 4]}>$</Smallar>
-              <Largar>40</Largar>
+              <Largar>60</Largar>
             </Price>
           </Box>
           <BtnRainbow
