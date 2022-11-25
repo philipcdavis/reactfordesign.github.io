@@ -76,7 +76,7 @@ const PurchaseCard = function (props) {
           <Box>
             <Price lineHeight={1} mb={3} fontSize={[6, 7]} color="white">
               <Smallar fontSize={[3, 4]}>$</Smallar>
-              <Largar>60</Largar>
+              <Largar>29</Largar>
             </Price>
           </Box>
           <BtnRainbow
